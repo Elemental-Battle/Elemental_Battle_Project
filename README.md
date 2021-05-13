@@ -16,7 +16,8 @@ Desenvolvimento de um jogo de tabuleiro, no âmbito de Programação Orientada a
   * 4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não);
 
 **Regras**: <br/>
- * Jogadores: 2 O tabuleiro é dividido por 20 casas, 7 casas neutra, 8 casas duelo e 4 casas surpresa;<br/>
+ * Jogadores: 2; <br/>
+ * O tabuleiro é dividido por 20 casas, 7 casas neutra, 8 casas duelo e 4 casas surpresa;<br/>
  * O jogador inicia com 15 cartas; Para ver quem ganha é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto;<br/>
  * O jogador começa na “casa partida”;<br/>
  * O jogador só pode lançar o dado uma vez por jogada; <br/>
