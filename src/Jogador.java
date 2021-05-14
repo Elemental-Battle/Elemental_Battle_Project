@@ -31,7 +31,7 @@ public class Jogador {
 		//ToString do Jogador com as respetivas informações
 		@Override
 		public String toString() {
-			return "Jogador [Nome = " + getNome() + "]";
+			return "jogador " + getNome().toUpperCase();
 		}
 		
 		//Clonar o Jogador

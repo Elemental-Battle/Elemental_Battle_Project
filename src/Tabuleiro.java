@@ -7,6 +7,9 @@ public class Tabuleiro {
 	private Jogador jogador1 = new Jogador();
 	private Jogador jogador2 = new Jogador();
 	
+	private PosicaoJogador posicaoJogador1 = new PosicaoJogador(jogador1);
+	private PosicaoJogador posicaoJogador2 = new PosicaoJogador(jogador2);
+	
 		//Criação da casa
 	private ArrayList<Casa> casas = new ArrayList<Casa>();
 	
@@ -16,9 +19,20 @@ public class Tabuleiro {
 	}
 	// Construtor - com argumentos
 	public Tabuleiro(ArrayList<Casa>  casas, Jogador jogador1, Jogador jogador2) {
-		this.casas = casas;
-		this.jogador1 = jogador1;
-		this.jogador2 = jogador2;
+			// Se as casas não forem nulas, então o array casas é igual ao passado por parâmetro
+		if(casas != null)
+			this.casas = casas;
+		// Verificar se o jogador 1 é válido
+		else if (jogador1.getNome() != "" && jogador1.getNome() != null) 
+			this.jogador1 = jogador1;
+		// Verificar se o jogador 2 é válido
+		else if (jogador2.getNome() == "" || jogador1.getNome() == null)
+			System.out.println("Nome inválido");
+		// Verificar se o jogador 2 tem o nome diferente do jogador 1
+		else if (jogador2.getNome() == jogador1.getNome())
+			System.out.println("Nome em uso, por favor escolha outro");
+		else
+			this.jogador2 = jogador2;
 	}
 	// Construtor - cópia
 	public Tabuleiro (Tabuleiro tabuleiro) {
@@ -28,20 +42,51 @@ public class Tabuleiro {
 	}
 	// Acessores
 	
+	// Get jogador 1
 	public Jogador getJogador1() {
 		return jogador1;
 	}
 	
+	// Get jogador 2
 	public Jogador getJogador2() {
 		return jogador2;
 	}
 	
+	// Get posicaoJogador 1
+	public PosicaoJogador getPosicaoJogador1() {
+		return posicaoJogador1;
+	}
+	
+		// Get posicaoJogador 2
+	public PosicaoJogador getPosicaoJogador2() {
+		return posicaoJogador2;
+	}
+	
+		// Get casas do tabuleiro
 	public ArrayList<Casa> getCasas() {
 		return casas;
 	}
 	
 	
 	// Comportamentos
+	public void andarJogador(Dado dado, PosicaoJogador posicaoJogador) {
+		
+			//Declarar o número de casas que o jogador vai andar com base na posição atual + o valor do dado lançado
+		int andarCasas =  posicaoJogador.getPosicao() + dado.lancarDado();
+		
+			//Se o número de casas a andar for maior que o número do tabuleiro
+		if(andarCasas  > casas.size()) {
+			 
+				//Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1. 
+				//Ex: andarCasas = 18, casas.size() = 14 + 1.      andarCasas  - (casas.size() + 1) = posicao 2
+			posicaoJogador.setPosicao(andarCasas  - (casas.size() + 1)); 
+		}else
+				//Caso contrário, anda o nº de casas
+			posicaoJogador.setPosicao(andarCasas );
+		
+		
+	}
+	
 	
 	//Métodos Adicionais
 	

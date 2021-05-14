@@ -1,5 +1,5 @@
 
-public abstract class Casa {
+public class Casa {
 	
 	//Atributos
 
