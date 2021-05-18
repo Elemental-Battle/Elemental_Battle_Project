@@ -1,0 +1,50 @@
+
+public abstract class Casa extends Tabuleiro {
+	
+	//Atributos
+	
+		//Declaração do número da casa
+	public abstract int numeroCasa();
+	
+	//Construtor - default
+	public Casa() {
+		
+	}
+	
+	// Construtor - com argumentos
+	public Casa(int numeroCasa) {
+		this.numeroCasa = numeroCasa;
+	}
+	
+	// Construtor - cópia
+	public Casa(Casa casa) {
+		this.numeroCasa = casa.getNumeroCasa();
+	}
+
+	
+	// Acessores
+	public int getNumeroCasa() {
+		return numeroCasa;
+	}	
+	
+	// Comportamentos
+	
+	
+	//Métodos Adicionais
+	
+	//ToString do Casa com as respetivas informações
+		@Override
+		public String toString() {
+			return "Casa [Número da casa = " + getNumeroCasa() + "]";
+		}
+
+		//Permite saber se os tabuleiros são iguais
+		public boolean equals(Casa casa) {
+			if(casa == null)
+				return false;
+			else if (casa.equals( casa.getNumeroCasa() ))
+				return true;
+			else
+				return false;
+		}
+}

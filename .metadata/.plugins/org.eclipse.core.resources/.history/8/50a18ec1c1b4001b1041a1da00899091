@@ -1,0 +1,31 @@
+import java.util.Random;
+
+public class Dado {
+
+	//Atributos
+		int numero;
+		Random rand = new Random();
+	
+	//Construtor - default
+		
+		public Dado() {
+			super();
+	
+		}
+	// Construtor - com argumentos
+
+	// Construtor - cópia
+	
+	
+	// Acessores
+	
+	
+	// Comportamentos
+		public void lancarDado() {
+			
+		}
+	
+	
+	// Métodos Adicionais
+	
+}

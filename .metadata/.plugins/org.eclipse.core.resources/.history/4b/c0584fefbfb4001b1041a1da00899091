@@ -1,0 +1,29 @@
+
+public class PosicaoJogador{
+
+	//Atributos
+		int posicao;
+		Jogador jogador;
+	
+		//Construtor - default
+		public PosicaoJogador () {
+			
+		}
+		
+		// Construtor - com argumentos
+		public PosicaoJogador (Jogador jogador) {
+			
+		}
+		
+		// Construtor - cópia
+		
+		
+		// Acessores
+		
+		
+		// Comportamentos
+		
+		
+		// Métodos Adicionais
+	
+}

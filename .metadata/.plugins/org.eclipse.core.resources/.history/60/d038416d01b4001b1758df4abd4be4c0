@@ -1,0 +1,29 @@
+
+public class Jogador extends Tabuleiro{
+	//Atributos
+	private String nome;
+	
+	//Construtor - default
+	public Jogador() {
+		
+	}
+	
+	// Construtor - com argumentos
+	public Jogador(String nome) {
+		this.nome = nome;
+	}
+	
+	// Construtor - cópia
+	public Jogador(Jogador jogador) {
+		this.nome = jogador.nome;
+	}
+	// Acessores
+	public String getNome() {
+		return nome;
+	}
+	
+	// Comportamentos
+	
+	// Métodos Adicionais
+	
+}

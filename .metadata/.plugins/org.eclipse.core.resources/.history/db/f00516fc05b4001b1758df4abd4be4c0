@@ -1,0 +1,30 @@
+
+public class CasaNeutra extends Casa{
+
+
+
+	//Atributos	
+	
+	//Número da Casa
+	@Override
+	public int numeroCasa(int numero) {
+		
+		return numero;
+	}
+	
+	//Construtor - default
+	public CasaNeutra () {
+		
+	}
+	
+	// Construtor - com argumentos
+	public CasaNeutra (int numero) {
+		this.numeroCasa(numero);
+	}
+
+
+	// Acessores
+	// Comportamentos
+	// Métodos Adicionais
+	
+}

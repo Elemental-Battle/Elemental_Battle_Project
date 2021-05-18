@@ -1,0 +1,12 @@
+
+public abstract class Casa extends Tabuleiro {
+	//Atributos
+	//Construtor - default
+	public Casa() {
+		
+	}
+	// Construtor - com argumentos
+	// Construtor - cópia
+	// Acessores
+	// Comportamentos
+}

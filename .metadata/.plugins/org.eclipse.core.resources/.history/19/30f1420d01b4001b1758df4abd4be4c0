@@ -1,0 +1,12 @@
+
+public class Jogador extends Tabuleiro{
+	//Atributos
+	//Construtor - default
+	public Jogador() {
+		
+	}
+	// Construtor - com argumentos
+	// Construtor - cópia
+	// Acessores
+	// Comportamentos
+}

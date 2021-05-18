@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Dado dado = new Dado();
+		
+		Jogador jogador1 = new Jogador();
+		Jogador jogador2 = new Jogador();
+		
+		ArrayList<Casa>  casas = new ArrayList<Casa>();
+		
+		System.out.println(dado.lancarDado());
+		
+		Tabuleiro t = new Tabuleiro(casas, jogador1, jogador2);
+	}
+
+	
+	public static ArrayList<Casa> criarCasas() {
+		ArrayList<Casa> casas = new ArrayList<Casa>();
+		animais.add(new Crocodilo("CrocBalu", "rio"));
+		animais.add(new Crocodilo("CrocMogli", "oceano"));		
+		animais.add(new Leao("LeaoRei", "Africa"));
+		animais.add(new Leao("LeaoPumba", "Asia"));
+		animais.add(new Cao("CaoSirius", "Labrador"));
+		animais.add(new Cao("CaoNoddy", "Cao da Rhodesia"));
+		animais.add(new Ovelha("OvelhaTimon", "Serra da Estrela"));
+		animais.add(new Ovelha("OvelhaSimba", "Serra da Estrela"));
+		return animais;
+	}
+}
+

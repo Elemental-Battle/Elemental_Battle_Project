@@ -1,0 +1,20 @@
+
+public abstract class Casa {
+	
+	//Atributos
+	protected int numero;
+		//Declaração do número da casa
+	public abstract int numeroCasa(int numero);
+	
+	public Casa(int numero) {
+		this.numero = numero;
+	}
+	
+	// Acessores
+	
+	// Comportamentos
+	
+	
+	//Métodos Adicionais
+	
+}

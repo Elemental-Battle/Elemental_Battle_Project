@@ -1,0 +1,23 @@
+
+public class CasaNeutra extends Casa{
+
+
+
+	//Atributos	
+	
+	//Número da Casa
+
+
+	// Construtor - com argumentos
+	public CasaNeutra (int numero) {
+		super(numero);
+	}
+
+	// Acessores
+	
+	
+	// Comportamentos
+	
+	// Métodos Adicionais
+	
+}

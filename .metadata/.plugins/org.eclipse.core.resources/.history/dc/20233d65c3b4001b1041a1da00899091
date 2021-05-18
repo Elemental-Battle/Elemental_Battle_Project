@@ -1,0 +1,40 @@
+
+public class PosicaoJogador{
+
+	//Atributos
+		int posicao;
+		Jogador jogador;
+	
+		//Construtor - default
+		public PosicaoJogador () {
+			
+		}
+		
+		// Construtor - com argumentos
+		public PosicaoJogador (Jogador jogador) {
+			this.jogador = jogador;
+		}
+		
+		// Construtor - cópia
+
+		
+		
+		// Acessores
+		public int getPosicao() {
+			return posicao;
+		}
+
+		public Jogador getJogador() {
+			return jogador;
+		}
+		
+		
+		
+		// Comportamentos
+		
+		
+		
+		
+		// Métodos Adicionais
+	
+}

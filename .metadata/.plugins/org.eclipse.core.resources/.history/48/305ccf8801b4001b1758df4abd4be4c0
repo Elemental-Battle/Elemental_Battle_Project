@@ -1,0 +1,51 @@
+
+public class Jogador extends Tabuleiro{
+	//Atributos
+	private String nome;
+	
+	//Construtor - default
+	public Jogador() {
+		
+	}
+	
+	// Construtor - com argumentos
+	public Jogador(String nome) {
+		this.nome = nome;
+	}
+	
+	// Construtor - cópia
+	public Jogador(Jogador jogador) {
+		this.nome = jogador.nome;
+	}
+	// Acessores
+	public String getNome() {
+		return nome;
+	}
+	
+	// Comportamentos
+	
+	// Métodos Adicionais
+	
+		//ToString do Jogador com as respetivas informações
+		@Override
+		public String toString() {
+			return "Jogador [Nome = " + getNome() + "]";
+		}
+		
+		//Clonar o tabuleiro
+		public Tabuleiro clone() {
+			return new Tabuleiro(this);
+		}
+		
+		//Permite saber se os tabuleiros são iguais
+		public boolean equals(Tabuleiro tabuleiro) {
+			if(tabuleiro == null)
+				return false;
+			else if (jogador1.equals( tabuleiro.getJogador1() ) || jogador2.equals( tabuleiro.getJogador2() ))
+				return true;
+			else if (casas.equals( tabuleiro.getCasas() ))
+				return true;
+			else
+				return false;
+		}
+}

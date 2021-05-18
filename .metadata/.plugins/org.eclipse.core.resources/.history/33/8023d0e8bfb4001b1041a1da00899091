@@ -1,0 +1,24 @@
+
+public class PosicaoJogador  extends Jogador{
+
+	//Atributos
+	
+	
+		//Construtor - default
+		
+		
+		// Construtor - com argumentos
+		
+		
+		// Construtor - cópia
+		
+		
+		// Acessores
+		
+		
+		// Comportamentos
+		
+		
+		// Métodos Adicionais
+	
+}

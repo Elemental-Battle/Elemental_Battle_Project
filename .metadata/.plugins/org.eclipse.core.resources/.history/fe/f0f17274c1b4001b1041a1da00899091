@@ -1,0 +1,28 @@
+
+public class Dado {
+
+	//Atributos
+		int numero;
+
+	
+	
+	//Construtor - default
+		
+		public Dado() {
+			super();
+	
+		}
+	// Construtor - com argumentos
+
+	// Construtor - cópia
+	
+	
+	// Acessores
+	
+	
+	// Comportamentos
+	
+	
+	// Métodos Adicionais
+	
+}

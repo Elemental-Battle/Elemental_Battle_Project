@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="Bonus" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Bonus.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1002" y="678"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="Capacidade" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Capacidade.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="100" y="618"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="Carta" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Carta.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="203" y="354"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="Casa" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Casa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1150" y="258"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="CasaSurpresa" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/CasaSurpresa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1035" y="489"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="Dado" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Dado.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="934" y="182"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="Destreza" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Destreza.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="311" y="631"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="Forca" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Forca.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="88" width="105" x="409" y="610"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="Jogador" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Jogador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="670" y="471"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="Jogo" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Jogo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="621" y="114"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="PosicaoJogador" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/PosicaoJogador.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="423" y="349"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="Tabuleiro" project="Elemental_Battle_Project" 
+    file="/Elemental_Battle_Project/src/Tabuleiro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="722" y="759"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="13">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="14" name="posicaoJogador2"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="16">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="17" name="posicaoJogador1"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="19">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="20">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="21" name="casas"/>      
+      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="23">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="24" name="posicaoJogador2"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="26">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="27" name="jogador1"/>      
+      <multiplicity id="28" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="30" name="dado"/>      
+      <multiplicity id="31" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="34">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="35" name="jogador"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="38">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="39" name="jogador2"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="42" name="jogador2"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="44">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="45">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="46" name="posicaoJogador1"/>      
+      <multiplicity id="47" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="48">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="49" name="jogador1"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

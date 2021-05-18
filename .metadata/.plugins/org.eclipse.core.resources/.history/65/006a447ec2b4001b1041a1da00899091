@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Dado dado = new Dado();
+		
+		Jogador jogador1;
+		Jogador jogador2;
+		
+		ArrayList<Casa>  casas = new ArrayList<Casa>();
+		
+		System.out.println(dado.lancarDado());
+		
+		Tabuleiro t = new Tabuleiro(casas, jogador1, jogador2);
+	}
+
+	
+	public void criarCasas(ArrayList<Casa>  casas) {
+		
+	}
+}
+

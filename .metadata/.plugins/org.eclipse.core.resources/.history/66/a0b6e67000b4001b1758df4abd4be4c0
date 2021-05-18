@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+
+public class Tabuleiro {
+
+	//Atributos
+		//Criação dos jogadores
+	private Jogador jogador1 = new Jogador();
+	private Jogador jogador2 = new Jogador();
+	
+		//Criação da casa
+	private ArrayList<Casa> casas = new ArrayList<Casa>();
+	
+	//Construtor - default
+	public Tabuleiro() {
+		
+	}
+	// Construtor - com argumentos
+	public Tabuleiro(ArrayList<Casa>  casas, Jogador jogador1, Jogador jogador2) {
+		this.casas = casas;
+		this.jogador1 = jogador1;
+		this.jogador2 = jogador2;
+	}
+	// Construtor - cópia
+	public Tabuleiro (Tabuleiro tabuleiro) {
+		super();
+	}
+	// Acessores
+	
+	public Jogador getJogador1() {
+		return jogador1;
+	}
+	
+	public Jogador getJogador2() {
+		return jogador2;
+	}
+	
+	public ArrayList<Casa> getCasas() {
+		return casas;
+	}
+	
+	
+	// Comportamentos
+
+}

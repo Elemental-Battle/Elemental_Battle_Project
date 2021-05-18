@@ -1,0 +1,31 @@
+
+public abstract class Casa extends Tabuleiro {
+	
+	//Atributos
+	protected int numeroCasa;
+	
+	//Construtor - default
+	public Casa() {
+		
+	}
+	
+	// Construtor - com argumentos
+	public Casa(int numeroCasa) {
+		this.numeroCasa = numeroCasa;
+	}
+	
+	// Construtor - cópia
+	public Casa(Casa casa) {
+		this.numeroCasa = casa.getNumeroCasa();
+	}
+
+	
+	// Acessores
+	public int getNumeroCasa() {
+		return numeroCasa;
+	}	
+	
+	// Comportamentos
+	
+	//Métodos Adicionais
+}

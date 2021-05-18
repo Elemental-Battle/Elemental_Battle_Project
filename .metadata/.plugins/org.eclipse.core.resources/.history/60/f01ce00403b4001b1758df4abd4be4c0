@@ -1,0 +1,21 @@
+
+public class CasaNeutra extends Casa{
+
+
+
+	//Atributos	
+	
+	//Número da Casa
+	@Override
+	public int numeroCasa() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	//Construtor - default
+	// Construtor - com argumentos
+	// Construtor - cópia
+	// Acessores
+	// Comportamentos
+	// Métodos Adicionais
+	
+}

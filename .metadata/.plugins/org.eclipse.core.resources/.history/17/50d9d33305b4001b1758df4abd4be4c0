@@ -1,0 +1,16 @@
+
+public abstract class Casa {
+	
+	//Atributos
+	
+		//Declaração do número da casa
+	public abstract int numeroCasa(int numero);
+	
+	// Acessores
+	
+	// Comportamentos
+	
+	
+	//Métodos Adicionais
+	
+}
