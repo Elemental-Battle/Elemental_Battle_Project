@@ -1,0 +1,102 @@
+Tabuleiro POO
+
+30 Cartas
+Capacidades:
+0: nada
+1: +2 forca
+2: +2 destreza
+3: +2 forca e +2 destreza
+4: Tirar 2 forca
+5: Tirar 2 destreza
+6: Tirar 2 forca e 2 destreza
+
+Carta 1
+Nome: Water Elemental
+Forca: 10, Destreza: 5, Capacidade: 6
+Carta 2
+Nome: Fire Elemental
+Forca: 10, Destreza: 5, Capacidade: 3
+Carta 3
+Nome: Earth Elemental
+Forca: 10, Destreza: 5, Capacidade: 4
+Carta 4
+Nome: Air Elemental
+Forca: 10, Destreza: 5, Capacidade: 1
+Carta 5
+Nome: Water Bender
+Forca: 5, Destreza: 5, Capacidade: 2 
+Carta 6
+Nome: Fire Bender
+Forca: 5, Destreza: 5, Capacidade: 5 
+Carta 7
+Nome: Earth  Bender
+Forca: 5, Destreza: 5, Capacidade: 4 
+Carta 8
+Nome: Air Bender
+Forca: 5, Destreza: 5, Capacidade: 1
+Carta 9
+Nome: Emperor
+Forca: 4, Destreza: 2, Capacidade: 2 
+Carta 10
+Nome: Archmage
+Forca: 4, Destreza: 4, Capacidade: 5
+Carta 11
+Nome: Hell
+Forca: 4, Destreza: 5, Capacidade: 1 
+Carta 12
+Nome: Murlock
+Forca: 1, Destreza: 5, Capacidade: 3
+Carta 13
+Nome: Storm
+Forca: 3, Destreza: 5, Capacidade: 0
+Carta 14
+Nome: Bloodmage
+Forca: 3, Destreza: 2, Capacidade: 0 
+Carta 15
+Nome: Doctor Boom
+Forca: 3, Destreza: 4, Capacidade: 0 
+Carta 16
+Nome: Windrunner
+Forca: 3, Destreza: 1, Capacidade: 0 
+Carta 17
+Nome: Cursed Blade
+Forca: 1, Destreza: 1, Capacidade: 0 
+Carta 18
+Nome: Magma Rager
+Forca: 1, Destreza: 2, Capacidade: 0 
+Carta 19
+Nome: Azure Drake
+Forca: 1, Destreza: 4, Capacidade: 0 
+Carta 20
+Nome: Angry Chicken
+Forca: 6, Destreza: 5, Capacidade: 0 
+Carta 21
+Nome: Faceless
+Forca: 7, Destreza: 4, Capacidade: 0 
+Carta 22
+Nome: Reksai
+Forca: 7, Destreza: 5, Capacidade: 0 
+Carta 23
+Nome: Yasuo
+Forca: 7, Destreza: 1, Capacidade: 0 
+Carta 24
+Nome: Razorpetal
+Forca: 7, Destreza: 3, Capacidade: 0 
+Carta 25
+Nome: Safari
+Forca: 8, Destreza: 5, Capacidade: 0 
+Carta 26
+Nome: Death
+Forca: 8, Destreza: 3, Capacidade: 0 
+Carta 27
+Nome: Brook
+Forca: 8, Destreza: 1, Capacidade: 0 
+Carta 28
+Nome: Zed
+Forca: 9, Destreza: 2, Capacidade: 6 
+Carta 29
+Nome: The Lich King
+Forca: 9, Destreza: 5, Capacidade: 5
+Carta 30
+Nome: God King
+Forca: 9, Destreza: 3, Capacidade: 2

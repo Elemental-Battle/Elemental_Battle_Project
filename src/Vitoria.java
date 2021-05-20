@@ -1,4 +1,4 @@
 
-public class Vitoria extends Jogada {
+public class Vitoria {
 
 }
