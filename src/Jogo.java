@@ -28,11 +28,10 @@ public class Jogo {
 		this.jogador2 = jogo.jogador2;
 	}
 
-
 	// Acessores
 
 	// Comportamentos
-	
+
 	public static ArrayList<Casa> tabuleiro6x6() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
 		for (int i = 0; i < 20; i++) {
@@ -41,7 +40,7 @@ public class Jogo {
 
 		return casas;
 	}
-	
+
 	private static ArrayList<Carta> criarBaralho() {
 		ArrayList<Carta> baralho = new ArrayList<Carta>();
 
@@ -78,38 +77,41 @@ public class Jogo {
 
 		return baralho;
 	}
-	
-	
+
 	public static void distribuirBaralho(ArrayList<Carta> baralho, Jogador jogador1, Jogador jogador2) {
-		
+
 		Collections.shuffle(baralho);
-		
+
 		ArrayList<Carta> primeiroBaralho = new ArrayList<Carta>();
 		ArrayList<Carta> segundoBaralho = new ArrayList<Carta>();
-		
-		System.out.println("Baralho do Jogador 1");
-		System.out.println("");
+
 		for (int i = 0; i < 7; i++) {
 			Collections.shuffle(baralho);
 			primeiroBaralho.add(baralho.get(i));
-			System.out.println("Carta nº " + i + ": " + primeiroBaralho.get(i));
 		}
-		System.out.println("");
-		System.out.println("-----------------------------------------------");
-		System.out.println("");
-		
-		System.out.println("Baralho do Jogador 2");
-		System.out.println("");
+
+
 		for (int i = 0; i < 7; i++) {
 			Collections.shuffle(baralho);
 			segundoBaralho.add(baralho.get(i));
-			System.out.println("Carta nº " + i + ": " + segundoBaralho.get(i));
 		}
-		
+
 		jogador1.setCartas(primeiroBaralho);
 		jogador2.setCartas(segundoBaralho);
 		
-		//System.out.println(baralho);
+		System.out.println("Baralho do Jogador 1");
+		System.out.println("");
+		jogador1.mostrarCartas(primeiroBaralho);
+		System.out.println("");
+		System.out.println("-----------------------------------------------");
+		System.out.println("");
+
+		System.out.println("Baralho do Jogador 2");
+		System.out.println("");
+		jogador2.mostrarCartas(segundoBaralho);
+
+		
+		// System.out.println(baralho);
 	}
 	// Métodos Adicionais
 

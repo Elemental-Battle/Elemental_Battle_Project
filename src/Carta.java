@@ -5,11 +5,11 @@ public class Carta {
 	private String nome; // Nome da carta
 	private int forca; // Força/poder da carta
 	private int destreza; // destreza da carta
-	private int caracteristica; // número das características da carta
+	private int capacidade; // número da capacidade da carta
 
 	// Construtor - com argumentos
 
-	public Carta(String nome, int forca, int destreza, int caracteristica) {
+	public Carta(String nome, int forca, int destreza, int capacidade) {
 		// Validar o nome
 		if (nome != null && nome != "")
 			this.nome = nome;
@@ -23,7 +23,8 @@ public class Carta {
 		validarDestreza(destreza);
 
 		// Verificar se a caracteristica está no intervalo de 1 a 5
-		validarCaracteristica(caracteristica);
+		validarCapacidade(capacidade);
+
 	}
 
 	// Construtor - cópia
@@ -39,19 +40,20 @@ public class Carta {
 		validarDestreza(carta.destreza);
 
 		// Verificar se a caracteristica está no intervalo de 1 a 5
-		validarCaracteristica(carta.caracteristica);
+		validarCapacidade(carta.capacidade);
+
 	}
 
 	// Acessores
 
 	// Get caracteristica
-	public int getCaracteristica() {
-		return caracteristica;
+	public int getCapacidade() {
+		return capacidade;
 	}
 
 	// Set caracteristica
-	public void setCaracteristica(int caracteristica) {
-		this.caracteristica = caracteristica;
+	public void setCapacidade(int capacidade) {
+		this.capacidade = capacidade;
 	}
 
 	// Get força
@@ -77,44 +79,116 @@ public class Carta {
 	 *                                  superior a 5
 	 */
 	private void validarForca(int forca) {
-		
-		 if(forca < 0 || forca > 10) {
-			 throw new IllegalArgumentException("A força tem que estar no intervalo de 0 e entre 10, inclusive");
-		 }
-		 else {
-			 this.forca = forca;
-		 }
-		 
-	}
-	
-	private void validarDestreza(int destreza) {
-		
-		 if(destreza < 0 || destreza > 5) {
-			 throw new IllegalArgumentException("A destreza tem que estar no intervalo de 0 e entre 5, inclusive");
-		 }
-		 else {
-			 this.destreza = destreza;
-		 }
-		 
-	}
-	
-	private void validarCaracteristica(int caracteristica) {
-		
-		 if(caracteristica < 0 || caracteristica > 6) {
-			 throw new IllegalArgumentException("A caracteristica tem que estar no intervalo de 0 e entre 6, inclusive");
-		 }
-		 else {
-			 this.caracteristica = caracteristica;
-		 }
-		 
+
+		if (forca < 0 || forca > 10) {
+			throw new IllegalArgumentException("A força tem que estar no intervalo de 0 e entre 10, inclusive");
+		} else {
+			this.forca = forca;
+		}
+
 	}
 
+	private void validarDestreza(int destreza) {
+
+		if (destreza < 0 || destreza > 5) {
+			throw new IllegalArgumentException("A destreza tem que estar no intervalo de 0 e entre 5, inclusive");
+		} else {
+			this.destreza = destreza;
+		}
+
+	}
+
+	private void validarCapacidade(int capacidade) {
+
+		if (capacidade < 0 || capacidade > 6) {
+			throw new IllegalArgumentException("A capacidade tem que estar no intervalo de 0 e entre 6, inclusive");
+		} else {
+			this.capacidade = capacidade;
+		}
+
+	}
+
+	private String legendaCapacidade(int capacidade) {
+
+		switch (capacidade) {
+		case 0:
+			return "Sem efeito";
+
+		case 1:
+			return "Ganha 2 de força";
+
+		case 2:
+			return "Ganha 2 de destreza";
+
+		case 3:
+			return "Ganha 2 força e destreza";
+
+		case 4:
+			return "Tira 2 de força ao adversário";
+
+		case 5:
+			return "Tira 2 destreza ao adversário";
+
+		case 6:
+			return "Tira 2 força e destreza ao adversário";
+
+		default:
+			throw new IllegalArgumentException("A capacidade tem que ter um número válido");
+		}
+
+	}
+
+	private void efeitoCapacidade(int capacidade, Carta cartaJ2) {
+
+		switch (capacidade) {
+		case 0:
+
+			break;
+		case 1:
+
+			// Ganha 2 de força
+			this.forca = forca + 2;
+
+			break;
+		case 2:
+			// Ganha 2 de destreza
+			this.destreza = destreza + 2;
+
+			break;
+		case 3:
+			// Ganha 2 força e destreza
+			this.destreza = destreza + 2;
+			this.forca = forca + 2;
+
+			break;
+		case 4:
+			// Tira 2 de força ao adversário
+			cartaJ2.forca = cartaJ2.forca - 2;
+
+			break;
+		case 5:
+			// Tira 2 destreza ao adversário
+			cartaJ2.destreza = cartaJ2.destreza - 2;
+
+			break;
+		case 6:
+			// Tira 2 força e destreza ao adversário
+			cartaJ2.forca = cartaJ2.forca - 2;
+			cartaJ2.destreza = cartaJ2.destreza - 2;
+
+			break;
+
+		default:
+			throw new IllegalArgumentException("A capacidade tem que ter um número válido");
+		}
+
+	}
 	// Métodos Adicionais
 
 	@Override
 	public String toString() {
-		return "Nome da Carta " + nome + ", forca=" + forca + ", destreza=" + destreza + ", caracteristica="
-				+ caracteristica + "]";
+		return nome + " | Força: " + forca + " | destreza: " + destreza + " | capacidade: "
+				+ legendaCapacidade(capacidade);
 	}
 
 }

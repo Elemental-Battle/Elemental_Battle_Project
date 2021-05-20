@@ -30,10 +30,13 @@ public class Jogador {
 	public String getNome() {
 		return nome;
 	}
-	
 
 	public ArrayList<Carta> getCartas() {
 		return cartas;
+	}
+
+	public Carta getCarta(int numero) {
+		return cartas.get(numero);
 	}
 
 	public void setCartas(ArrayList<Carta> cartas) {
@@ -54,7 +57,7 @@ public class Jogador {
 
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		for (int i = 0; i < cartas.size(); i++) {
-			System.out.println(cartas.indexOf(i));
+			System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));
 		}
 
 	}

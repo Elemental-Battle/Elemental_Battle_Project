@@ -11,12 +11,12 @@ public class Baralho {
 
 		baralho.add(new Carta("Water Elemental", 10, 5, 6));
 		baralho.add(new Carta("Fire Elemental", 10, 5, 3));
-		baralho.add(new Carta("Earth  Elemental", 10, 5, 4));
-		baralho.add(new Carta("Air   Elemental", 10, 5, 1));
+		baralho.add(new Carta("Earth Elemental", 10, 5, 4));
+		baralho.add(new Carta("Air Elemental", 10, 5, 1));
 		baralho.add(new Carta("Water Bender", 5, 5, 2));
 		baralho.add(new Carta("Fire Bender", 5, 5, 5));
-		baralho.add(new Carta("Earth  Bender", 5, 5, 4));
-		baralho.add(new Carta("Air  Bender", 5, 5, 1));
+		baralho.add(new Carta("Earth Bender", 5, 5, 4));
+		baralho.add(new Carta("Air Bender", 5, 5, 1));
 		baralho.add(new Carta("Emperor", 4, 5, 2));
 		baralho.add(new Carta("Archmage", 4, 4, 5));
 		baralho.add(new Carta("Hell", 4, 5, 1));
