@@ -18,6 +18,9 @@ public class Dado {
 	
 	
 	// Acessores
+		public int getDado() {
+			return numero;
+		}
 	
 	
 	// Comportamentos
@@ -26,7 +29,8 @@ public class Dado {
 			
 			return numero;
 		}
-	
+
+
 	
 	// Métodos Adicionais
 	

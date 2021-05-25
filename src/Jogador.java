@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class Jogador {
+public class Jogador extends Peca {
 	// Atributos
 
 	// Declarar o baralho de cartas
-	ArrayList<Carta> cartas = new ArrayList<Carta>();
+	//ArrayList<Carta> cartas = new ArrayList<Carta>();
 
 	// Declaração do nome do jogador
 	private String nome;
@@ -29,18 +29,6 @@ public class Jogador {
 	// Acessores
 	public String getNome() {
 		return nome;
-	}
-
-	public ArrayList<Carta> getCartas() {
-		return cartas;
-	}
-
-	public Carta getCarta(int numero) {
-		return cartas.get(numero);
-	}
-
-	public void setCartas(ArrayList<Carta> cartas) {
-		this.cartas = cartas;
 	}
 
 	// Comportamentos

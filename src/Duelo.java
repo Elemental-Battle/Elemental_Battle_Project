@@ -39,26 +39,26 @@ public class Duelo /* extends CasaDuelo */ {
 	 */
 	public void duelo(int cartaJ1, int cartaJ2, Jogador jogador1, Jogador jogador2) {
 
-		System.out.println("Jogador 1 Escolhe uma carta");
-		jogador1.getCarta(cartaJ1);
-		System.out.println("Jogador 2 Escolhe uma carta");
-		jogador1.getCarta(cartaJ2);
-
-		if (jogador1.getCarta(cartaJ1).getForca() > jogador2.getCarta(cartaJ2).getForca()) {
-			System.out.println("Jogador 1 Ganhou o Duelo");
-
-		} else if (jogador1.getCarta(cartaJ1).getForca() < jogador2.getCarta(cartaJ2).getForca()) {
-			System.out.println("Jogador 2 Ganhou o Duelo");
-		} else {
-			if (jogador1.getCarta(cartaJ1).getDestreza() > jogador2.getCarta(cartaJ2).getDestreza()) {
-				System.out.println("Jogador 1 Ganhou o Duelo");
-
-			} else if (jogador1.getCarta(cartaJ1).getDestreza() < jogador2.getCarta(cartaJ2).getDestreza()) {
-				System.out.println("Jogador 2 Ganhou o Duelo");
-			} else {
-				System.out.println("Ninguem Ganhou o Duelo");
-			}
-		}
+//		System.out.println("Jogador 1 Escolhe uma carta");
+//		jogador1.getCarta(cartaJ1);
+//		System.out.println("Jogador 2 Escolhe uma carta");
+//		jogador1.getCarta(cartaJ2);
+//
+//		if (jogador1.getCarta(cartaJ1).getForca() > jogador2.getCarta(cartaJ2).getForca()) {
+//			System.out.println("Jogador 1 Ganhou o Duelo");
+//
+//		} else if (jogador1.getCarta(cartaJ1).getForca() < jogador2.getCarta(cartaJ2).getForca()) {
+//			System.out.println("Jogador 2 Ganhou o Duelo");
+//		} else {
+//			if (jogador1.getCarta(cartaJ1).getDestreza() > jogador2.getCarta(cartaJ2).getDestreza()) {
+//				System.out.println("Jogador 1 Ganhou o Duelo");
+//
+//			} else if (jogador1.getCarta(cartaJ1).getDestreza() < jogador2.getCarta(cartaJ2).getDestreza()) {
+//				System.out.println("Jogador 2 Ganhou o Duelo");
+//			} else {
+//				System.out.println("Ninguem Ganhou o Duelo");
+//			}
+//		}
 
 	}
 
