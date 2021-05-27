@@ -3,8 +3,6 @@ import java.util.ArrayList;
 public class Jogador extends Peca {
 	// Atributos
 
-	// Declarar o baralho de cartas
-	//ArrayList<Carta> cartas = new ArrayList<Carta>();
 
 	// Declaração do nome do jogador
 	private String nome;
@@ -33,22 +31,7 @@ public class Jogador extends Peca {
 
 	// Comportamentos
 
-	// Esta é uma maneira de criar um baralho de cartas automaticamente, mas nós
-	// optamos por criar as cartas manualmente, assim podemos criar as nossas
-	/*
-	 * public static ArrayList<Carta> criarBaralho() { ArrayList<Carta> cartas = new
-	 * ArrayList<Carta>(); for (int i = 0; i < 3; i++) { cartas.add(new
-	 * Carta("Carta " + i, 1 + i, i, i) ); }
-	 * 
-	 * return cartas; }
-	 */
 
-	public void mostrarCartas(ArrayList<Carta> cartas) {
-		for (int i = 0; i < cartas.size(); i++) {
-			System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));
-		}
-
-	}
 	// Métodos Adicionais
 
 	// ToString do Jogador com as respetivas informações

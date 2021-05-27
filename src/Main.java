@@ -4,9 +4,11 @@ import java.util.Stack;
 
 public class Main {
 
+	Jogo jogo = new Jogo();
+	
 	public static void main(String[] args) {
 
-		Dado dado = new Dado();
+		
 
 //		System.out.println("O tabuleiro tem " + casas.size() + " casas");
 //		System.out.println("");

@@ -1,8 +1,8 @@
 
-public class Bonus extends CasaSurpresa {
+public class Bonus {
 
 	public Bonus(int numero) {
-		super(numero);
+	
 		// TODO Auto-generated constructor stub
 	}
 

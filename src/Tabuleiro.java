@@ -5,7 +5,6 @@ public class Tabuleiro {
 	// Atributos
 
 	// posição do jogador
-	int posicao;
 
 	// Criação dos jogadores
 	ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
@@ -22,23 +21,16 @@ public class Tabuleiro {
 	}
 
 	// Construtor - com argumentos
-	public Tabuleiro(ArrayList<Casa> casas, ArrayList<Jogador> jogadores) {
-		// Se as casas não forem nulas, então o array casas é igual ao passado por
-		// parâmetro
-		if (casas != null)
-			this.tabuleiro = casas;
-		// Verificar se o jogador 1 é válido
-//		else if (jogador1.getNome() != "" && jogador1.getNome() != null)
-//			this.jogador1 = jogador1;
-//		// Verificar se o jogador 2 é válido
-//		else if (jogador2.getNome() == "" || jogador1.getNome() == null)
-//			System.out.println("Nome inválido");
-//		// Verificar se o jogador 2 tem o nome diferente do jogador 1
-//		else if (jogador2.getNome() == jogador1.getNome())
-//			System.out.println("Nome em uso, por favor escolha outro");
-//		else
-//			this.jogador2 = jogador2;
-		this.jogadores = jogadores;
+	public Tabuleiro(ArrayList<Casa> tabuleiro, ArrayList<Jogador> jogadores) {
+		// Se o tabuleiro for null, então lança um erro.
+		if (tabuleiro == null)
+			new NullPointerException("O tabuleiro está inválido");
+		// Se os jogadores for null, então lança um erro.
+		else if (jogadores == null)
+			new NullPointerException("Jogadores não são válidos");
+		else
+			this.jogadores = jogadores;
+		this.tabuleiro = tabuleiro;
 	}
 
 	// Construtor - cópia
@@ -48,36 +40,52 @@ public class Tabuleiro {
 	}
 	// Acessores
 
-	// Get casas do tabuleiro
-	public ArrayList<Casa> getCasas() {
+	public ArrayList<Jogador> getJogadores() {
+		return jogadores;
+	}
+
+	public int getJogador(int jogador) {
+		return jogadores.indexOf(jogador);
+	}
+
+	// Get tamanho do tabuleiro
+	public int getTabuleiroSize() {
+		return tabuleiro.size();
+
+	}
+
+	// Get tabuleiro
+	public ArrayList<Casa> getTabuleiro() {
 		return tabuleiro;
 	}
 
 	// Comportamentos
-	public void andarJogador(Dado dado, int posicaoJogador) {
 
-		int lancarDado = dado.lancarDado();
+	/**
+	 * O jogador na casa 0 recebe uma carta 
+	 * O jogador na casa 1,4,6,9,11,14,16,19 vai duelar 
+	 * O jogador na casa 3,8,13,18 vai receber uma surpresa
+	 * @param jogador1 posição do jogador 1
+	 * @param jogador2 posição do jogador 2
+	 */
+	public void verificarCasa(Peca jogador1, Peca jogador2) {
 
-		System.out.println("Valor do dado: " + lancarDado);
-
-//		// Declarar o número de casas que o jogador vai andar com base na posição atual
-//		// + o valor do dado lançado
-//		int andarCasas = posicaoJogador.getPosicao() + lancarDado;
-//
-//		// Se o número de casas a andar for maior que o número do tabuleiro
-//		if (andarCasas > tabuleiro.size()) {
-//
-//			// Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1.
-//			// Ex: andarCasas = 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) =
-//			// posicao 2
-//			posicaoJogador.setPosicao(andarCasas - (tabuleiro.size() + 1));
-//		} else
-//			// Caso contrário, anda o nº de casas
-//			posicaoJogador.setPosicao(andarCasas);
+		if (jogador1.getPosicao() == jogador2.getPosicao()) {
+			// duelo
+		} else if (jogador1.getPosicao() == 3 | jogador1.getPosicao() == 8 | jogador1.getPosicao() == 13
+				| jogador1.getPosicao() == 18) {
+			// faz surpresa
+		} else if (jogador1.getPosicao() == 0) {
+			// recebe carta
+		} else if (jogador1.getPosicao() == 1 | jogador1.getPosicao() == 4 | jogador1.getPosicao() == 6
+				| jogador1.getPosicao() == 9 | jogador1.getPosicao() == 11 | jogador1.getPosicao() == 14
+				| jogador1.getPosicao() == 16 | jogador1.getPosicao() == 19) {
+			// faz duelo
+		}
 
 	}
 
-	public static ArrayList<Casa> criarCasas() {
+	public static ArrayList<Casa> criarTabuleiro() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
 		for (int i = 0; i < 20; i++) {
 			casas.add(new Casa(i));
