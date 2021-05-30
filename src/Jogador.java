@@ -6,6 +6,17 @@ public class Jogador extends Peca {
 
 	// Declaração do nome do jogador
 	private String nome;
+	
+	//Declarar vitória
+	private int vitoria;
+
+	public int getVitoria() {
+		return vitoria;
+	}
+
+	public void setVitoria(int vitoria) {
+		this.vitoria = vitoria;
+	}
 
 	// Construtor - default
 	public Jogador() {

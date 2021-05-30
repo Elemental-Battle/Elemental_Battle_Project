@@ -44,10 +44,10 @@ public class Tabuleiro {
 		return jogadores;
 	}
 
-	public int getJogador(int jogador) {
+	/*public ArrayList<Jogador> getJogador(int jogador) {
 		return jogadores.indexOf(jogador);
 	}
-
+*/
 	// Get tamanho do tabuleiro
 	public int getTabuleiroSize() {
 		return tabuleiro.size();
@@ -69,7 +69,8 @@ public class Tabuleiro {
 	 * @param jogador2 posição do jogador 2
 	 */
 	public void verificarCasa(Peca jogador1, Peca jogador2) {
-
+		Duelo duelo = new Duelo();
+		
 		if (jogador1.getPosicao() == jogador2.getPosicao()) {
 			// duelo
 		} else if (jogador1.getPosicao() == 3 | jogador1.getPosicao() == 8 | jogador1.getPosicao() == 13
@@ -80,7 +81,9 @@ public class Tabuleiro {
 		} else if (jogador1.getPosicao() == 1 | jogador1.getPosicao() == 4 | jogador1.getPosicao() == 6
 				| jogador1.getPosicao() == 9 | jogador1.getPosicao() == 11 | jogador1.getPosicao() == 14
 				| jogador1.getPosicao() == 16 | jogador1.getPosicao() == 19) {
-			// faz duelo
+			// Duelo
+			
+			//Como fazer?
 		}
 
 	}

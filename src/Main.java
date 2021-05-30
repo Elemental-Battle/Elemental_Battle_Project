@@ -4,9 +4,11 @@ import java.util.Stack;
 
 public class Main {
 
-	Jogo jogo = new Jogo();
+	
 	
 	public static void main(String[] args) {
+		Jogo jogo = new Jogo();
+		
 
 		
 

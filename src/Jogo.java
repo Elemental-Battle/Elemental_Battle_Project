@@ -10,7 +10,9 @@ public class Jogo {
 	// Gerar um baralho
 	Baralho baralho = new Baralho();
 	// Gerar Peça
-	Peca peca = new Peca();
+	//Peca peca = new Peca();
+	ArrayList<Peca> pecas = new ArrayList<Peca>();
+
 
 	// Construtor - com argumentos
 
@@ -36,45 +38,55 @@ public class Jogo {
 
 	}
 
-	public static void distribuirBaralho(ArrayList<Carta> baralho, Jogador jogador1, Jogador jogador2) {
+	public static void distribuirBaralho(ArrayList<Carta> baralho, ArrayList<Carta> primeiraMao, ArrayList<Carta> segundaMao) {
 
 		Collections.shuffle(baralho);
 
-		ArrayList<Carta> primeiroBaralho = new ArrayList<Carta>();
-		ArrayList<Carta> segundoBaralho = new ArrayList<Carta>();
+		
 
 		for (int i = 0; i < 7; i++) {
 			Collections.shuffle(baralho);
-			primeiroBaralho.add(baralho.get(i));
+			primeiraMao.add(baralho.get(i));
 		}
 
 		for (int i = 0; i < 7; i++) {
 			Collections.shuffle(baralho);
-			segundoBaralho.add(baralho.get(i));
+			segundaMao.add(baralho.get(i));
 		}
+		//t.getJogador(0).setCartas(primeiroBaralho);
 
-//		jogador1.setCartas(primeiroBaralho);
-//		jogador2.setCartas(segundoBaralho);
-
-		System.out.println("Baralho do Jogador 1");
-		System.out.println("");
-		//jogador1.mostrarCartas(primeiroBaralho);
-		System.out.println("");
-		System.out.println("-----------------------------------------------");
-		System.out.println("");
-
-		System.out.println("Baralho do Jogador 2");
-		System.out.println("");
-		//jogador2.mostrarCartas(segundoBaralho);
-
+		
 		// System.out.println(baralho);
 	}
 
 	// Turno ( while, for dentro, vai trocando de jogadores, dando lhes a ordem de andar, dentro da ordem andar, verficar se calhou numa casa especial e faz a respetiva
 	//ação, caso contrario, passa de turno.
 	
+	public void turno () {
+
+
+		distribuirBaralho(baralho.getElementals(), baralho.getPrimeiraMao(), baralho.getSegundaMao());
+
+		 do{
+			 int turno = 1;
+			 if (turno == 1) {
+				 mostrarCartas(baralho.getPrimeiraMao());
+				 andarJogador(dado, (Peca) tabuleiro.getJogadores().get(0), (Peca) tabuleiro.getJogadores().get(1));
+			}else if (turno == 2) {
+				 mostrarCartas(baralho.getSegundaMao());
+				 andarJogador(dado, (Peca) tabuleiro.getJogadores().get(0), (Peca) tabuleiro.getJogadores().get(1));
+			}
+			 
+			
+		 }while(tabuleiro.getJogadores().get(0) == tabuleiro.getJogadores().get(1));
+		 
+		 if(tabuleiro.getJogadores().get(0).getVitoria() == 5) {
+			 System.out.println("Ganhou o Jogador 1");
+		 } else
+			 System.out.println("Ganhou o Jogador 2");
+	}
 	
-	public void andarJogador(Dado dado, Peca jogador) {
+	public void andarJogador(Dado dado, Peca jogador, Peca jogador2) {
 
 		int lancarDado = dado.lancarDado();
 	
@@ -96,6 +108,7 @@ public class Jogo {
 			// Caso contrário, anda o nº de casas
 			jogador.setPosicao(andarCasas);
 
+		tabuleiro.verificarCasa(jogador, jogador2);
 	}
 
 	// Métodos Adicionais
