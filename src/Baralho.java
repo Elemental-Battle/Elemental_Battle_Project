@@ -5,8 +5,6 @@ import java.util.Stack;
 
 public class Baralho {
 	ArrayList<Carta> elementals = new ArrayList<Carta>();
-	ArrayList<Carta> primeiraMao = new ArrayList<Carta>();
-	ArrayList<Carta> segundaMao = new ArrayList<Carta>();
 
 	public void criarBaralho1(ArrayList<Carta> baralho) {
 		baralho.add(new Carta("Water Elemental", 10, 5, 6));
@@ -83,13 +81,6 @@ public class Baralho {
 		return elementals;
 	}
 	
-	public ArrayList<Carta> getPrimeiraMao() {
-		return primeiraMao;
-	}
-	
-	public ArrayList<Carta> getSegundaMao() {
-		return segundaMao;
-	}
 
 	// Criação do baralho de Cartas
 	

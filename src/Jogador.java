@@ -10,6 +10,10 @@ public class Jogador extends Peca {
 	//Declarar vitória
 	private int vitoria;
 
+	//Mão do jogador
+	ArrayList<Carta> mao = new ArrayList<Carta>();
+	
+	//Getters e Setters
 	public int getVitoria() {
 		return vitoria;
 	}
@@ -24,9 +28,11 @@ public class Jogador extends Peca {
 	}
 
 	// Construtor - com argumentos
-	public Jogador(String nome) {
+	public Jogador(String nome, ArrayList<Carta> maoJogador) {
 		if (nome != "" || nome != null)
 			this.nome = nome;
+		else if(maoJogador != null)
+			mao = maoJogador; 
 	}
 
 	// Construtor - cópia
