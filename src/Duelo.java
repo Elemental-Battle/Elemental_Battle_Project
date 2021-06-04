@@ -40,29 +40,31 @@ public class Duelo /* extends CasaDuelo */ {
 	 * @param jogador1 jogador 1
 	 * @param jogador2 jogador 2
 	 */
-	public void duelo(int cartaJ1, int cartaJ2, ArrayList<Carta> primeiraMao, ArrayList<Carta> segundaMao) {
+	public void duelo(int cartaJ1, int cartaJ2,	Jogador jogador1, Jogador jogador2) {
 
-		System.out.println("Jogador 1 Escolhe uma carta");
+	//	System.out.println("Jogador 1 Escolhe uma carta");
 		//JOptionPane.showInputDialog("Escolha a carta do" + jogador1.getNome());
-		primeiraMao.get(cartaJ1);
-		System.out.println("Jogador 2 Escolhe uma carta");
-		segundaMao.get(cartaJ2);
+	//	primeiraMao.get(cartaJ1);
+	//	System.out.println("Jogador 2 Escolhe uma carta");
+	//	segundaMao.get(cartaJ2);
 
 		//Verifica se o Jogador1 ganhou
-		if (primeiraMao.get(cartaJ1).getForca() > segundaMao.get(cartaJ2).getForca()) {
+		if (jogador1.getMao().get(1).getForca() > jogador2.getMao().get(2).getForca()) {
 			System.out.println("Jogador 1 Ganhou o Duelo");
-
+			jogador1.setVitoria(jogador1.getVitoria()+ 1);
 			//Verifica se o Jogador 2 Ganhou
-		} else if (primeiraMao.get(cartaJ1).getForca() < segundaMao.get(cartaJ2).getForca()) {
+		} else if (jogador1.getMao().get(1).getForca() < jogador2.getMao().get(2).getForca()) {
 			System.out.println("Jogador 2 Ganhou o Duelo");
+			jogador2.setVitoria(jogador2.getVitoria()+ 1);
 		} else {
 			//Verifica se o Jogador 1 tem mais Destreza
-			if (primeiraMao.get(cartaJ1).getDestreza() > segundaMao.get(cartaJ2).getDestreza()) {
+			if (jogador1.getMao().get(1).getDestreza() > jogador2.getMao().get(2).getDestreza()) {
 				System.out.println("Jogador 1 Ganhou o Duelo");
-
+				jogador1.setVitoria(jogador1.getVitoria()+ 1);
 				//Verifica se o Jogador 2 tem mais Destreza
-			} else if (primeiraMao.get(cartaJ1).getDestreza() < segundaMao.get(cartaJ2).getDestreza()) {
+			} else if (jogador1.getMao().get(1).getDestreza() < jogador2.getMao().get(2).getDestreza()) {
 				System.out.println("Jogador 2 Ganhou o Duelo");
+				jogador2.setVitoria(jogador2.getVitoria()+ 1);
 				//Caso contrário empate
 			} else {
 				System.out.println("Ninguem Ganhou o Duelo");

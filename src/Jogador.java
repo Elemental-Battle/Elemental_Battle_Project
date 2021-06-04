@@ -11,9 +11,19 @@ public class Jogador extends Peca {
 	private int vitoria;
 
 	//Mão do jogador
-	ArrayList<Carta> mao = new ArrayList<Carta>();
-	
-	//Getters e Setters
+	private ArrayList<Carta> mao = new ArrayList<Carta>();
+
+
+	//Getters e Setters	
+		//  Getter da mão atual do jogador
+	public ArrayList<Carta> getMao() {
+		return mao;
+	}
+
+	//  Setter da mão atual do jogador
+	public void setMao(ArrayList<Carta> mao) {
+		this.mao = mao;
+	}
 	public int getVitoria() {
 		return vitoria;
 	}

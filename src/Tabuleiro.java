@@ -17,20 +17,15 @@ public class Tabuleiro {
 
 	// Construtor - default
 	public Tabuleiro() {
-
 	}
 
 	// Construtor - com argumentos
-	public Tabuleiro(ArrayList<Casa> tabuleiro, ArrayList<Jogador> jogadores) {
+	public Tabuleiro( ArrayList<Jogador> jogadores) {
 		// Se o tabuleiro for null, então lança um erro.
-		if (tabuleiro == null)
-			new NullPointerException("O tabuleiro está inválido");
-		// Se os jogadores for null, então lança um erro.
-		else if (jogadores == null)
+		if (jogadores == null)
 			new NullPointerException("Jogadores não são válidos");
 		else
 			this.jogadores = jogadores;
-		this.tabuleiro = tabuleiro;
 	}
 
 	// Construtor - cópia
@@ -100,7 +95,7 @@ public class Tabuleiro {
 		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6
 				| posicaoJogador == 9 | posicaoJogador == 11 | posicaoJogador == 14
 				| posicaoJogador == 16 | posicaoJogador == 19) {
-			// Duelo
+			duelo.duelo( 1, 1, jogadores.get(0), jogadores.get(1));
 
 			// Como fazer?
 		}

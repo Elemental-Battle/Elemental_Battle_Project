@@ -5,8 +5,22 @@ import java.util.Stack;
 public class Main {
 
 	public static void main(String[] args) {
-		Jogo jogo = new Jogo();
-
+		
+		
+		
+		ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+		Jogador jogador1 = new Jogador();
+		Jogador jogador2 = new Jogador();
+		jogadores.add(jogador1);
+		jogadores.add(jogador2);
+		
+		
+		Tabuleiro tabuleiro = new Tabuleiro(jogadores);
+		Jogo jogo = new Jogo(tabuleiro);
+		jogo.turno();
+		
+		
+		
 //		System.out.println("O tabuleiro tem " + casas.size() + " casas");
 //		System.out.println("");
 
