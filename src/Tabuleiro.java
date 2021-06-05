@@ -82,25 +82,32 @@ public class Tabuleiro {
 	 * @param jogador1 posição do jogador 1
 	 * @param jogador2 posição do jogador 2
 	 */
-	public void verificarCasa(int posicaoJogador) {
-		Duelo duelo = new Duelo();
+//	Duelo duelo = new Duelo();
+//	public void verificarCasa(int posicaoJogador) {
+//		System.out.println("Verifica");
+//
+//		if (getPosicaoJogador1()== getPosicaoJogador2()) {
+//			duelo.duelo(jogadores);
+//		} else if (posicaoJogador == 3 |posicaoJogador == 8 | posicaoJogador == 13
+//				| posicaoJogador == 18) {
+//			// faz surpresa
+//		} else if (posicaoJogador == 0) {
+//			if(posicaoJogador == getPosicaoJogador1()) {
+//				
+//			}else if(posicaoJogador == getPosicaoJogador2()) {
+//				// recebe carta
+//			}
+//		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6
+//				| posicaoJogador == 9 | posicaoJogador == 11 | posicaoJogador == 14
+//				| posicaoJogador == 16 | posicaoJogador == 19) {
+//			System.out.println("Duelo");
+//			duelo.duelo(jogadores);
+//
+//			// Como fazer?
+//		}
 
-		if (getPosicaoJogador1()== getPosicaoJogador2()) {
-			// duelo
-		} else if (posicaoJogador == 3 |posicaoJogador == 8 | posicaoJogador == 13
-				| posicaoJogador == 18) {
-			// faz surpresa
-		} else if (posicaoJogador == 0) {
-			// recebe carta
-		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6
-				| posicaoJogador == 9 | posicaoJogador == 11 | posicaoJogador == 14
-				| posicaoJogador == 16 | posicaoJogador == 19) {
-			duelo.duelo( 1, 1, jogadores.get(0), jogadores.get(1));
-
-			// Como fazer?
-		}
-
-	}
+	
+	
 
 	
 
@@ -122,16 +129,6 @@ public class Tabuleiro {
 		return new Tabuleiro(this);
 	}
 
-	// Permite saber se os tabuleiros são iguais
-//	public boolean equals(Tabuleiro tabuleiro) {
-//		if (tabuleiro == null)
-//			return false;
-//		else if (jogador1.equals(tabuleiro.getJogador1()) || jogador2.equals(tabuleiro.getJogador2()))
-//			return true;
-//		else if (tabuleiro.equals(tabuleiro.getCasas()))
-//			return true;
-//		else
-//			return false;
-//	}
-
+	
+	
 }

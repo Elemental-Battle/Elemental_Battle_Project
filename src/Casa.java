@@ -14,10 +14,6 @@ public class Casa {
 	
 	// Comportamentos
 	
-	public void passarVez() {
-		//Passa a vez do jogador
-	}
-	
 	
 	//Métodos Adicionais
 	

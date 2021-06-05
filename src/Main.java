@@ -9,8 +9,8 @@ public class Main {
 		
 		
 		ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-		Jogador jogador1 = new Jogador();
-		Jogador jogador2 = new Jogador();
+		Jogador jogador1 = new Jogador("Pedro");
+		Jogador jogador2 = new Jogador("João");
 		jogadores.add(jogador1);
 		jogadores.add(jogador2);
 		
@@ -18,6 +18,8 @@ public class Main {
 		Tabuleiro tabuleiro = new Tabuleiro(jogadores);
 		Jogo jogo = new Jogo(tabuleiro);
 		jogo.turno();
+		
+		Duelo duelo = new Duelo();
 		
 		
 		

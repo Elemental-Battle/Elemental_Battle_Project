@@ -24,6 +24,10 @@ public class Jogador extends Peca {
 	public void setMao(ArrayList<Carta> mao) {
 		this.mao = mao;
 	}
+	
+	public Carta getCarta(int carta) {
+		return mao.get(carta);
+	}
 	public int getVitoria() {
 		return vitoria;
 	}
@@ -33,8 +37,8 @@ public class Jogador extends Peca {
 	}
 
 	// Construtor - default
-	public Jogador() {
-		nome = "Jogador";
+	public Jogador(String nome) {
+		this.nome = nome;
 	}
 
 	// Construtor - com argumentos
@@ -64,7 +68,7 @@ public class Jogador extends Peca {
 	// ToString do Jogador com as respetivas informações
 	@Override
 	public String toString() {
-		return "jogador " + getNome().toUpperCase();
+		return "Jogador " + getNome();
 	}
 
 	// Clonar o Jogador

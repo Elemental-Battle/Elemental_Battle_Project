@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Duelo /* extends CasaDuelo */ {
+	
 
 	// Atributos
 //	private Duelo duelo;
@@ -14,10 +15,9 @@ public class Duelo /* extends CasaDuelo */ {
 //	}
 //
 //	// Construtor - com argumentos
-//	public Duelo(Duelo duelo, Jogador jogador1, Jogador jogador2) {
-//		this.duelo = duelo;
-//
-//	}
+	public Duelo() {
+
+	}
 
 	// Construtor - cópia
 
@@ -40,37 +40,36 @@ public class Duelo /* extends CasaDuelo */ {
 	 * @param jogador1 jogador 1
 	 * @param jogador2 jogador 2
 	 */
-	public void duelo(int cartaJ1, int cartaJ2,	Jogador jogador1, Jogador jogador2) {
+	public void duelo(ArrayList<Jogador> jogadores) {
 
-	//	System.out.println("Jogador 1 Escolhe uma carta");
-		//JOptionPane.showInputDialog("Escolha a carta do" + jogador1.getNome());
-	//	primeiraMao.get(cartaJ1);
-	//	System.out.println("Jogador 2 Escolhe uma carta");
-	//	segundaMao.get(cartaJ2);
+		//	System.out.println("Jogador 1 Escolhe uma carta");
+			//JOptionPane.showInputDialog("Escolha a carta do" + jogador1.getNome());
+		//	primeiraMao.get(cartaJ1);
+		//	System.out.println("Jogador 2 Escolhe uma carta");
+		//	segundaMao.get(cartaJ2);
 
-		//Verifica se o Jogador1 ganhou
-		if (jogador1.getMao().get(1).getForca() > jogador2.getMao().get(2).getForca()) {
-			System.out.println("Jogador 1 Ganhou o Duelo");
-			jogador1.setVitoria(jogador1.getVitoria()+ 1);
-			//Verifica se o Jogador 2 Ganhou
-		} else if (jogador1.getMao().get(1).getForca() < jogador2.getMao().get(2).getForca()) {
-			System.out.println("Jogador 2 Ganhou o Duelo");
-			jogador2.setVitoria(jogador2.getVitoria()+ 1);
-		} else {
-			//Verifica se o Jogador 1 tem mais Destreza
-			if (jogador1.getMao().get(1).getDestreza() > jogador2.getMao().get(2).getDestreza()) {
+			
+			//Verifica se o Jogador1 ganhou
+			if (jogadores.get(0).getCarta(1).getForca() > jogadores.get(1).getCarta(1).getForca()) {
 				System.out.println("Jogador 1 Ganhou o Duelo");
-				jogador1.setVitoria(jogador1.getVitoria()+ 1);
-				//Verifica se o Jogador 2 tem mais Destreza
-			} else if (jogador1.getMao().get(1).getDestreza() < jogador2.getMao().get(2).getDestreza()) {
+				jogadores.get(0).setVitoria(jogadores.get(0).getVitoria()+ 1);
+				
+			} else if (jogadores.get(0).getCarta(1).getForca() < jogadores.get(1).getCarta(1).getForca()) {
 				System.out.println("Jogador 2 Ganhou o Duelo");
-				jogador2.setVitoria(jogador2.getVitoria()+ 1);
-				//Caso contrário empate
-			} else {
-				System.out.println("Ninguem Ganhou o Duelo");
+				jogadores.get(1).setVitoria(jogadores.get(1).getVitoria()+ 1);
+				
+			} else if (jogadores.get(0).getCarta(1).getDestreza() > jogadores.get(1).getCarta(1).getDestreza()) {
+					System.out.println("Jogador 1 Ganhou o Duelo");
+					jogadores.get(0).setVitoria(jogadores.get(0).getVitoria()+ 1);
+					
+				} else if (jogadores.get(0).getCarta(1).getDestreza() < jogadores.get(1).getCarta(1).getDestreza()) {
+					System.out.println("Jogador 2 Ganhou o Duelo");
+					jogadores.get(1).setVitoria(jogadores.get(1).getVitoria()+ 1);
+					
+				} else {
+					System.out.println("Ninguem Ganhou o Duelo");
+				}
 			}
-		}
 
 	}
 
-}
