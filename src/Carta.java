@@ -1,7 +1,10 @@
 
 public class Carta {
 
-	// Argumentos
+	// Atributos
+	/**
+	 * Inserir as características da carta
+	 */
 	private String nome; // Nome da carta
 	private int forca; // Força/poder da carta
 	private int destreza; // destreza da carta
@@ -9,6 +12,15 @@ public class Carta {
 
 	// Construtor - com argumentos
 
+	/**
+	 * 
+	 * Validação dos parâmetros da carta (nome, forca, destreza e capacidade)
+	 * 
+	 * @param nome       Nome da carta
+	 * @param forca      Poder da carta
+	 * @param destreza   Destreza da Carta
+	 * @param capacidade Capacidade da carta
+	 */
 	public Carta(String nome, int forca, int destreza, int capacidade) {
 		// Validar o nome
 		if (nome != null && nome != "")
@@ -29,6 +41,11 @@ public class Carta {
 
 	// Construtor - cópia
 
+	/**
+	 * 
+	 * @param carta Validação dos parâmetros da carta (nome, forca, destreza e
+	 *              capacidade)
+	 */
 	public Carta(Carta carta) {
 		if (carta == null)
 			throw new NullPointerException("A carta é nula, por favor escolha uma válida");
@@ -46,22 +63,34 @@ public class Carta {
 
 	// Acessores
 
-	// Get caracteristica
+	/**
+	 * 
+	 * @return Vai receber uma capacidade
+	 */
 	public int getCapacidade() {
 		return capacidade;
 	}
 
-	// Set caracteristica
+	/**
+	 * 
+	 * @param capacidade Vai definir uma capacidade
+	 */
 	public void setCapacidade(int capacidade) {
 		this.capacidade = capacidade;
 	}
 
-	// Get força
+	/**
+	 * 
+	 * @return Vai receber um nível de forca
+	 */
 	public int getForca() {
 		return forca;
 	}
 
-	// Get destreza
+	/**
+	 * 
+	 * @return Vai receber um nível de destreza
+	 */
 	public int getDestreza() {
 		return destreza;
 	}
@@ -78,6 +107,13 @@ public class Carta {
 	 * @throws IllegalArgumentException Se o valor do atributo for inferior a 0 ou
 	 *                                  superior a 5
 	 */
+
+	/**
+	 * Valida o atributo dado (forca) como parâmetro. A força tem como limite de
+	 * intervalo entre 0 a 10
+	 * 
+	 * @param forca Nível de força de uma carta
+	 */
 	private void validarForca(int forca) {
 
 		if (forca < 0 || forca > 10) {
@@ -88,6 +124,12 @@ public class Carta {
 
 	}
 
+	/**
+	 * Valida o atributo dado (destreza) como parâmetro. A destreza tem como limite
+	 * de intervalo entre 0 a 5
+	 * 
+	 * @param destreza Nível de destreza de uma carta
+	 */
 	private void validarDestreza(int destreza) {
 
 		if (destreza < 0 || destreza > 5) {
@@ -98,6 +140,12 @@ public class Carta {
 
 	}
 
+	/**
+	 * Valida o atributo dado (capacidade) como parâmetro. O tipo de capacidade tem
+	 * como limite de intervalo entre 0 a 6
+	 * 
+	 * @param capacidade Tipo de capacidade de uma carta
+	 */
 	private void validarCapacidade(int capacidade) {
 
 		if (capacidade < 0 || capacidade > 6) {
@@ -108,6 +156,12 @@ public class Carta {
 
 	}
 
+	/**
+	 * Legenda do efeito de cada capacidade úinica, de 0 a 6
+	 * 
+	 * @param capacidade Tipo de capacidade de uma carta
+	 * @return Legenda do efeito da respetiva capacidade
+	 */
 	private String legendaCapacidade(int capacidade) {
 
 		switch (capacidade) {
@@ -138,6 +192,13 @@ public class Carta {
 
 	}
 
+	/**
+	 * Todos os tipos efeitos que uma carta pode ter Validação do parâmetro
+	 * capacidade, a carta tem de ter uma capacidade de 0 a 6
+	 * 
+	 * @param capacidade Tipo de capacidade de uma carta
+	 * @param cartaJ2    Uma carta
+	 */
 	private void efeitoCapacidade(int capacidade, Carta cartaJ2) {
 
 		switch (capacidade) {
@@ -185,6 +246,9 @@ public class Carta {
 	}
 	// Métodos Adicionais
 
+	/**
+	 * Print da carta com as suas respetivas características
+	 */
 	@Override
 	public String toString() {
 		return nome + " | Força: " + forca + " | destreza: " + destreza + " | capacidade: "

@@ -2,25 +2,31 @@ import java.util.ArrayList;
 
 public class Tabuleiro {
 
-	// Atributos
-
-	// posição do jogador
-
 	// Criação dos jogadores
 	ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
 
 	private int posicaoJogador1 = 0;
 	private int posicaoJogador2 = 0;
 
-	// Criação do tabuleiro
+	/**
+	 * Criação do tabuleiro
+	 */
 	private ArrayList<Casa> tabuleiro = new ArrayList<Casa>();
 
 	// Construtor - default
+	/**
+	 * ??
+	 */
 	public Tabuleiro() {
 	}
 
 	// Construtor - com argumentos
-	public Tabuleiro( ArrayList<Jogador> jogadores) {
+	/**
+	 * ??
+	 * 
+	 * @param jogadores Jogadores
+	 */
+	public Tabuleiro(ArrayList<Jogador> jogadores) {
 		// Se o tabuleiro for null, então lança um erro.
 		if (jogadores == null)
 			new NullPointerException("Jogadores não são válidos");
@@ -29,12 +35,22 @@ public class Tabuleiro {
 	}
 
 	// Construtor - cópia
+	/**
+	 * ??
+	 * 
+	 * @param tabuleiro Tabuleiro
+	 */
 	public Tabuleiro(Tabuleiro tabuleiro) {
 		this.tabuleiro = tabuleiro.tabuleiro;
 		this.jogadores = tabuleiro.jogadores;
 	}
+
 	// Acessores
 
+	/**
+	 * 
+	 * @return Recebe os Jogadores
+	 */
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 	}
@@ -43,32 +59,52 @@ public class Tabuleiro {
 	 * public ArrayList<Jogador> getJogador(int jogador) { return
 	 * jogadores.indexOf(jogador); }
 	 */
-	// Get tamanho do tabuleiro
+
+	/**
+	 * 
+	 * @return Recebe o tamanho do tabuleiro
+	 */
 	public int getTabuleiroSize() {
 		return tabuleiro.size();
 
 	}
 
-	//Get posição do jogador 1
+	/**
+	 * 
+	 * @return Recebe a posição do jogador 1
+	 */
 	public int getPosicaoJogador1() {
 		return posicaoJogador1;
 	}
 
-	//Get posição do jogador 2
+	/**
+	 * 
+	 * @return Recebe a posição do jogador 2
+	 */
 	public int getPosicaoJogador2() {
 		return posicaoJogador2;
 	}
 
-	//Set posição do jogador 1
+	/**
+	 * 
+	 * @param posicaoJogador1 Define a posição do jogador 1
+	 */
 	public void setPosicaoJogador1(int posicaoJogador1) {
 		this.posicaoJogador1 = posicaoJogador1;
 	}
-	//Set posição do jogador 2
+
+	/**
+	 * 
+	 * @param posicaoJogador2 Define a posição do jogador 2
+	 */
 	public void setPosicaoJogador2(int posicaoJogador2) {
 		this.posicaoJogador2 = posicaoJogador2;
 	}
-	
-	// Get tabuleiro
+
+	/**
+	 * 
+	 * @return Recebe o tabuleiro
+	 */
 	public ArrayList<Casa> getTabuleiro() {
 		return tabuleiro;
 	}
@@ -106,11 +142,10 @@ public class Tabuleiro {
 //			// Como fazer?
 //		}
 
-	
-	
-
-	
-
+	/**
+	 * 
+	 * @return Criar casas para o tabuleiro
+	 */
 	public static ArrayList<Casa> criarTabuleiro() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
 		for (int i = 0; i < 20; i++) {
@@ -120,15 +155,11 @@ public class Tabuleiro {
 		return casas;
 	}
 
-	// Métodos Adicionais
-
-	// ToString do tabuleiro com as respetivas informações
-
-	// Clonar o tabuleiro
+	/**
+	 * Clonar o tabuleiro
+	 */
 	public Tabuleiro clone() {
 		return new Tabuleiro(this);
 	}
 
-	
-	
 }

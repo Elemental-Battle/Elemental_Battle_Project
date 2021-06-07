@@ -2,29 +2,45 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class Jogo {
-	// Atributos
-	// Gerar o tabuleiro
+
+	/**
+	 * Gerar o tabuleiro
+	 */
 	Tabuleiro tabuleiro = new Tabuleiro();
-	// Gerar um dado
+
+	/**
+	 * Gerar um dado
+	 */
 	Dado dado = new Dado();
-	// Gerar um baralho
+
+	/**
+	 * Gerar um baralho
+	 */
 	Baralho baralho = new Baralho();
-	// Gerar Peça
+
+	/**
+	 * Gerar Peça
+	 */
 	// Peca peca = new Peca();
 	ArrayList<Peca> pecas = new ArrayList<Peca>();
 
 	// Construtor - com argumentos
-
+	/**
+	 * Criação do jogo
+	 * 
+	 * @param tabuleiro Tabuleiro
+	 */
 	public Jogo(Tabuleiro tabuleiro) {
 		this.tabuleiro = tabuleiro;
 	}
 
-	// Construtor - cópia
-
-	// Acessores
-
 	// Comportamentos
 
+	/**
+	 * Criação de um tabuleiro com x casas
+	 * 
+	 * @return Recebe as casas
+	 */
 	public static ArrayList<Casa> tabuleiro6x6() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
 		for (int i = 0; i < 20; i++) {
@@ -34,6 +50,11 @@ public class Jogo {
 		return casas;
 	}
 
+	/**
+	 * Vai mostrar as cartas
+	 * 
+	 * @param cartas Cartas
+	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		for (int i = 0; i < cartas.size(); i++) {
 			System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));
@@ -41,12 +62,23 @@ public class Jogo {
 
 	}
 
+	/**
+	 * Dá cartas ao jogador
+	 * 
+	 * @param jogador Jogador
+	 */
 	public void receberCarta(Jogador jogador) {
 
 		Collections.shuffle(baralho.getElementals());
 		jogador.getMao().add(baralho.getElementals().get(1));
 	}
 
+	/**
+	 * 
+	 * @param baralho     Baralho de cartas
+	 * @param primeiraMao Mao do jogador 1
+	 * @param segundaMao  Mao do jogador 2
+	 */
 	public static void distribuirBaralho(ArrayList<Carta> baralho, ArrayList<Carta> primeiraMao,
 			ArrayList<Carta> segundaMao) {
 
@@ -76,6 +108,16 @@ public class Jogo {
 	 * Quando o primeiro jogador chegar às 5 vitórias, o jogo acaba.
 	 */
 
+	/**
+	 * Criação do sistema de turnos, o jogo começa no turno 1 com a distribuição de
+	 * um baralho de cartas para a mão de cada jogador, os turnos são jogados
+	 * alternadamente entre os jogadores, começando pelo jogador 1, o turno chega ao
+	 * fim após cumprir os comportamentos designados dentro do turno, lança o dado,
+	 * move a peça, verifica as escolhas de acordo com a localização da peça, por
+	 * fim, após as escolhas, o turno acaba e começa o próximo jogador.
+	 * 
+	 * 
+	 */
 	public void turno() {
 		int turno = 1;
 		// Baralha e distribui o baralho
@@ -136,8 +178,8 @@ public class Jogo {
 	 * O dado não pode ser nulo e a posição do jogador não pode ser inferior a 0 nem
 	 * superior a 20
 	 * 
-	 * @param dado
-	 * @param posicaoJogador
+	 * @param dado           Dado
+	 * @param posicaoJogador Posicao do Jogador
 	 * 
 	 * @throws IllegalArgumentException se a posição do jogador for inferior a 0 ou
 	 *                                  superior a 20
@@ -191,6 +233,15 @@ public class Jogo {
 
 	Duelo duelo = new Duelo();
 
+	/**
+	 * Verifica se o jogador está numa casa duelo ou surpresa e também se está na
+	 * mesma casa que outro jogador, cada acontecimento resultará de uma ação, caso
+	 * o jogador esteja numa casa surpresa, irá receber bónus, caso esteja numa casa
+	 * duelo, irá duelar com outro jogador, caso esteja na mesma casa que outro
+	 * jogador, irá duelar com esse jogador.
+	 * 
+	 * @param posicaoJogador Posicao do Jogador
+	 */
 	public void verificarCasa(int posicaoJogador) {
 
 		if (tabuleiro.getPosicaoJogador1() == tabuleiro.getPosicaoJogador2()) {
@@ -205,6 +256,5 @@ public class Jogo {
 			// Como fazer?
 		}
 	}
-	// Métodos Adicionais
 
 }
