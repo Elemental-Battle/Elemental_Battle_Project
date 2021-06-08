@@ -13,12 +13,33 @@ public class Jogador extends Peca {
 	private int vitoria;
 
 	/**
+	 * 
+	 */
+	private int posicaoJogador = 0;
+	
+	
+
+	/**
 	 * Mão do jogador
 	 */
 	private ArrayList<Carta> mao = new ArrayList<Carta>();
 
 	// Acessores
+	/**
+	 * 
+	 * @return
+	 */
+	public int getPosicaoJogador() {
+		return posicaoJogador;
+	}
 
+	/**
+	 * 
+	 * @param posicaoJogador
+	 */
+	public void setPosicaoJogador(int posicaoJogador) {
+		this.posicaoJogador = posicaoJogador;
+	}
 	/**
 	 * 
 	 * @return Recebe a mão atual do jogador
@@ -46,27 +67,36 @@ public class Jogador extends Peca {
 
 	/**
 	 * 
-	 * @return Recebe uma vitoria
+	 * @return Valor da vitoria
 	 */
 	public int getVitoria() {
 		return vitoria;
 	}
 
 	/**
+	 * Define um valor para a vitória
 	 * 
-	 * @param Decide uma vitoria
+	 * @param vitoria Número de vitória(s)
 	 */
 	public void setVitoria(int vitoria) {
 		this.vitoria = vitoria;
 	}
-
-	// Construtor - default
+	
 	/**
 	 * 
+	 * @return Nome do Jogador
+	 */
+	public String getNome() {
+		return nome;
+	}
+	
+
+	/**
+	 * Construtor por defeito
 	 * @param nome Nome do jogador
 	 */
-	public Jogador(String nome) {
-		this.nome = nome;
+	public Jogador() {
+		this.nome = "Jogador";
 	}
 
 	// Construtor - com argumentos
@@ -94,14 +124,7 @@ public class Jogador extends Peca {
 			this.nome = jogador.nome;
 	}
 
-	// Acessores
-	/**
-	 * 
-	 * @return Recebe o Nome
-	 */
-	public String getNome() {
-		return nome;
-	}
+	
 
 	// Métodos Adicionais
 

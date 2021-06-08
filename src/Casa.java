@@ -1,17 +1,19 @@
+import java.util.ArrayList;
 
-public class Casa {
+public  abstract class  Casa {
 
 	// Atributos
 
 	// Declaração do número da casa
-	protected int numero;
 
 	/**
 	 * 
 	 * @param numero Número da casa
 	 */
-	public Casa(int numero) {
-		this.numero = numero;
+	public Casa() {
+		
 	}
 
+	public abstract void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores);
+	
 }

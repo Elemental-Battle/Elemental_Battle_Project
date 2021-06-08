@@ -2,79 +2,77 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class Duelo /* extends CasaDuelo */ {
-
-	// Atributos
-//	private Duelo duelo;
-//
-//	// Construtor - default
-//	public Duelo(Duelo duelo) {
-//		this.duelo = duelo;
-//
-//	}
-//
-//	// Construtor - com argumentos
+public class Duelo extends Casa {
 
 	/**
-	 * ???
+	 * Construtor Default
 	 */
 	public Duelo() {
 
 	}
 
 	/**
-	 * A classe duelo serve para fazer um combate entre dois jogadores. Esse
-	 * resultado pode resultar de uma vitória, derrota ou empate. Para descobrirmos
-	 * esse resultado, temos definido como parâmetros a força como prioritária, caso
-	 * ela seja igual, então verificamos a destreza, caso seja também igual e
-	 * nenhuma carta tenha alguma capacidade para modificar os seus atributos (força
-	 * ou destreza) então resulta num empate.
-	 * 
-	 * @param cartaJ1  carta do jogador 1
-	 * @param cartaJ2  carta do jogador 2
-	 * @param jogador1 jogador 1
-	 * @param jogador2 jogador 2
-	 */
-
-	/**
 	 * 
 	 * A classe duelo serve para fazer um combate entre dois jogadores. Esse
 	 * resultado pode resultar de uma vitória, derrota ou empate. Para descobrirmos
-	 * esse resultado, temos definido como parâmetros a força como prioritária, caso
-	 * ela seja igual, então verificamos a destreza, caso seja também igual e
-	 * nenhuma carta tenha alguma capacidade para modificar os seus atributos (força
-	 * ou destreza) então resulta num empate.
+	 * esse resultado, verifica a força como prioritária, caso ela seja igual, então
+	 * verificamos a destreza, caso seja também igual então resulta num empate.
 	 * 
 	 * @param jogadores Jogadores
 	 */
-	public void duelo(ArrayList<Jogador> jogadores) {
+	public void duelo() {
 
+	}
+
+	@Override
+	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
+		int cartaJ1 = 0;
+		int cartaJ2 = 0;
 		// System.out.println("Jogador 1 Escolhe uma carta");
-		// JOptionPane.showInputDialog("Escolha a carta do" + jogador1.getNome());
-		// primeiraMao.get(cartaJ1);
-		// System.out.println("Jogador 2 Escolhe uma carta");
-		// segundaMao.get(cartaJ2);
+		for (int i = 0; i < jogadores.size(); i++) {
+			int carta = Integer
+					.parseInt(JOptionPane.showInputDialog("Escolha a carta do " + jogadores.get(i).getNome()));
+
+			switch (i) {
+			case 1: {
+				cartaJ1 = carta;
+				break;
+			}
+
+			case 2: {
+				cartaJ2 = carta;
+				break;
+			}
+
+			}
+		}
 
 		// Verifica se o Jogador1 ganhou
-		if (jogadores.get(0).getCarta(1).getForca() > jogadores.get(1).getCarta(1).getForca()) {
+		if (jogadores.get(0).getCarta(cartaJ1).getForca() > jogadores.get(1).getCarta(cartaJ2).getForca()) {
 			System.out.println("Jogador 1 Ganhou o Duelo");
 			jogadores.get(0).setVitoria(jogadores.get(0).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null, "Ganhou o jogador " + jogadores.get(0).getNome());
 
-		} else if (jogadores.get(0).getCarta(1).getForca() < jogadores.get(1).getCarta(1).getForca()) {
+		} else if (jogadores.get(0).getCarta(cartaJ1).getForca() < jogadores.get(1).getCarta(cartaJ2).getForca()) {
 			System.out.println("Jogador 2 Ganhou o Duelo");
 			jogadores.get(1).setVitoria(jogadores.get(1).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null, "Ganhou o jogador " + jogadores.get(1).getNome());
 
-		} else if (jogadores.get(0).getCarta(1).getDestreza() > jogadores.get(1).getCarta(1).getDestreza()) {
+		} else if (jogadores.get(0).getCarta(cartaJ1).getDestreza() > jogadores.get(1).getCarta(cartaJ2)
+				.getDestreza()) {
 			System.out.println("Jogador 1 Ganhou o Duelo");
 			jogadores.get(0).setVitoria(jogadores.get(0).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null, "Ganhou o jogador " + jogadores.get(0).getNome());
 
-		} else if (jogadores.get(0).getCarta(1).getDestreza() < jogadores.get(1).getCarta(1).getDestreza()) {
+		} else if (jogadores.get(0).getCarta(cartaJ1).getDestreza() < jogadores.get(1).getCarta(1).getDestreza()) {
 			System.out.println("Jogador 2 Ganhou o Duelo");
 			jogadores.get(1).setVitoria(jogadores.get(1).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null, "Ganhou o jogador " + jogadores.get(0).getNome());
 
 		} else {
 			System.out.println("Ninguem Ganhou o Duelo");
 		}
+
 	}
 
 }

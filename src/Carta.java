@@ -97,22 +97,15 @@ public class Carta {
 
 	// Comportamentos
 
-	/**
-	 * Valida os atributos dados como parâmetro.
-	 * 
-	 * @param valorMaximo   Valor máximo que o atributo pode ter
-	 * @param atributo      Valor do atributo da carta
-	 * @param valorAtributo Valor que se quer dar ao atributo
-	 * 
-	 * @throws IllegalArgumentException Se o valor do atributo for inferior a 0 ou
-	 *                                  superior a 5
-	 */
+
 
 	/**
 	 * Valida o atributo dado (forca) como parâmetro. A força tem como limite de
 	 * intervalo entre 0 a 10
 	 * 
 	 * @param forca Nível de força de uma carta
+	 * 
+	 * @throws IllegalArgumentException Se o valor da força for inferior a 0 ou superior a 10
 	 */
 	private void validarForca(int forca) {
 
@@ -129,6 +122,7 @@ public class Carta {
 	 * de intervalo entre 0 a 5
 	 * 
 	 * @param destreza Nível de destreza de uma carta
+	 * @throws IllegalArgumentException Se o valor da destreza for inferior a 0 ou superior a 10
 	 */
 	private void validarDestreza(int destreza) {
 
@@ -162,7 +156,7 @@ public class Carta {
 	 * @param capacidade Tipo de capacidade de uma carta
 	 * @return Legenda do efeito da respetiva capacidade
 	 */
-	private String legendaCapacidade(int capacidade) {
+	public String legendaCapacidade(int capacidade) {
 
 		switch (capacidade) {
 		case 0:

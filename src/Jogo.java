@@ -21,7 +21,6 @@ public class Jogo {
 	/**
 	 * Gerar Peça
 	 */
-	// Peca peca = new Peca();
 	ArrayList<Peca> pecas = new ArrayList<Peca>();
 
 	// Construtor - com argumentos
@@ -37,18 +36,18 @@ public class Jogo {
 	// Comportamentos
 
 	/**
-	 * Criação de um tabuleiro com x casas
+	 * Criação de um tabuleiro com 21 casas
 	 * 
-	 * @return Recebe as casas
+	 * @return Tabuleiro gerado
 	 */
-	public static ArrayList<Casa> tabuleiro6x6() {
-		ArrayList<Casa> casas = new ArrayList<Casa>();
-		for (int i = 0; i < 20; i++) {
-			casas.add(new Casa(i));
-		}
-
-		return casas;
-	}
+//	public static ArrayList<Casa> tabuleiro6x6() {
+//		ArrayList<Casa> casas = new ArrayList<Casa>();
+//		for (int i = 0; i < 20; i++) {
+//			casas.add(new Casa());
+//		}
+//
+//		return casas;
+//	}
 
 	/**
 	 * Vai mostrar as cartas
@@ -74,6 +73,7 @@ public class Jogo {
 	}
 
 	/**
+	 * Baralha o baralho, e depois divide por 2
 	 * 
 	 * @param baralho     Baralho de cartas
 	 * @param primeiraMao Mao do jogador 1
@@ -96,25 +96,13 @@ public class Jogo {
 
 	}
 
-	// Turno ( while, for dentro, vai trocando de jogadores, dando lhes a ordem de
-	// andar, dentro da ordem andar, verficar se calhou numa casa especial e faz a
-	// respetiva
-	// ação, caso contrario, passa de turno.
-	/**
-	 * É o coração do jogo, divide o baralho, dá as cartas a cada jogador. Nos
-	 * turnos pares o jogador 2 vê as cartas que tem em sua posse, e depois chama o
-	 * comportamento andarJogador. Caso seja turno impar, é o jogador 1 a jogar.
-	 * 
-	 * Quando o primeiro jogador chegar às 5 vitórias, o jogo acaba.
-	 */
-
 	/**
 	 * Criação do sistema de turnos, o jogo começa no turno 1 com a distribuição de
 	 * um baralho de cartas para a mão de cada jogador, os turnos são jogados
 	 * alternadamente entre os jogadores, começando pelo jogador 1, o turno chega ao
-	 * fim após cumprir os comportamentos designados dentro do turno, lança o dado,
-	 * move a peça, verifica as escolhas de acordo com a localização da peça, por
-	 * fim, após as escolhas, o turno acaba e começa o próximo jogador.
+	 * fim após concluir a sua jogada, lança o dado, move a peça, verifica as
+	 * escolhas de acordo com a localização da peça, por fim, após as escolhas, o
+	 * turno acaba e começa o próximo jogador.
 	 * 
 	 * 
 	 */
@@ -129,31 +117,20 @@ public class Jogo {
 		do {
 			System.out.println("Coração do turno");
 
-			/*
-			 * Para o Jogador 1, Mostra as cartas que tem no seu baralho, move a peça dele
-			 * no tabuleiro, e, se calhar numa casa duelo, surpresa faz o respetivo desafio,
-			 * caso contrário, passa o turno
-			 */
-			System.out.println("Turno " + turno);
-			if (turno % 2 == 0) {
+			// Para o Jogador 1, Mostra as cartas que tem no seu baralho, move a peça dele
+			// no tabuleiro, e, se calhar numa casa duelo, surpresa faz o respetivo desafio,
+			// caso contrário, passa o turno
 
-				System.out.println("");
-				System.out.println("Turno do Jogador 2");
+			System.out.println("Turno " + turno);
+			for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
+				
+				System.out.println("Jogadores: " + tabuleiro.getJogadores().size());
+				System.out.println("Turno do jogador " + tabuleiro.getJogadores().get(i).getNome());
 				// Mostra as cartas que tem no seu baralho
-				mostrarCartas(tabuleiro.jogadores.get(1).getMao());
-				// Move a peça do jogador
-				andarJogador(dado, tabuleiro.getPosicaoJogador2());
-				System.out.println(tabuleiro.getPosicaoJogador2());
-				// Avança o turno
-				turno++;
-			} else {
-				System.out.println("");
-				System.out.println("Turno do Jogador 1");
-				// Mostra as cartas que tem no seu baralho
-				mostrarCartas(tabuleiro.jogadores.get(0).getMao());
-				// Move a peça do jogador
-				andarJogador(dado, tabuleiro.getPosicaoJogador1());
-				System.out.println(tabuleiro.getPosicaoJogador1());
+				mostrarCartas(tabuleiro.jogadores.get(i).getMao());
+				andarJogador(dado, i);
+				System.out.println(tabuleiro.getJogadores().get(i).getPosicaoJogador());
+				System.out.println();
 				// Avança o turno
 				turno++;
 			}
@@ -166,9 +143,9 @@ public class Jogo {
 		System.out.println("Fim dos turnos");
 		System.out.println("O jogo durou " + turno + " turnos");
 		if (tabuleiro.getJogadores().get(0).getVitoria() == 5) {
-			System.out.println("Ganhou o Jogador 1");
+			System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(1).getNome());
 		} else
-			System.out.println("Ganhou o Jogador 2");
+			System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(1).getNome());
 	}
 
 	/**
@@ -185,53 +162,37 @@ public class Jogo {
 	 *                                  superior a 20
 	 * @throws NullPointerException     se o dado for nulo
 	 */
-	public void andarJogador(Dado dado, int posicaoJogador) {
+	public void andarJogador(Dado dado, int jogador) {
 
-		/*
-		 * if (dado == null) { throw new NullPointerException("O dado inserido é nulo");
-		 * } else if (posicaoJogador < 0 || posicaoJogador > 20) { throw new
-		 * IllegalArgumentException("A posição do jogador é superior a 20 ou inferior a 0"
-		 * ); } else {
-		 */
+//		 if (dado == null) { throw new NullPointerException("O dado inserido é nulo");
+//		 } else if (posicaoJogador < 0 || posicaoJogador > 20) { throw new
+//		 IllegalArgumentException("A posição do jogador é superior a 20 ou inferior a 0"
+//		 ); } else {
+//		 
 
 		int lancarDado = dado.lancarDado();
 
 		System.out.println("Valor do dado: " + lancarDado);
 
 //		 Declarar o número de casas que o jogador vai andar com base na posição atual + o valor do dado lançado
-		int andarCasas = posicaoJogador + lancarDado;
+		int andarCasas = tabuleiro.getJogadores().get(jogador).getPosicaoJogador() + lancarDado;
 		System.out.println("Andar para a casa: " + andarCasas);
 		// Se o número de casas a andar for maior que o número do tabuleiro
-		if (posicaoJogador == tabuleiro.getPosicaoJogador2()) {
-			if (andarCasas > tabuleiro.getTabuleiroSize()) {
+		if (andarCasas > tabuleiro.getTabuleiroSize()) {
 
-				/*
-				 * Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1. Ex: andarCasas =
-				 * 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
-				 */
-				tabuleiro.setPosicaoJogador2(andarCasas - (tabuleiro.getTabuleiroSize() + 1));
-				receberCarta(tabuleiro.getJogadores().get(1));
-			} else
-				// Caso contrário, anda o nº de casas
-				tabuleiro.setPosicaoJogador2(andarCasas);
-		} else if (posicaoJogador == tabuleiro.getPosicaoJogador1()) {
-			if (andarCasas > tabuleiro.getTabuleiroSize()) {
+//				 Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1. Ex: andarCasas =
+//				 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
 
-				/*
-				 * Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1. Ex: andarCasas =
-				 * 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
-				 */
-				tabuleiro.setPosicaoJogador1(andarCasas - (tabuleiro.getTabuleiroSize() + 1));
-				receberCarta(tabuleiro.getJogadores().get(0));
-			} else
-				// Caso contrário, anda o nº de casas
-				tabuleiro.setPosicaoJogador1(andarCasas);
-		}
-		verificarCasa(posicaoJogador);
-		// }
+			tabuleiro.getJogadores().get(jogador).setPosicaoJogador((andarCasas - (tabuleiro.getTabuleiroSize() + 1)));
+			receberCarta(tabuleiro.getJogadores().get(jogador));
+		} else
+			// Caso contrário, anda o nº de casas
+			tabuleiro.getJogadores().get(jogador).setPosicaoJogador(andarCasas);
+
+		verificarCasa(jogador);
 	}
 
-	Duelo duelo = new Duelo();
+	
 
 	/**
 	 * Verifica se o jogador está numa casa duelo ou surpresa e também se está na
@@ -241,19 +202,26 @@ public class Jogo {
 	 * jogador, irá duelar com esse jogador.
 	 * 
 	 * @param posicaoJogador Posicao do Jogador
+	 * 
 	 */
-	public void verificarCasa(int posicaoJogador) {
+	
+	
+	public void verificarCasa(int jogador) {
+		int posicaoJogador = tabuleiro.getJogadores().get(jogador).getPosicaoJogador();
 
-		if (tabuleiro.getPosicaoJogador1() == tabuleiro.getPosicaoJogador2()) {
-			duelo.duelo(tabuleiro.getJogadores());
+		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1).getPosicaoJogador()) {
+			
+			//Se os jogadores calharem na mesma casa, então fazem um duelo
+			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		} else if (posicaoJogador == 3 | posicaoJogador == 8 | posicaoJogador == 13 | posicaoJogador == 18) {
-			// faz surpresa
-
+			
+			//Faz Bonus
+			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6 | posicaoJogador == 9
 				| posicaoJogador == 11 | posicaoJogador == 14 | posicaoJogador == 16 | posicaoJogador == 19) {
-			duelo.duelo(tabuleiro.getJogadores());
-
-			// Como fazer?
+			
+			//Duelo
+			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		}
 	}
 
