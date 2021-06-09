@@ -6,7 +6,7 @@ public class Jogo {
 	/**
 	 * Gerar o tabuleiro
 	 */
-	Tabuleiro tabuleiro = new Tabuleiro();
+	static Tabuleiro tabuleiro = new Tabuleiro();
 
 	/**
 	 * Gerar um dado
@@ -23,31 +23,11 @@ public class Jogo {
 	 */
 	ArrayList<Peca> pecas = new ArrayList<Peca>();
 
-	// Construtor - com argumentos
-	/**
-	 * Criação do jogo
-	 * 
-	 * @param tabuleiro Tabuleiro
-	 */
-	public Jogo(Tabuleiro tabuleiro) {
-		this.tabuleiro = tabuleiro;
-	}
-
 	// Comportamentos
-
-	/**
-	 * Criação de um tabuleiro com 21 casas
-	 * 
-	 * @return Tabuleiro gerado
-	 */
-//	public static ArrayList<Casa> tabuleiro6x6() {
-//		ArrayList<Casa> casas = new ArrayList<Casa>();
-//		for (int i = 0; i < 20; i++) {
-//			casas.add(new Casa());
-//		}
-//
-//		return casas;
-//	}
+	
+	public Jogo() {
+		turno();
+	}
 
 	/**
 	 * Vai mostrar as cartas
@@ -79,19 +59,15 @@ public class Jogo {
 	 * @param primeiraMao Mao do jogador 1
 	 * @param segundaMao  Mao do jogador 2
 	 */
-	public static void distribuirBaralho(ArrayList<Carta> baralho, ArrayList<Carta> primeiraMao,
-			ArrayList<Carta> segundaMao) {
+	public static void distribuirBaralho(ArrayList<Carta> baralho) {
 
 		Collections.shuffle(baralho);
-
-		for (int i = 0; i < 7; i++) {
-			Collections.shuffle(baralho);
-			primeiraMao.add(baralho.get(i));
-		}
-
-		for (int i = 0; i < 7; i++) {
-			Collections.shuffle(baralho);
-			segundaMao.add(baralho.get(i));
+		
+		for (int jogador = 0; jogador < tabuleiro.getJogadores().size(); jogador++) {
+			for (int carta = 0; carta < 7; carta++) {
+				Collections.shuffle(baralho);
+				tabuleiro.getJogadores().get(jogador).getMao().add(baralho.get(carta));
+			}
 		}
 
 	}
@@ -108,44 +84,69 @@ public class Jogo {
 	 */
 	public void turno() {
 		int turno = 1;
+		System.out.println( "-------------------- Participantes --------------------");
+		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
+			System.out.println("Jogador: " + tabuleiro.getJogadores().get(i).getNome());
+		}
+			System.out.println("");
 		// Baralha e distribui o baralho
-		distribuirBaralho(baralho.getElementals(), tabuleiro.jogadores.get(0).getMao(),
-				tabuleiro.jogadores.get(1).getMao());
-		System.out.println("O baralho foi distribuido");
+		distribuirBaralho(baralho.getElementals());
+
 
 		// Conta os turnos,
 		do {
-			System.out.println("Coração do turno");
 
 			// Para o Jogador 1, Mostra as cartas que tem no seu baralho, move a peça dele
 			// no tabuleiro, e, se calhar numa casa duelo, surpresa faz o respetivo desafio,
 			// caso contrário, passa o turno
 
-			System.out.println("Turno " + turno);
+			System.err.println("------------------- Turno " + turno + " --------------------");
+			System.out.println("");
 			for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
-				
-				System.out.println("Jogadores: " + tabuleiro.getJogadores().size());
-				System.out.println("Turno do jogador " + tabuleiro.getJogadores().get(i).getNome());
+				System.out.println("");
+				System.out.println("-------------------- Turno do jogador " + tabuleiro.getJogadores().get(i).getNome() + " --------------------");
+				System.out.println("");
 				// Mostra as cartas que tem no seu baralho
+				System.out.println("Mão do jogador:");
 				mostrarCartas(tabuleiro.jogadores.get(i).getMao());
+				// 	System.out.println("");
 				andarJogador(dado, i);
-				System.out.println(tabuleiro.getJogadores().get(i).getPosicaoJogador());
+				System.out.println("O jogador está na posição : " + tabuleiro.getJogadores().get(i).getPosicaoJogador());
 				System.out.println();
 				// Avança o turno
-				turno++;
+				
+				for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
+					
+					System.out.println("O jogador " + tabuleiro.getJogadores().get(j).getNome() + " tem  " + tabuleiro.getJogadores().get(j).getVitoria() + " vitórias");
+				}
+				System.out.println("");
 			}
+			turno++;
+			// anunciamento de vitórias
+			
 
-			System.out.println("Jogador 1 Vitórias: " + tabuleiro.getJogadores().get(0).getVitoria());
-			System.out.println("Jogador 2 Vitórias: " + tabuleiro.getJogadores().get(1).getVitoria());
+		} while (verificaVitoria() == false);
 
-		} while (tabuleiro.getJogadores().get(0).getVitoria() < 5 && tabuleiro.getJogadores().get(1).getVitoria() < 5);
-
-		System.out.println("Fim dos turnos");
+		System.out.println("Fim do jogo");
+		System.out.println("");
 		System.out.println("O jogo durou " + turno + " turnos");
-		if (tabuleiro.getJogadores().get(0).getVitoria() == 5) {
-			System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(1).getNome());
-		} else
-			System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(1).getNome());
+		System.out.println("");
+		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
+			if(tabuleiro.getJogadores().get(i).getVitoria() == 5)
+				System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(i).getNome());
+		}
+		System.out.println("");
+
+	}
+	
+	public Boolean verificaVitoria() {
+		for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
+			if(tabuleiro.getJogadores().get(j).getVitoria() >= 5) {
+				return true;
+			}
+		}
+		return false;
+		
 	}
 
 	/**
@@ -176,23 +177,22 @@ public class Jogo {
 
 //		 Declarar o número de casas que o jogador vai andar com base na posição atual + o valor do dado lançado
 		int andarCasas = tabuleiro.getJogadores().get(jogador).getPosicaoJogador() + lancarDado;
-		System.out.println("Andar para a casa: " + andarCasas);
-		// Se o número de casas a andar for maior que o número do tabuleiro
-		if (andarCasas > tabuleiro.getTabuleiroSize()) {
 
-//				 Subtrai ao nº de casas a andar o tamanho do tabuleiro + 1. Ex: andarCasas =
+		// Se o número de casas a andar for maior que o número do tabuleiro
+		if (andarCasas > tabuleiro.getTabuleiro().size()) {
+
+//				 Subtrai ao nº de casas a andar com tamanho do tabuleiro + 1. Ex: andarCasas =
 //				 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
 
-			tabuleiro.getJogadores().get(jogador).setPosicaoJogador((andarCasas - (tabuleiro.getTabuleiroSize() + 1)));
+			tabuleiro.getJogadores().get(jogador).setPosicaoJogador((andarCasas - tabuleiro.getTabuleiro().size()));
 			receberCarta(tabuleiro.getJogadores().get(jogador));
-		} else
+		} else {
 			// Caso contrário, anda o nº de casas
 			tabuleiro.getJogadores().get(jogador).setPosicaoJogador(andarCasas);
-
+		System.out.println("Posição do jogador " + tabuleiro.getJogadores().get(jogador).getNome() + " é: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
+		}
 		verificarCasa(jogador);
 	}
-
-	
 
 	/**
 	 * Verifica se o jogador está numa casa duelo ou surpresa e também se está na
@@ -204,23 +204,23 @@ public class Jogo {
 	 * @param posicaoJogador Posicao do Jogador
 	 * 
 	 */
-	
-	
+
 	public void verificarCasa(int jogador) {
 		int posicaoJogador = tabuleiro.getJogadores().get(jogador).getPosicaoJogador();
 
-		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1).getPosicaoJogador()) {
-			
-			//Se os jogadores calharem na mesma casa, então fazem um duelo
+		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
+				.getPosicaoJogador()) {
+
+			// Se os jogadores calharem na mesma casa, então fazem um duelo
 			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		} else if (posicaoJogador == 3 | posicaoJogador == 8 | posicaoJogador == 13 | posicaoJogador == 18) {
-			
-			//Faz Bonus
+
+			// Faz Bonus
 			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6 | posicaoJogador == 9
 				| posicaoJogador == 11 | posicaoJogador == 14 | posicaoJogador == 16 | posicaoJogador == 19) {
-			
-			//Duelo
+
+			// Duelo
 			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		}
 	}

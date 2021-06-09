@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Tabuleiro {
 
 	// Criação dos jogadores
@@ -8,18 +10,12 @@ public class Tabuleiro {
 	/**
 	 * Criação do tabuleiro
 	 */
-	private ArrayList<Casa> tabuleiro = new ArrayList<Casa>();
+	private ArrayList<Casa> tabuleiro;
 	
 	Casa casaBonus = new Bonus();
 	
 	Casa casaDuelo = new Duelo();
 
-	// Construtor - default
-	/**
-	 * Construtor por defeito
-	 */
-	public Tabuleiro() {
-	}
 
 	// Construtor - com argumentos
 	/**
@@ -28,12 +24,16 @@ public class Tabuleiro {
 	 * @param jogadores Jogadores
 	 * @throws NullPointerException Caso os jogadores não sejam válidos
 	 */
-	public Tabuleiro(ArrayList<Jogador> jogadores) {
-		// Se o tabuleiro for null, então lança um erro.
-		if (jogadores == null)
-			new NullPointerException("Jogadores não são válidos");
-		else
-			this.jogadores = jogadores;
+	public Tabuleiro() {
+		
+		int numeroJogadores = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
+		
+		for (int i = 0; i < numeroJogadores; i++) {
+			Jogador jogador = new Jogador( );
+			jogadores.add(jogador);
+		}
+		
+		this.tabuleiro = new ArrayList<Casa>(criarTabuleiro());
 	}
 
 	// Construtor - cópia

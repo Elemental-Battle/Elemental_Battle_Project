@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 public class Bonus extends Casa {
 
 	/**
@@ -25,17 +27,20 @@ public class Bonus extends Casa {
 		case 1: {
 			Collections.shuffle(baralho);
 			jogadores.get(jogador).getMao().add(baralho.get(1));
+			JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(jogador).getNome()+ " recebeu a carta: " + jogadores.get(jogador).getCarta(jogadores.get(jogador).getMao().size() - 1));
 			break;
 		}
 		// Andar x
 		case 2: {
 			jogadores.get(jogador).setPosicaoJogador(jogadores.get(jogador).getPosicaoJogador() + numeroCasas);
+			JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(jogador).getNome() + " avançou para casa " + jogadores.get(jogador).getPosicaoJogador());
 			break;
 		}
 
 		// Recuar x
 		case 3: {
 			jogadores.get(jogador).setPosicaoJogador(jogadores.get(jogador).getPosicaoJogador() - numeroCasas);
+			JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(jogador).getNome() + " recuou para casa: " + jogadores.get(jogador).getPosicaoJogador());
 			break;
 		}
 
@@ -44,8 +49,8 @@ public class Bonus extends Casa {
 
 			jogadores.get(jogador).getMao().get(carta).setCapacidade(capacidade);
 			
-			System.out.println("A carta " + jogadores.get(jogador).getMao().get(carta) + " recebeu a capacidade "
-					+ jogadores.get(jogador).getMao().get(carta).legendaCapacidade(capacidade));
+			System.out.println("A carta " + jogadores.get(jogador).getMao().get(carta) + " recebeu a capacidade: "+ jogadores.get(jogador).getMao().get(carta).legendaCapacidade(capacidade));
+			JOptionPane.showMessageDialog(null, "A carta " + jogadores.get(jogador).getMao().get(carta).getNome() + " do jogador " + jogadores.get(jogador).getNome() + " recebeu a capacidade " + jogadores.get(jogador).getMao().get(carta).legendaCapacidade(capacidade));
 			break;
 		}
 		default:

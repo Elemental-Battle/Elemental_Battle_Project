@@ -37,7 +37,7 @@ public class Dado {
 	 * @return Recebe o número do Dado
 	 */
 	public int lancarDado() {
-		numero = rand.nextInt(6) + 1;
+		numero = rand.nextInt(5) + 1;
 
 		return numero;
 	}

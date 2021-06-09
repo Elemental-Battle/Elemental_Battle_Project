@@ -7,6 +7,8 @@ public class Carta {
 	 */
 	private String nome; // Nome da carta
 	private int forca; // Força/poder da carta
+	
+
 	private int destreza; // destreza da carta
 	private int capacidade; // número da capacidade da carta
 
@@ -62,7 +64,14 @@ public class Carta {
 	}
 
 	// Acessores
-
+	
+	/**
+	 * 
+	 * @return nome da carta
+	 */
+	public String getNome() {
+		return nome;
+	}
 	/**
 	 * 
 	 * @return Vai receber uma capacidade

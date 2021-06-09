@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class Jogador extends Peca {
 
 	/**
@@ -16,8 +18,6 @@ public class Jogador extends Peca {
 	 * 
 	 */
 	private int posicaoJogador = 0;
-	
-	
 
 	/**
 	 * Mão do jogador
@@ -40,6 +40,7 @@ public class Jogador extends Peca {
 	public void setPosicaoJogador(int posicaoJogador) {
 		this.posicaoJogador = posicaoJogador;
 	}
+
 	/**
 	 * 
 	 * @return Recebe a mão atual do jogador
@@ -81,7 +82,7 @@ public class Jogador extends Peca {
 	public void setVitoria(int vitoria) {
 		this.vitoria = vitoria;
 	}
-	
+
 	/**
 	 * 
 	 * @return Nome do Jogador
@@ -89,28 +90,19 @@ public class Jogador extends Peca {
 	public String getNome() {
 		return nome;
 	}
-	
 
 	/**
 	 * Construtor por defeito
+	 * 
 	 * @param nome Nome do jogador
 	 */
 	public Jogador() {
-		this.nome = "Jogador";
-	}
+		String nome = "";
+		do {
+			nome = JOptionPane.showInputDialog("Insira o nome do jogador");
 
-	// Construtor - com argumentos
-	/**
-	 * Criar jogador Validar nome e maoJogador
-	 * 
-	 * @param nome       Nome do jogador
-	 * @param maoJogador Mao do jogador
-	 */
-	public Jogador(String nome, ArrayList<Carta> maoJogador) {
-		if (nome != "" || nome != null)
-			this.nome = nome;
-		else if (maoJogador != null)
-			mao = maoJogador;
+		} while (nome.length() < 1);
+		this.nome = nome;
 	}
 
 	// Construtor - cópia
@@ -123,8 +115,6 @@ public class Jogador extends Peca {
 		if (jogador.nome != "" || jogador.nome != null)
 			this.nome = jogador.nome;
 	}
-
-	
 
 	// Métodos Adicionais
 
