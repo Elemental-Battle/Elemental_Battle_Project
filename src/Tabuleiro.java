@@ -25,8 +25,11 @@ public class Tabuleiro {
 	 * @throws NullPointerException Caso os jogadores não sejam válidos
 	 */
 	public Tabuleiro() {
+		int numeroJogadores;
+		do {
+			numeroJogadores = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
+		}while(numeroJogadores <2 || numeroJogadores > 6);
 		
-		int numeroJogadores = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
 		
 		for (int i = 0; i < numeroJogadores; i++) {
 			Jogador jogador = new Jogador( );
