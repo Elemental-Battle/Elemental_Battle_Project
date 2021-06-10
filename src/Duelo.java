@@ -4,31 +4,27 @@ import javax.swing.JOptionPane;
 
 public class Duelo extends Casa {
 
-	/**
-	 * Construtor Default
-	 */
+// Construtor Default
 	public Duelo() {
 
 	}
 
 	/**
+	 * Fazer um combate entre dois jogadores. Esse combate pode resultar numa
+	 * vitória, empate ou derrota. Para descobrirmos esse resultado, verifica-se a
+	 * força como prioritária, caso seja igual, então verificamos como segundo
+	 * prioritário a destreza, caso seja também igual, resulta num empate.
 	 * 
-	 * A classe duelo serve para fazer um combate entre dois jogadores. Esse
-	 * resultado pode resultar de uma vitória, derrota ou empate. Para descobrirmos
-	 * esse resultado, verifica a força como prioritária, caso ela seja igual, então
-	 * verificamos a destreza, caso seja também igual então resulta num empate.
-	 * 
+	 * @param jogador   Jogador
+	 * @param baralho   Baralho de cartas
 	 * @param jogadores Jogadores
 	 */
-	public void duelo() {
-
-	}
-
 	@Override
 	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
 
 		int cartas[] = new int[jogadores.size()];
-		// System.out.println("Jogador 1 Escolhe uma carta");
+
+		// O jogador escolha uma carta que tenha na sua mão
 		for (int i = 0; i < jogadores.size(); i++) {
 			int carta = 0;
 			do {
@@ -38,6 +34,7 @@ public class Duelo extends Casa {
 
 		}
 
+		// Vai buscar a carta escolhida de cada jogador e compará-las e decidir o vencedor duelo de acordo com os parâmetros estabelicidos (força e destreza)
 		for (int i = 0; i < jogadores.size() - 1; i++) {
 			if (jogadores.get(i).getCarta(cartas[i]).getForca() > jogadores.get(i + 1).getCarta(cartas[i + 1])
 					.getForca()) {
@@ -73,13 +70,16 @@ public class Duelo extends Casa {
 
 			} else {
 				System.out.println("Empate");
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i).getNome() + " empatou contra o jogador " + jogadores.get(i+1).getNome());
+				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i).getNome()
+						+ " empatou contra o jogador " + jogadores.get(i + 1).getNome());
 			}
 		}
+		
+		// Remover as cartas utilizadas pelos jogadores
 		for (int i = 0; i < jogadores.size(); i++) {
 			jogadores.get(i).getMao().remove(cartas[i]);
 		}
-		
+
 	}
 
 }

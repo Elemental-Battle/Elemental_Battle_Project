@@ -2,27 +2,22 @@
 public class Carta {
 
 	// Atributos
-	/**
-	 * Inserir as características da carta
-	 */
 	private String nome; // Nome da carta
 	private int forca; // Força/poder da carta
-	
-
 	private int destreza; // destreza da carta
 	private int capacidade; // número da capacidade da carta
-
-	// Construtor - com argumentos
+	
 
 	/**
 	 * 
-	 * Validação dos parâmetros da carta (nome, forca, destreza e capacidade)
+	 * Validação dos atributos da carta (nome, forca, destreza e capacidade)
 	 * 
 	 * @param nome       Nome da carta
 	 * @param forca      Poder da carta
 	 * @param destreza   Destreza da Carta
 	 * @param capacidade Capacidade da carta
 	 */
+	// Construtor - com argumentos
 	public Carta(String nome, int forca, int destreza, int capacidade) {
 		// Validar o nome
 		if (nome != null && nome != "")
@@ -44,21 +39,22 @@ public class Carta {
 	// Construtor - cópia
 
 	/**
+	 * Validação dos atributos da carta (nome, forca, destreza e capacidade)
 	 * 
-	 * @param carta Validação dos parâmetros da carta (nome, forca, destreza e
-	 *              capacidade)
+	 * @param carta Atibutos da carta
+	 *              
 	 */
 	public Carta(Carta carta) {
 		if (carta == null)
 			throw new NullPointerException("A carta é nula, por favor escolha uma válida");
 
-		// Verificar se a força está no intervalo de 0 a 5
+		// Verificar se a força está no intervalo de 0 a 10
 		validarForca(carta.forca);
 
 		// Verificar se a destreza está no intervalo de 0 a 5
 		validarDestreza(carta.destreza);
 
-		// Verificar se a caracteristica está no intervalo de 1 a 5
+		// Verificar se a caracteristica está no intervalo de 0 a 6
 		validarCapacidade(carta.capacidade);
 
 	}
@@ -66,39 +62,45 @@ public class Carta {
 	// Acessores
 	
 	/**
-	 * 
+	 *  Recebe o nome da carta
+	 *  
 	 * @return nome da carta
 	 */
 	public String getNome() {
 		return nome;
 	}
+	
 	/**
+	 * Recebe a capacidade da carta
 	 * 
-	 * @return Vai receber uma capacidade
+	 * @return capacidade da carta
 	 */
 	public int getCapacidade() {
 		return capacidade;
 	}
 
 	/**
+	 * Define a capacidade de uma carta
 	 * 
-	 * @param capacidade Vai definir uma capacidade
+	 * @param capacidade da carta
 	 */
 	public void setCapacidade(int capacidade) {
 		this.capacidade = capacidade;
 	}
 
 	/**
+	 * Recebe a força da carta
 	 * 
-	 * @return Vai receber um nível de forca
+	 * @return força da carta
 	 */
 	public int getForca() {
 		return forca;
 	}
 
 	/**
+	 * Recebe a destreza da carta
 	 * 
-	 * @return Vai receber um nível de destreza
+	 * @return destreza da carta
 	 */
 	public int getDestreza() {
 		return destreza;
@@ -107,12 +109,11 @@ public class Carta {
 	// Comportamentos
 
 
-
 	/**
-	 * Valida o atributo dado (forca) como parâmetro. A força tem como limite de
+	 * Valida o atributo forca. A forca tem como limite de
 	 * intervalo entre 0 a 10
 	 * 
-	 * @param forca Nível de força de uma carta
+	 * @param forca Nível de força da carta
 	 * 
 	 * @throws IllegalArgumentException Se o valor da força for inferior a 0 ou superior a 10
 	 */
@@ -127,11 +128,11 @@ public class Carta {
 	}
 
 	/**
-	 * Valida o atributo dado (destreza) como parâmetro. A destreza tem como limite
+	 * Valida o atributo destreza. A destreza tem como limite
 	 * de intervalo entre 0 a 5
 	 * 
-	 * @param destreza Nível de destreza de uma carta
-	 * @throws IllegalArgumentException Se o valor da destreza for inferior a 0 ou superior a 10
+	 * @param destreza Nível de destreza da carta
+	 * @throws IllegalArgumentException Se o valor da destreza for inferior a 0 ou superior a 5
 	 */
 	private void validarDestreza(int destreza) {
 
@@ -144,10 +145,10 @@ public class Carta {
 	}
 
 	/**
-	 * Valida o atributo dado (capacidade) como parâmetro. O tipo de capacidade tem
+	 * Valida o atributo capacidade. O tipo de capacidade tem
 	 * como limite de intervalo entre 0 a 6
 	 * 
-	 * @param capacidade Tipo de capacidade de uma carta
+	 * @param capacidade Tipo de capacidade da carta
 	 */
 	private void validarCapacidade(int capacidade) {
 
@@ -162,7 +163,7 @@ public class Carta {
 	/**
 	 * Legenda do efeito de cada capacidade úinica, de 0 a 6
 	 * 
-	 * @param capacidade Tipo de capacidade de uma carta
+	 * @param capacidade Tipo de capacidade da carta
 	 * @return Legenda do efeito da respetiva capacidade
 	 */
 	public String legendaCapacidade(int capacidade) {
@@ -196,10 +197,10 @@ public class Carta {
 	}
 
 	/**
-	 * Todos os tipos efeitos que uma carta pode ter Validação do parâmetro
-	 * capacidade, a carta tem de ter uma capacidade de 0 a 6
+	 * Todos os tipos efeitos que uma carta pode ter, Validação do atributo
+	 * capacidade, a carta tem de ter uma capacidade de 0 a 6 inclusive
 	 * 
-	 * @param capacidade Tipo de capacidade de uma carta
+	 * @param capacidade Tipo de capacidade da carta
 	 * @param cartaJ2    Uma carta
 	 */
 	private void efeitoCapacidade(int capacidade, Carta cartaJ2) {
@@ -247,11 +248,11 @@ public class Carta {
 		}
 
 	}
+	
 	// Métodos Adicionais
 
-	/**
-	 * Print da carta com as suas respetivas características
-	 */
+
+	//Print da carta com as suas respetivas características
 	@Override
 	public String toString() {
 		return nome + " | Força: " + forca + " | destreza: " + destreza + " | capacidade: "

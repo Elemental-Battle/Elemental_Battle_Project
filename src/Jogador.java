@@ -4,87 +4,81 @@ import javax.swing.JOptionPane;
 
 public class Jogador extends Peca {
 
-	/**
-	 * Declaração do nome do jogador
-	 */
-	private String nome;
-
-	/**
-	 * Declarar vitória
-	 */
-	private int vitoria;
-
-	/**
-	 * 
-	 */
-	private int posicaoJogador = 0;
-
-	/**
-	 * Mão do jogador
-	 */
-	private ArrayList<Carta> mao = new ArrayList<Carta>();
+	// Atributos
+	
+	private String nome; // Nome do jogador
+	private int vitoria; // vitória de um duelo
+	private int posicaoJogador = 0; // posição da peça do jogador
+	private ArrayList<Carta> mao = new ArrayList<Carta>(); // Mão do jogador
 
 	// Acessores
 	/**
+	 * Recebe a posição do jogador
 	 * 
-	 * @return
+	 * @return posicaoJogador Posição do jogador
 	 */
 	public int getPosicaoJogador() {
 		return posicaoJogador;
 	}
 
 	/**
+	 * Define a posição do jogador
 	 * 
-	 * @param posicaoJogador
+	 * @param posicaoJogador Posição do jogador
 	 */
 	public void setPosicaoJogador(int posicaoJogador) {
 		this.posicaoJogador = posicaoJogador;
 	}
 
 	/**
+	 * Recebe a mão atual do jogador
 	 * 
-	 * @return Recebe a mão atual do jogador
+	 * @return mao do jogador
 	 */
 	public ArrayList<Carta> getMao() {
 		return mao;
 	}
 
 	/**
+	 * Define a mão atual do jogador
 	 * 
-	 * @param Define a mão atual do jogador
+	 * @param mao do jogador
 	 */
 	public void setMao(ArrayList<Carta> mao) {
 		this.mao = mao;
 	}
 
 	/**
+	 * Recebe uma carta da mão do jogador
 	 * 
 	 * @param carta Carta
-	 * @return Recebe uma carta da mão do jogador
+	 * @return mao Uma carta
 	 */
 	public Carta getCarta(int carta) {
 		return mao.get(carta);
 	}
 
 	/**
+	 * Recebe uma vitoria
 	 * 
-	 * @return Valor da vitoria
+	 * @return vitoria
 	 */
 	public int getVitoria() {
 		return vitoria;
 	}
 
 	/**
-	 * Define um valor para a vitória
+	 * Define o número de vitórias de um jogador
 	 * 
-	 * @param vitoria Número de vitória(s)
+	 * @param vitoria Vitória do duelo
 	 */
 	public void setVitoria(int vitoria) {
 		this.vitoria = vitoria;
 	}
 
 	/**
-	 * 
+	 *  Recebe o nome do jogador
+	 *  
 	 * @return Nome do Jogador
 	 */
 	public String getNome() {
@@ -98,6 +92,7 @@ public class Jogador extends Peca {
 	 */
 	public Jogador() {
 		String nome = "";
+		// Inserir o nome do jogador,
 		do {
 			nome = JOptionPane.showInputDialog("Insira o nome do jogador");
 
@@ -107,21 +102,23 @@ public class Jogador extends Peca {
 
 	// Construtor - cópia
 	/**
-	 * Criar jogador Validação do nome
+	 * Criar jogador com validação no nome
 	 * 
 	 * @param jogador Jogador
 	 */
 	public Jogador(Jogador jogador) {
+		// O jogador é obrigado a escrever um nome
 		if (jogador.nome != "" || jogador.nome != null)
 			this.nome = jogador.nome;
 	}
 
 	// Métodos Adicionais
 
+
+	@Override
 	/**
 	 * ToString do Jogador com as respetivas informações
 	 */
-	@Override
 	public String toString() {
 		return "Jogador " + getNome();
 	}

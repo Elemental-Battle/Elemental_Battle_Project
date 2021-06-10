@@ -5,14 +5,13 @@ import java.util.Stack;
 
 public class Baralho {
 
-	/*
-	 * Criação de cartas
-	 */
+	 //Criação de cartas
 	ArrayList<Carta> elementals = new ArrayList<Carta>();
 
 	/**
+	 * Criação de um baralho com 30 cartas
 	 * 
-	 * @param baralho Criação de um set de 30 cartas
+	 * @param baralho 
 	 */
 	public void criarBaralho1(ArrayList<Carta> baralho) {
 		baralho.add(new Carta("Water Elemental", 10, 5, 6));
@@ -48,16 +47,16 @@ public class Baralho {
 	}
 
 	/**
-	 * Devolve o baralho Elementals
+	 * Devolve as cartas do baralho "elementals"
 	 * 
-	 * @return As cartas do set "elementals"
+	 * @return elementals
 	 */
 	public ArrayList<Carta> getElementals() {
 		return elementals;
 	}
 
 	/**
-	 * Criação de um baralho com um set de 30 cartas
+	 * Construtor Default do baralho elementals
 	 */
 	public Baralho() {
 		criarBaralho1(elementals);

@@ -1,29 +1,28 @@
 import java.util.Random;
 
+
 public class Dado {
 
 	// Atributos
 	int numero;
 	Random rand = new Random();
 
-	// Construtor - default
+
 
 	/**
 	 * Criação do Dado
 	 */
+	// Construtor - default
 	public Dado() {
 		super();
 
 	}
-	// Construtor - com argumentos
-
-	// Construtor - cópia
 
 	// Acessores
 
 	/**
-	 * 
-	 * @return Recebe o número do dado
+	 * Recebe o número do dado
+	 * @return numero
 	 */
 	public int getDado() {
 		return numero;
@@ -32,9 +31,9 @@ public class Dado {
 	// Comportamentos
 
 	/**
-	 * Lança o dado aleatóriamente e recebe o seu valor
+	 * Recebe o número do dado lançado
 	 * 
-	 * @return Recebe o número do Dado
+	 * @return numero
 	 */
 	public int lancarDado() {
 		numero = rand.nextInt(5) + 1;

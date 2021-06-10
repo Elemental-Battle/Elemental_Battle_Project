@@ -4,44 +4,40 @@ import javax.swing.JOptionPane;
 
 public class Tabuleiro {
 
-	// Criação dos jogadores
-	ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+	// Atributos
+
+	ArrayList<Jogador> jogadores = new ArrayList<Jogador>(); // criação dos jogadores
+	private ArrayList<Casa> tabuleiro; // criação do tabuleiro
+	Casa casaBonus = new Bonus(); // criação da casa bonus
+	Casa casaDuelo = new Duelo(); // criação da casa duelo
 
 	/**
-	 * Criação do tabuleiro
+	 * Escolher a quantidade de jogadores que vão participar no jogo, havendo
+	 * restrição, minimo 2 jogadores e um máximo de 6 jogadores
 	 */
-	private ArrayList<Casa> tabuleiro;
-	
-	Casa casaBonus = new Bonus();
-	
-	Casa casaDuelo = new Duelo();
-
-
-	// Construtor - com argumentos
-	/**
-	 * Construtor com argumentos, verifica se os jogadores são válidos
-	 * 
-	 * @param jogadores Jogadores
-	 * @throws NullPointerException Caso os jogadores não sejam válidos
-	 */
+	// Construtor Default
 	public Tabuleiro() {
 		int numeroJogadores;
+		// Inserir a quantidade de jogadores que vão participar, de 2 a 6 jogadores
+		// inclusive
 		do {
-			numeroJogadores = Integer.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
-		}while(numeroJogadores <2 || numeroJogadores > 6);
-		
-		
+			numeroJogadores = Integer
+					.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
+		} while (numeroJogadores < 2 || numeroJogadores > 6);
+
+		// Adicionar jogadores ao jogo de acordo com a quantidade de participantes
 		for (int i = 0; i < numeroJogadores; i++) {
-			Jogador jogador = new Jogador( );
+			Jogador jogador = new Jogador();
 			jogadores.add(jogador);
 		}
-		
+
+		// Inserir as casas ao tabuleiro
 		this.tabuleiro = new ArrayList<Casa>(criarTabuleiro());
 	}
 
 	// Construtor - cópia
 	/**
-	 * ??
+	 * Cópia do tabuleiro
 	 * 
 	 * @param tabuleiro Tabuleiro
 	 */
@@ -53,6 +49,7 @@ public class Tabuleiro {
 	// Acessores
 
 	/**
+	 * Recebe a quantidade de jogadores
 	 * 
 	 * @return Jogadores
 	 */
@@ -61,8 +58,9 @@ public class Tabuleiro {
 	}
 
 	/**
-	 * 
-	 * @return Recebe o tamanho do tabuleiro
+	 * Recebe o tamanho do tabuleiro (número de casas)
+	 *
+	 * @return tabuleiro
 	 */
 	public int getTabuleiroSize() {
 		return tabuleiro.size();
@@ -70,8 +68,9 @@ public class Tabuleiro {
 	}
 
 	/**
+	 * Recebe o tabuleiro
 	 * 
-	 * @return Recebe o tabuleiro
+	 * @return tabuleiro
 	 */
 	public ArrayList<Casa> getTabuleiro() {
 		return tabuleiro;
@@ -80,18 +79,19 @@ public class Tabuleiro {
 	// Comportamentos
 
 	/**
+	 * Cria 21 casas para o tabuleiro
 	 * 
-	 * @return Criar casas para o tabuleiro
+	 * @return casas do tabuleiro
 	 */
 	public static ArrayList<Casa> criarTabuleiro() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
 		for (int i = 0; i < 20; i++) {
 			casas.add(new Casa() {
-				
+
 				@Override
 				public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
 					// TODO Auto-generated method stub
-					
+
 				}
 			});
 		}

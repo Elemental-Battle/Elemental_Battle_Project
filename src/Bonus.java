@@ -8,22 +8,26 @@ public class Bonus extends Casa {
 
 	/**
 	 * 
-	 * @param numero ???
+	 * @param Bonus
 	 */
 	public Bonus() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
+	/**
+	 * 4 bónus escolhidos à sorte, sendo eles, o jogador receber uma carta, mover a sua peça para a frente,
+	 * mover a sua peça para trás, receber ou modificar a capacidade de uma carta da sua mão aleatóriamente
+	 */
 	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
 		Random rand = new Random();
-		int numeroDesafio = rand.nextInt(4) + 1;
+		int numeroBonus = rand.nextInt(4) + 1;
 		int numeroCasas = rand.nextInt(3) + 1;
 		int capacidade = rand.nextInt(6);
 		int carta = rand.nextInt(jogadores.get(jogador).getMao().size());
 		
 		// Recebe Carta
-		switch (numeroDesafio) {
+		switch (numeroBonus) {
 		case 1: {
 			Collections.shuffle(baralho);
 			jogadores.get(jogador).getMao().add(baralho.get(1));
