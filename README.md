@@ -2,23 +2,23 @@
 Desenvolvimento de um jogo de tabuleiro, no âmbito de Programação Orientada a Objetos e de Engenharia de Software.
 
 ## Tema: 
-  * Criar um jogo de tabuleiro com o foco de envolver vários duelos entre jogadores. Esses duelos são representados pela utilização de cartas, sendo elas quantificadas pela sua força e destreza. Podendo ou não ter capacidades (modificar atributos).
+  * Criar um jogo de tabuleiro com o foco de envolver vários duelos entre 2 jogadores. Esses duelos são representados pela utilização de cartas, sendo elas quantificadas pela sua força e destreza de 1 a 5. Podendo ou não ter capacidades (modificar atributos).
 
 ## Objetivo: 
   * Obter 5 vitórias nas “casas duelo”, evitando perder os duelos.
 
 ## Características:  
   * Dado de 1 a 6; 
-  * Tabuleiro de 6x6 (21 casas); 
+  * Tabuleiro de 6x6 (20 casas); 
   * 1 casa partida (posição onde o jogador começa);
   * 7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno); 
   * 8 casas duelo (o jogador é obrigado a entrar num duelo com o adversário);
   * 4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não);
 
 ## Regras:  <br/>
- * Jogadores: 2-6; <br/>
- * O tabuleiro é dividido por 21 casas, 7 casas neutra, 8 casas duelo e 4 casas surpresa;<br/>
- * O jogador inicia com 7 cartas; Para ver quem ganha é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto;<br/>
+ * Jogadores: 2; <br/>
+ * O tabuleiro é dividido por 20 casas, 7 casas neutra, 8 casas duelo e 4 casas surpresa;<br/>
+ * O jogador inicia com 15 cartas; Para ver quem ganha é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto;<br/>
  * O jogador começa na “casa partida”;<br/>
  * O jogador só pode lançar o dado uma vez por jogada; <br/>
  * O jogador move-se de acordo com o resultado do lançamento dos dados; <br/>

@@ -5,13 +5,13 @@ import java.util.Stack;
 
 public class Baralho {
 
-	 //Criação de cartas
+	// Criação de cartas
 	ArrayList<Carta> elementals = new ArrayList<Carta>();
 
 	/**
 	 * Criação de um baralho com 30 cartas
 	 * 
-	 * @param baralho 
+	 * @param baralho
 	 */
 	public void criarBaralho1(ArrayList<Carta> baralho) {
 		baralho.add(new Carta("Water Elemental", 10, 5, 6));
@@ -44,6 +44,7 @@ public class Baralho {
 		baralho.add(new Carta("Zed", 9, 2, 6));
 		baralho.add(new Carta("The Lich King", 9, 5, 5));
 		baralho.add(new Carta("God King", 9, 3, 2));
+		baralho.add(new Carta("Camachão", 10, 5, 5));
 	}
 
 	/**
@@ -63,5 +64,4 @@ public class Baralho {
 
 	}
 
-	
 }

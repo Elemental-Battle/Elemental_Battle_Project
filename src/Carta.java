@@ -6,7 +6,6 @@ public class Carta {
 	private int forca; // Força/poder da carta
 	private int destreza; // destreza da carta
 	private int capacidade; // número da capacidade da carta
-	
 
 	/**
 	 * 
@@ -42,7 +41,7 @@ public class Carta {
 	 * Validação dos atributos da carta (nome, forca, destreza e capacidade)
 	 * 
 	 * @param carta Atibutos da carta
-	 *              
+	 * 
 	 */
 	public Carta(Carta carta) {
 		if (carta == null)
@@ -60,16 +59,24 @@ public class Carta {
 	}
 
 	// Acessores
-	
+
+	public void setForca(int forca) {
+		this.forca = forca;
+	}
+
+	public void setDestreza(int destreza) {
+		this.destreza = destreza;
+	}
+
 	/**
-	 *  Recebe o nome da carta
-	 *  
+	 * Recebe o nome da carta
+	 * 
 	 * @return nome da carta
 	 */
 	public String getNome() {
 		return nome;
 	}
-	
+
 	/**
 	 * Recebe a capacidade da carta
 	 * 
@@ -108,14 +115,13 @@ public class Carta {
 
 	// Comportamentos
 
-
 	/**
-	 * Valida o atributo forca. A forca tem como limite de
-	 * intervalo entre 0 a 10
+	 * Valida o atributo forca. A forca tem como limite de intervalo entre 0 a 10
 	 * 
 	 * @param forca Nível de força da carta
 	 * 
-	 * @throws IllegalArgumentException Se o valor da força for inferior a 0 ou superior a 10
+	 * @throws IllegalArgumentException Se o valor da força for inferior a 0 ou
+	 *                                  superior a 10
 	 */
 	private void validarForca(int forca) {
 
@@ -128,11 +134,12 @@ public class Carta {
 	}
 
 	/**
-	 * Valida o atributo destreza. A destreza tem como limite
-	 * de intervalo entre 0 a 5
+	 * Valida o atributo destreza. A destreza tem como limite de intervalo entre 0 a
+	 * 5
 	 * 
 	 * @param destreza Nível de destreza da carta
-	 * @throws IllegalArgumentException Se o valor da destreza for inferior a 0 ou superior a 5
+	 * @throws IllegalArgumentException Se o valor da destreza for inferior a 0 ou
+	 *                                  superior a 5
 	 */
 	private void validarDestreza(int destreza) {
 
@@ -145,8 +152,8 @@ public class Carta {
 	}
 
 	/**
-	 * Valida o atributo capacidade. O tipo de capacidade tem
-	 * como limite de intervalo entre 0 a 6
+	 * Valida o atributo capacidade. O tipo de capacidade tem como limite de
+	 * intervalo entre 0 a 6
 	 * 
 	 * @param capacidade Tipo de capacidade da carta
 	 */
@@ -203,43 +210,42 @@ public class Carta {
 	 * @param capacidade Tipo de capacidade da carta
 	 * @param cartaJ2    Uma carta
 	 */
-	private void efeitoCapacidade(int capacidade, Carta cartaJ2) {
+	public void efeitoCapacidade(Carta cartaJ2) {
 
-		switch (capacidade) {
+		switch (this.capacidade) {
 		case 0:
 
 			break;
 		case 1:
 
 			// Ganha 2 de força
-			this.forca = forca + 2;
+			cartaJ2.setForca(cartaJ2.getForca() + 2);
 
 			break;
 		case 2:
 			// Ganha 2 de destreza
-			this.destreza = destreza + 2;
-
+			cartaJ2.setDestreza(cartaJ2.getDestreza() + 2);
 			break;
 		case 3:
 			// Ganha 2 força e destreza
-			this.destreza = destreza + 2;
-			this.forca = forca + 2;
+			cartaJ2.setDestreza(cartaJ2.getDestreza() + 2);
+			cartaJ2.setForca(cartaJ2.getForca() + 2);
 
 			break;
 		case 4:
 			// Tira 2 de força ao adversário
-			cartaJ2.forca = cartaJ2.forca - 2;
+			cartaJ2.setForca(cartaJ2.getForca() - 2);
 
 			break;
 		case 5:
 			// Tira 2 destreza ao adversário
-			cartaJ2.destreza = cartaJ2.destreza - 2;
+			cartaJ2.setDestreza(cartaJ2.getDestreza() - 2);
 
 			break;
 		case 6:
 			// Tira 2 força e destreza ao adversário
-			cartaJ2.forca = cartaJ2.forca - 2;
-			cartaJ2.destreza = cartaJ2.destreza - 2;
+			cartaJ2.setForca(cartaJ2.getForca() - 2);
+			cartaJ2.setDestreza(cartaJ2.getDestreza() - 2);
 
 			break;
 
@@ -248,11 +254,10 @@ public class Carta {
 		}
 
 	}
-	
+
 	// Métodos Adicionais
 
-
-	//Print da carta com as suas respetivas características
+	// Print da carta com as suas respetivas características
 	@Override
 	public String toString() {
 		return nome + " | Força: " + forca + " | destreza: " + destreza + " | capacidade: "

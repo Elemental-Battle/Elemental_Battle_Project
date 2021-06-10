@@ -1,13 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.awt.FlowLayout;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 import javax.swing.JOptionPane;
 
@@ -15,7 +7,7 @@ public class Jogo {
 
 	// Atributos
 
-	static Tabuleiro tabuleiro = new Tabuleiro(); // Gerar um tabuleiro
+	static Tabuleiro tabuleiro; // Gerar um tabuleiro
 	Dado dado = new Dado(); // Gerar um dado
 	Baralho baralho = new Baralho(); // Gerar um baralho
 	ArrayList<Peca> pecas = new ArrayList<Peca>(); // Gerar uma peça
@@ -26,8 +18,8 @@ public class Jogo {
 	 * Criação do jogo de tabuleiro
 	 */
 	public Jogo() {
-	
 		jogoDescricao();
+		this.tabuleiro = new Tabuleiro();
 		turno();
 
 	}
@@ -101,9 +93,6 @@ public class Jogo {
 			// no tabuleiro, e, se calhar numa casa duelo ou surpresa faz o respetivo
 			// desafio,
 			// caso contrário, passa o turno
-
-			System.err.println("------------------- Turno " + turno + " --------------------");
-			System.out.println("");
 			// Demonstra o nome do jogador que deve fazer a sua jogada
 			for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
 				System.out.println("");
@@ -111,9 +100,6 @@ public class Jogo {
 						+ " --------------------");
 				System.out.println("");
 
-				System.out.println("Mão do jogador:");
-				// Mostra as cartas que tem na sua mão
-				mostrarCartas(tabuleiro.jogadores.get(i).getMao());
 				// Move a peça do jogador
 				andarJogador(dado, i);
 				System.out
@@ -127,8 +113,12 @@ public class Jogo {
 							+ tabuleiro.getJogadores().get(j).getVitoria() + " vitórias");
 				}
 				System.out.println("");
+				System.out.println("Fim Turno");
+				System.out.println("");
 			}
 			turno++;
+			System.out.println("------------------- Turno " + turno + " --------------------");
+			System.out.println("");
 			// anunciamento de vitórias
 
 		} while (verificaVitoria() == false);
@@ -139,7 +129,7 @@ public class Jogo {
 		System.out.println("");
 		// Demonstra o primeiro jogador que ganhou 5 vitórias
 		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
-			if (tabuleiro.getJogadores().get(i).getVitoria() == 5)
+			if (tabuleiro.getJogadores().get(i).getVitoria() >= 5)
 				System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(i).getNome());
 		}
 		System.out.println("");
@@ -244,11 +234,51 @@ public class Jogo {
 
 		String newLine = System.getProperty("line.separator");
 
+		System.out.println("JOGO TABULEIRO: ELEMENTAL BATTLE");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Objetivo:");
+		System.out.println("");
+		System.out.println("Obter 5 vitórias nas casas duelo");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Informações:");
+		System.out.println("");
+		System.out.println("*    Um dado de 1 a 6");
+		System.out.println("*    Um baralho de 30 cartas");
+		System.out.println("*    Um tabuleiro dividido por 21 casas");
+		System.out.println("*    1 casa partida (posição onde o jogador começa)");
+		System.out.println("*    7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno)");
+		System.out.println("*    8 casas duelo (o jogador é obrigado a entrar num duelo com o adversário)");
+		System.out.println(
+				"*    4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não)");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Regras:");
+		System.out.println("");
+		System.out.println("1:   Jogadores: 2-6");
+		System.out.println("2:   O jogador inicia com 7 cartas");
+		System.out.println("3:   O jogador começa na casa partida");
+		System.out.println("4:   O jogador só pode lançar o dado uma vez por jogada");
+		System.out.println("5:   O jogador move-se pelo sentido dos ponteiros do relógio");
+		System.out.println("6:   Cada vez que o jogador passa pela “casa partida”, recebe 1 carta aleatória");
+		System.out.println("7:   As jogadas são alternadas");
+		System.out.println("8:   Na casa neutra o jogador termina a sua vez");
+		System.out.println(
+				"9:   Na casa surpresa o jogador recebe, aleatóriamente, uma ordem para avançar ou recuar x casas, ou pode receber um bónus de força e/ou destreza numa carta à sua escolha");
+		System.out.println("10:   Na casa duelo o jogador é obrigado a enfrentar o adversário");
+		System.out.println(
+				"11:   Para ver quem ganha o duelo, é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto");
+		System.out.println("12:   Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso");
+		System.out.println("");
+		System.out.println("");
+
 		JOptionPane.showMessageDialog(null, " JOGO TABULEIRO: ELEMENTAL BATTLE" + newLine + newLine + "Objetivo:"
 				+ newLine + newLine + "Obter 5 vitórias nas casas duelo" + newLine + newLine + "Informações:" + newLine
-				+ newLine + "*    Um dado de 1 a 6" + newLine + "*    Um tabuleiro dividido por 21 casas" + newLine
-				+ "*    Um baralho de 30 cartas" + newLine + "*    1 casa partida (posição onde o jogador começa)"
-				+ newLine + "*    7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno)" + newLine
+				+ newLine + "*    Um dado de 1 a 6" + newLine + "*    Um baralho de 30 cartas" + newLine
+				+ "*    Um tabuleiro dividido por 21 casas" + newLine
+				+ "*    1 casa partida (posição onde o jogador começa)" + newLine
+				+ "*    7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno)" + newLine
 				+ "*    8 casas duelo (o jogador é obrigado a entrar num duelo com o adversário)" + newLine
 				+ "*    4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não)"
 				+ newLine + newLine + "Regras:" + newLine + newLine + "1:   Jogadores: 2-6" + newLine

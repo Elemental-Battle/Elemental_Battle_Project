@@ -79,13 +79,13 @@ public class Tabuleiro {
 	// Comportamentos
 
 	/**
-	 * Cria 21 casas para o tabuleiro
+	 * Cria 25 casas para o tabuleiro
 	 * 
 	 * @return casas do tabuleiro
 	 */
 	public static ArrayList<Casa> criarTabuleiro() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 24; i++) {
 			casas.add(new Casa() {
 
 				@Override
