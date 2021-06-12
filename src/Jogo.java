@@ -89,6 +89,9 @@ public class Jogo {
 		// Conta os turnos,
 		do {
 
+			System.out.println("------------------- Turno " + turno + " --------------------");
+			System.out.println("");
+
 			// O jogador mostra as cartas que tem no seu baralho, move a peça dele
 			// no tabuleiro, e, se calhar numa casa duelo ou surpresa faz o respetivo
 			// desafio,
@@ -96,20 +99,20 @@ public class Jogo {
 			// Demonstra o nome do jogador que deve fazer a sua jogada
 			for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
 				System.out.println("");
-				System.out.println("-------------------- Vez do jogador " + tabuleiro.getJogadores().get(i).getNome()
+				System.out.println("-------------------- Vez do " + tabuleiro.getJogadores().get(i).getNome()
 						+ " --------------------");
 				System.out.println("");
 
 				// Move a peça do jogador
 				andarJogador(dado, i);
-				System.out
-						.println("O jogador está na posição : " + tabuleiro.getJogadores().get(i).getPosicaoJogador());
+				System.out.println(tabuleiro.getJogadores().get(i).getNome() + " está na posição "
+						+ tabuleiro.getJogadores().get(i).getPosicaoJogador());
 				System.out.println();
 
 				// Anuncia a quantidade de duelos ganhos de cada jogador
 				for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
 
-					System.out.println("O jogador " + tabuleiro.getJogadores().get(j).getNome() + " tem  "
+					System.out.println(tabuleiro.getJogadores().get(j).getNome() + " tem  "
 							+ tabuleiro.getJogadores().get(j).getVitoria() + " vitórias");
 				}
 				System.out.println("");
@@ -117,8 +120,6 @@ public class Jogo {
 				System.out.println("");
 			}
 			turno++;
-			System.out.println("------------------- Turno " + turno + " --------------------");
-			System.out.println("");
 			// anunciamento de vitórias
 
 		} while (verificaVitoria() == false);
@@ -130,7 +131,9 @@ public class Jogo {
 		// Demonstra o primeiro jogador que ganhou 5 vitórias
 		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
 			if (tabuleiro.getJogadores().get(i).getVitoria() >= 5)
-				System.out.println("Ganhou o Jogador " + tabuleiro.getJogadores().get(i).getNome());
+				System.out.println("Vencedor do Jogo: " + tabuleiro.getJogadores().get(i).getNome());
+
+			// METER POSIÇÕES DOS JOGADORES DE ACORDO COM AS VITORIAS
 		}
 		System.out.println("");
 
@@ -167,34 +170,36 @@ public class Jogo {
 	 */
 	public void andarJogador(Dado dado, int jogador) {
 
-//		 if (dado == null) { throw new NullPointerException("O dado inserido é nulo");
-//		 } else if (posicaoJogador < 0 || posicaoJogador > 20) { throw new
-//		 IllegalArgumentException("A posição do jogador é superior a 20 ou inferior a 0"
-//		 ); } else {
-//		 
+		// Validar os parametros
+		if (dado == null) {
+			throw new NullPointerException("O dado inserido é nulo");
+		} else if (jogador < 0 || jogador > 20) {
+			throw new IllegalArgumentException("A posição do jogador é superior a 20 ou inferior a 0");
+		} else {
 
-		int lancarDado = dado.lancarDado();
+			int lancarDado = dado.lancarDado();
 
-		System.out.println("Valor do dado: " + lancarDado);
+			System.out.println("Valor do dado: " + lancarDado);
 
 //		 Declarar o número de casas que o jogador vai andar com base na posição atual + o valor do dado lançado
-		int andarCasas = tabuleiro.getJogadores().get(jogador).getPosicaoJogador() + lancarDado;
+			int andarCasas = tabuleiro.getJogadores().get(jogador).getPosicaoJogador() + lancarDado;
 
-		// Se o número de casas a andar for maior que o número do tabuleiro
-		if (andarCasas > tabuleiro.getTabuleiro().size()) {
+			// Se o número de casas a andar for maior que o número do tabuleiro
+			if (andarCasas > tabuleiro.getTabuleiro().size()) {
 
 //				 Subtrai ao nº de casas a andar com tamanho do tabuleiro + 1. Ex: andarCasas =
 //				 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
 
-			tabuleiro.getJogadores().get(jogador).setPosicaoJogador((andarCasas - tabuleiro.getTabuleiro().size()));
-			receberCarta(tabuleiro.getJogadores().get(jogador));
-		} else {
-			// Caso contrário, anda o nº de casas
-			tabuleiro.getJogadores().get(jogador).setPosicaoJogador(andarCasas);
-			System.out.println("Posição do jogador " + tabuleiro.getJogadores().get(jogador).getNome() + " é: "
-					+ tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
+				tabuleiro.getJogadores().get(jogador).setPosicaoJogador((andarCasas - tabuleiro.getTabuleiro().size()));
+				receberCarta(tabuleiro.getJogadores().get(jogador));
+			} else {
+				// Caso contrário, anda o nº de casas
+				tabuleiro.getJogadores().get(jogador).setPosicaoJogador(andarCasas);
+				System.out.println("Posição: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
+			}
+
+			verificarCasa(jogador);
 		}
-		verificarCasa(jogador);
 	}
 
 	/**
@@ -210,21 +215,57 @@ public class Jogo {
 	public void verificarCasa(int jogador) {
 		int posicaoJogador = tabuleiro.getJogadores().get(jogador).getPosicaoJogador();
 
+		// Se os jogadores calharem na mesma casa, então fazem um duelo
 		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
 				.getPosicaoJogador()) {
 
-			// Se os jogadores calharem na mesma casa, então fazem um duelo
+			System.out.println("Casa Duelo");
+			System.out.println("");
+			System.out.println("|");
+			System.out.println("|");
+			System.out.println("V");
+
+			// Faz Desafio (duelo)
 			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+
+			// Se os jogadores calharem nas posições (3;8;13;18), faz surpresa
 		} else if (posicaoJogador == 3 | posicaoJogador == 8 | posicaoJogador == 13 | posicaoJogador == 18) {
 
-			// Faz Bonus
+			// Faz Desafio (surpresa)
 			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+
+			// Se os jogadores calharem nas posições (1;4;6;9;11;14;16;19), faz duelo
 		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6 | posicaoJogador == 9
 				| posicaoJogador == 11 | posicaoJogador == 14 | posicaoJogador == 16 | posicaoJogador == 19) {
 
-			// Duelo
+			System.out.println("Casa Duelo");
+			System.out.println("");
+			System.out.println("|");
+			System.out.println("|");
+			System.out.println("V");
+
+			// Faz Desafio (duelo)
 			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 		}
+	}
+
+	/**
+	 * Verifica a mão do jogador, na eventualidade de ficar sem cartas
+	 * 
+	 * @param jogador Jogador
+	 */
+	public void verificarMao(Jogador jogador) {
+
+		int quantidadeCartas = 3;
+
+		// Caso o jogador fique sem cartas, recebe 3
+		if (jogador.getMao().size() <= 0) {
+
+			tabuleiro.getTabuleiro().get(0).recebeCarta(jogador, baralho.getElementals(), quantidadeCartas);
+			JOptionPane.showMessageDialog(null, jogador.getNome() + "recebeu 3 cartas por ter ficado sem mão",
+					"JOGO", JOptionPane.INFORMATION_MESSAGE);
+		}
+
 	}
 
 	/**

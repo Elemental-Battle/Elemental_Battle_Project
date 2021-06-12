@@ -31,20 +31,19 @@ public class Duelo extends Casa {
 
 			int carta = 0;
 			System.out.println("");
+			System.out.println("Mão do(a) " + jogadores.get(i).getNome());
 			System.out.println("");
-			System.out.println("Mão do jogador: " + jogadores.get(i).getNome());
 
-			// O jogador escolha uma carta que tenha na sua mão, caso não tenha cartas,
-			// recebe 3
 			if (jogadores.get(i).getMao().size() > 0) {
 				mostrarCartas(jogadores.get(i).getMao());
 				do {
-					cartas[i] = Integer.parseInt(
-							JOptionPane.showInputDialog("Escolha a carta do jogador " + jogadores.get(i).getNome()))
-							- 1;
+					cartas[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "Número da Carta",
+							jogadores.get(i).getNome(), JOptionPane.INFORMATION_MESSAGE)) - 1;
 
 				} while (cartas[i] > jogadores.get(i).getMao().size() - 1 || carta < 0);
 
+				// O jogador escolha uma carta que tenha na sua mão, caso não tenha cartas,
+				// recebe 3
 			} else {
 				recebeCarta(jogadores.get(i), baralho, quantidadeCartas);
 				JOptionPane.showMessageDialog(null,
@@ -59,52 +58,23 @@ public class Duelo extends Casa {
 			}
 
 		}
+
+		// Sistema de duelo
 		for (int i = 0; i < jogadores.size(); i++) {
-			jogadores.get(i).getCarta(i).efeitoCapacidade(jogadores.get(i).getCarta(i + 1));
 
-		}
-		// Vai buscar a carta escolhida de cada jogador e compará-las e decidir o
-		// vencedor duelo de acordo com os parâmetros estabelicidos (força e destreza)
-		for (int i = 0; i < jogadores.size() - 1; i++) {
+			// Sistema de duelo entre 2 jogadores
+			if (jogadores.size() < 3)
+				verificaDuelo(i, i + 1, cartas, jogadores);
 
-			if (jogadores.get(i).getCarta(cartas[i]).getForca() > jogadores.get(i + 1).getCarta(cartas[i + 1])
-					.getForca()) {
-				System.out.println("");
-				System.out.println("O jogador " + jogadores.get(i).getNome() + " ganhou ao jogador "
-						+ jogadores.get(i + 1).getNome());
-				jogadores.get(i).setVitoria(jogadores.get(i).getVitoria() + 1);
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i).getNome()
-						+ " ganhou contra o jogador " + jogadores.get(i + 1).getNome() + " através da força");
+			// Sistema de duelo de 2+ jogadores
+			// Sistema de duelo de até ao penúltimo jogador
+			else if (i < jogadores.size() - 1) {
+				verificaDuelo(i, i + 1, cartas, jogadores);
 
-			} else if (jogadores.get(i + 1).getCarta(cartas[i + 1]).getForca() > jogadores.get(i).getCarta(cartas[i])
-					.getForca()) {
-				System.out.println("O jogador " + jogadores.get(i + 1).getNome() + " ganhou ao jogador "
-						+ jogadores.get(i).getNome());
-				jogadores.get(i + 1).setVitoria(jogadores.get(i + 1).getVitoria() + 1);
-
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i + 1).getNome()
-						+ " ganhou contra o jogador " + jogadores.get(i).getNome() + " através da força");
-			} else if (jogadores.get(i).getCarta(cartas[i]).getDestreza() > jogadores.get(i + 1).getCarta(cartas[i + 1])
-					.getDestreza()) {
-				System.out.println("O jogador " + jogadores.get(i).getNome() + " ganhou ao jogador "
-						+ jogadores.get(i + 1).getNome());
-				jogadores.get(i).setVitoria(jogadores.get(i).getVitoria() + 1);
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i).getNome()
-						+ " ganhou contra o jogador " + jogadores.get(i + 1).getNome() + " através da destreza");
-
-			} else if (jogadores.get(i + 1).getCarta(cartas[i + 1]).getDestreza() > jogadores.get(i).getCarta(cartas[i])
-					.getDestreza()) {
-				System.out.println("O jogador " + jogadores.get(i + 1).getNome() + " ganhou ao jogador "
-						+ jogadores.get(i).getNome());
-				jogadores.get(i + 1).setVitoria(jogadores.get(i + 1).getVitoria() + 1);
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i + 1).getNome()
-						+ " ganhou contra o jogador " + jogadores.get(i).getNome() + " através da destreza");
-
+				// Sistema de duelo de 2+ jogadores
+				// Sistema de duelo entre o último e primeiro jogador
 			} else {
-				System.out.println("");
-				System.out.println("Empate");
-				JOptionPane.showMessageDialog(null, "O jogador " + jogadores.get(i).getNome()
-						+ " empatou contra o jogador " + jogadores.get(i + 1).getNome());
+				verificaDuelo(i, 0, cartas, jogadores);
 			}
 		}
 
@@ -117,6 +87,64 @@ public class Duelo extends Casa {
 
 	}
 
+	public void verificaDuelo(int jogador1, int jogador2, int[] cartas, ArrayList<Jogador> jogadores) {
+
+		if (jogadores.get(jogador1).getCarta(cartas[jogador1]).getForca() > jogadores.get(jogador2)
+				.getCarta(cartas[jogador2]).getForca()) {
+			System.out.println("");
+			System.out.println("O jogador " + jogadores.get(jogador1).getNome() + " ganhou ao jogador "
+					+ jogadores.get(jogador2).getNome());
+			jogadores.get(jogador1).setVitoria(jogadores.get(jogador1).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null,
+					jogadores.get(jogador1).getNome() + " ganhou contra " + jogadores.get(jogador2).getNome(), "Duelo",
+					JOptionPane.INFORMATION_MESSAGE);
+
+			// Vitoria do jogador 2 contra o jogador 1 pela forÃ§a
+		} else if (jogadores.get(jogador2).getCarta(cartas[jogador2]).getForca() > jogadores.get(jogador1)
+				.getCarta(cartas[jogador1]).getForca()) {
+			System.out
+					.println(jogadores.get(jogador2).getNome() + " ganhou contra " + jogadores.get(jogador1).getNome());
+			JOptionPane.showMessageDialog(null,
+					jogadores.get(jogador2).getNome() + " ganhou contra " + jogadores.get(jogador1).getNome(), "Duelo",
+					JOptionPane.INFORMATION_MESSAGE);
+			jogadores.get(jogador2).setVitoria(jogadores.get(jogador2).getVitoria() + 1);
+
+			// Vitoria do jogador 1 contra o jogador 2 pela destreza
+		} else if (jogadores.get(jogador1).getCarta(cartas[jogador1]).getDestreza() > jogadores.get(jogador2)
+				.getCarta(cartas[jogador2]).getDestreza()) {
+			System.out
+					.println(jogadores.get(jogador1).getNome() + " ganhou contra " + jogadores.get(jogador2).getNome());
+			jogadores.get(jogador1).setVitoria(jogadores.get(jogador1).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null,
+					jogadores.get(jogador1).getNome() + " ganhou contra " + jogadores.get(jogador2).getNome(), "Duelo",
+					JOptionPane.INFORMATION_MESSAGE);
+
+			// Vitoria do jogador 2 contra o jogador 1 pela destreza
+		} else if (jogadores.get(jogador2).getCarta(cartas[jogador2]).getDestreza() > jogadores.get(jogador1)
+				.getCarta(cartas[jogador1]).getDestreza()) {
+			System.out
+					.println(jogadores.get(jogador2).getNome() + " ganhou contra " + jogadores.get(jogador1).getNome());
+			jogadores.get(jogador2).setVitoria(jogadores.get(jogador2).getVitoria() + 1);
+			JOptionPane.showMessageDialog(null,
+					jogadores.get(jogador2).getNome() + " ganhou contra " + jogadores.get(jogador1).getNome(), "Duelo",
+					JOptionPane.INFORMATION_MESSAGE);
+
+			// Empate entre os jogadores
+		} else {
+			System.out.println("");
+			System.out.println("Empate");
+			JOptionPane.showMessageDialog(null,
+					jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome(), "Duelo",
+					JOptionPane.INFORMATION_MESSAGE);
+		}
+
+	}
+
+	/**
+	 * Mostra as cartas do jogador
+	 * 
+	 * @param cartas Cartas de um baralho
+	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		for (int i = 0; i < cartas.size(); i++) {
 			System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));

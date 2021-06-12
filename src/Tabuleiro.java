@@ -8,7 +8,7 @@ public class Tabuleiro {
 
 	ArrayList<Jogador> jogadores = new ArrayList<Jogador>(); // criação dos jogadores
 	private ArrayList<Casa> tabuleiro; // criação do tabuleiro
-	Casa casaBonus = new Bonus(); // criação da casa bonus
+	Casa casaBonus = new Surpresa(); // criação da casa bonus
 	Casa casaDuelo = new Duelo(); // criação da casa duelo
 
 	/**
@@ -21,8 +21,8 @@ public class Tabuleiro {
 		// Inserir a quantidade de jogadores que vão participar, de 2 a 6 jogadores
 		// inclusive
 		do {
-			numeroJogadores = Integer
-					.parseInt(JOptionPane.showInputDialog("Insira a quantidade de jogadores que vão participar "));
+			numeroJogadores = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Número de jogadores",
+					"Jogadores", JOptionPane.PLAIN_MESSAGE, null, null, "2"));
 		} while (numeroJogadores < 2 || numeroJogadores > 6);
 
 		// Adicionar jogadores ao jogo de acordo com a quantidade de participantes

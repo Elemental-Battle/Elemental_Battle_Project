@@ -210,7 +210,7 @@ public class Carta {
 	 * @param capacidade Tipo de capacidade da carta
 	 * @param cartaJ2    Uma carta
 	 */
-	public void efeitoCapacidade(Carta cartaJ2) {
+	public void efeitoCapacidade(Carta cartaJ1, Carta cartaJ2) {
 
 		switch (this.capacidade) {
 		case 0:
@@ -219,17 +219,17 @@ public class Carta {
 		case 1:
 
 			// Ganha 2 de força
-			cartaJ2.setForca(cartaJ2.getForca() + 2);
+			cartaJ1.setForca(cartaJ1.getForca() + 2);
 
 			break;
 		case 2:
 			// Ganha 2 de destreza
-			cartaJ2.setDestreza(cartaJ2.getDestreza() + 2);
+			cartaJ1.setDestreza(cartaJ1.getDestreza() + 2);
 			break;
 		case 3:
 			// Ganha 2 força e destreza
-			cartaJ2.setDestreza(cartaJ2.getDestreza() + 2);
-			cartaJ2.setForca(cartaJ2.getForca() + 2);
+			cartaJ1.setDestreza(cartaJ1.getDestreza() + 2);
+			cartaJ1.setForca(cartaJ1.getForca() + 2);
 
 			break;
 		case 4:

@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Jogador extends Peca {
 
 	// Atributos
-	
+
 	private String nome; // Nome do jogador
 	private int vitoria; // vitória de um duelo
 	private int posicaoJogador = 0; // posição da peça do jogador
@@ -77,8 +77,8 @@ public class Jogador extends Peca {
 	}
 
 	/**
-	 *  Recebe o nome do jogador
-	 *  
+	 * Recebe o nome do jogador
+	 * 
 	 * @return Nome do Jogador
 	 */
 	public String getNome() {
@@ -94,7 +94,7 @@ public class Jogador extends Peca {
 		String nome = "";
 		// Inserir o nome do jogador,
 		do {
-			nome = JOptionPane.showInputDialog("Insira o nome do jogador");
+			nome = JOptionPane.showInputDialog(null, "Nome do jogador", "Jogador", JOptionPane.INFORMATION_MESSAGE);
 
 		} while (nome.length() < 1);
 		this.nome = nome;
@@ -113,7 +113,6 @@ public class Jogador extends Peca {
 	}
 
 	// Métodos Adicionais
-
 
 	@Override
 	/**
