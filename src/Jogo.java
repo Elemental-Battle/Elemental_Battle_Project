@@ -56,9 +56,9 @@ public class Jogo {
 
 		Collections.shuffle(baralho);
 
-		// Baralha o baralho e distribui 7 cartas à mão de cada jogador
+		// Baralha o baralho e distribui 10 cartas à mão de cada jogador
 		for (int jogador = 0; jogador < tabuleiro.getJogadores().size(); jogador++) {
-			for (int carta = 0; carta < 7; carta++) {
+			for (int carta = 0; carta < 10; carta++) {
 				Collections.shuffle(baralho);
 				tabuleiro.getJogadores().get(jogador).getMao().add(baralho.get(carta));
 			}
@@ -105,8 +105,7 @@ public class Jogo {
 
 				// Move a peça do jogador
 				andarJogador(dado, i);
-				System.out.println(tabuleiro.getJogadores().get(i).getNome() + " está na posição "
-						+ tabuleiro.getJogadores().get(i).getPosicaoJogador());
+
 				System.out.println();
 
 				// Anuncia a quantidade de duelos ganhos de cada jogador
@@ -118,6 +117,8 @@ public class Jogo {
 				System.out.println("");
 				System.out.println("Fim Turno");
 				System.out.println("");
+				if (verificaVitoria() == true)
+					break;
 			}
 			turno++;
 			// anunciamento de vitórias
@@ -146,7 +147,7 @@ public class Jogo {
 	 */
 	public Boolean verificaVitoria() {
 		for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
-			if (tabuleiro.getJogadores().get(j).getVitoria() >= 5) {
+			if (tabuleiro.getJogadores().get(j).getVitoria() >= 10) {
 				return true;
 			}
 		}
@@ -179,6 +180,7 @@ public class Jogo {
 
 			int lancarDado = dado.lancarDado();
 
+			System.out.println("Posição: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
 			System.out.println("Valor do dado: " + lancarDado);
 
 //		 Declarar o número de casas que o jogador vai andar com base na posição atual + o valor do dado lançado
@@ -195,9 +197,10 @@ public class Jogo {
 			} else {
 				// Caso contrário, anda o nº de casas
 				tabuleiro.getJogadores().get(jogador).setPosicaoJogador(andarCasas);
-				System.out.println("Posição: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
 			}
 
+			System.out.println("Posição: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
+			System.out.println("");
 			verificarCasa(jogador);
 		}
 	}
@@ -219,6 +222,8 @@ public class Jogo {
 		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
 				.getPosicaoJogador()) {
 
+			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " Entrou em duelo",
+					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("Casa Duelo");
 			System.out.println("");
 			System.out.println("|");
@@ -229,15 +234,18 @@ public class Jogo {
 			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 
 			// Se os jogadores calharem nas posições (3;8;13;18), faz surpresa
-		} else if (posicaoJogador == 3 | posicaoJogador == 8 | posicaoJogador == 13 | posicaoJogador == 18) {
+		} else if (posicaoJogador == 3 | posicaoJogador == 6 | posicaoJogador == 9 | posicaoJogador == 12
+				| posicaoJogador == 15 | posicaoJogador == 18 | posicaoJogador == 21 | posicaoJogador == 24) {
 
 			// Faz Desafio (surpresa)
 			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 
 			// Se os jogadores calharem nas posições (1;4;6;9;11;14;16;19), faz duelo
-		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 6 | posicaoJogador == 9
-				| posicaoJogador == 11 | posicaoJogador == 14 | posicaoJogador == 16 | posicaoJogador == 19) {
+		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 7 | posicaoJogador == 10
+				| posicaoJogador == 13 | posicaoJogador == 16 | posicaoJogador == 19 | posicaoJogador == 22) {
 
+			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " Entrou em duelo",
+					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("Casa Duelo");
 			System.out.println("");
 			System.out.println("|");
@@ -262,8 +270,8 @@ public class Jogo {
 		if (jogador.getMao().size() <= 0) {
 
 			tabuleiro.getTabuleiro().get(0).recebeCarta(jogador, baralho.getElementals(), quantidadeCartas);
-			JOptionPane.showMessageDialog(null, jogador.getNome() + "recebeu 3 cartas por ter ficado sem mão",
-					"JOGO", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, jogador.getNome() + "recebeu 3 cartas por ter ficado sem mão", "JOGO",
+					JOptionPane.INFORMATION_MESSAGE);
 		}
 
 	}
@@ -280,59 +288,61 @@ public class Jogo {
 		System.out.println("");
 		System.out.println("Objetivo:");
 		System.out.println("");
-		System.out.println("Obter 5 vitórias nas casas duelo");
+		System.out.println("Obter 10 vitórias através de duelos");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("Informações:");
 		System.out.println("");
 		System.out.println("*    Um dado de 1 a 6");
-		System.out.println("*    Um baralho de 30 cartas");
-		System.out.println("*    Um tabuleiro dividido por 21 casas");
-		System.out.println("*    1 casa partida (posição onde o jogador começa)");
-		System.out.println("*    7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno)");
-		System.out.println("*    8 casas duelo (o jogador é obrigado a entrar num duelo com o adversário)");
+		System.out.println("*    Um baralho de cartas");
+		System.out.println("*    Um tabuleiro dividido por 25 casas");
+		System.out.println("*    1 casa partida");
+		System.out.println("*    8 casas neutra");
+		System.out.println("*    8 casas duelo");
 		System.out.println(
-				"*    4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não)");
+				"*    8 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não)");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("Regras:");
 		System.out.println("");
-		System.out.println("1:   Jogadores: 2-6");
-		System.out.println("2:   O jogador inicia com 7 cartas");
-		System.out.println("3:   O jogador começa na casa partida");
-		System.out.println("4:   O jogador só pode lançar o dado uma vez por jogada");
-		System.out.println("5:   O jogador move-se pelo sentido dos ponteiros do relógio");
-		System.out.println("6:   Cada vez que o jogador passa pela “casa partida”, recebe 1 carta aleatória");
-		System.out.println("7:   As jogadas são alternadas");
-		System.out.println("8:   Na casa neutra o jogador termina a sua vez");
+		System.out.println(" 1:   Jogadores: 2-6");
+		System.out.println(" 2:   O jogador inicia com 10 cartas");
+		System.out.println(" 3:   O jogador começa na casa partida");
+		System.out.println(" 4:   O jogador só pode lançar o dado uma vez por jogada");
+		System.out.println(" 5:   O jogador move-se pelo sentido dos ponteiros do relógio");
+		System.out.println(" 6:   Cada vez que o jogador passa pela “casa partida”, recebe 1 carta aleatória");
+		System.out.println(" 7:   As jogadas são alternadas");
+		System.out.println(" 8:   Na casa neutra o jogador termina a sua vez");
 		System.out.println(
-				"9:   Na casa surpresa o jogador recebe, aleatóriamente, uma ordem para avançar ou recuar x casas, ou pode receber um bónus de força e/ou destreza numa carta à sua escolha");
+				" 9:   Na casa surpresa o jogador recebe, aleatóriamente, uma ordem para avançar ou recuar x casas, ou pode receber/perder um bónus de força e/ou destreza numa carta aleatória");
 		System.out.println("10:   Na casa duelo o jogador é obrigado a enfrentar o adversário");
 		System.out.println(
-				"11:   Para ver quem ganha o duelo, é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto");
-		System.out.println("12:   Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso");
+				"11:   Se o jogador estiver na mesma casa que outro jogador, inica os duelos entre todos os jogadores ");
+		System.out.println(
+				"12:   Para ver quem ganha o duelo, é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto");
+		System.out.println("13:   Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso");
 		System.out.println("");
 		System.out.println("");
 
 		JOptionPane.showMessageDialog(null, " JOGO TABULEIRO: ELEMENTAL BATTLE" + newLine + newLine + "Objetivo:"
-				+ newLine + newLine + "Obter 5 vitórias nas casas duelo" + newLine + newLine + "Informações:" + newLine
-				+ newLine + "*    Um dado de 1 a 6" + newLine + "*    Um baralho de 30 cartas" + newLine
-				+ "*    Um tabuleiro dividido por 21 casas" + newLine
-				+ "*    1 casa partida (posição onde o jogador começa)" + newLine
-				+ "*    7 casas neutra (o jogador não pode fazer qualquer ação e passa o turno)" + newLine
-				+ "*    8 casas duelo (o jogador é obrigado a entrar num duelo com o adversário)" + newLine
-				+ "*    4 casas surpresa (nesta casa é testado a sorte do jogador, podendo sair dela beneficiado ou não)"
-				+ newLine + newLine + "Regras:" + newLine + newLine + "1:   Jogadores: 2-6" + newLine
-				+ "2:   O jogador inicia com 7 cartas" + newLine + "3:   O jogador começa na casa partida" + newLine
-				+ "4:   O jogador só pode lançar o dado uma vez por jogada" + newLine
-				+ "5:   O jogador move-se pelo sentido dos ponteiros do relógio" + newLine
-				+ "6:   Cada vez que o jogador passa pela “casa partida”, recebe 1 carta aleatória" + newLine
-				+ "7:   As jogadas são alternadas" + newLine + "8:   Na casa neutra o jogador termina a sua vez"
+				+ newLine + newLine + "Obter 10 vitórias através de duelos" + newLine + newLine + "Informações:"
+				+ newLine + newLine + "*    Um dado de 1 a 6" + newLine + "*    Um baralho de cartas" + newLine
+				+ "*    Um tabuleiro dividido por 25 casas" + newLine + "*    1 casa partida" + newLine
+				+ "*    8 casas neutra" + newLine + "*    8 casas duelo" + newLine + "*    8 casas surpresa" + newLine
+				+ newLine + "Regras:" + newLine + newLine + " 1:   Jogadores: 2-6" + newLine
+				+ " 2:   O jogador inicia com 10 cartas" + newLine + " 3:   O jogador começa na casa partida" + newLine
+				+ " 4:   O jogador só pode lançar o dado uma vez por jogada" + newLine
+				+ " 5:   O jogador move-se pelo sentido dos ponteiros do relógio" + newLine
+				+ " 6:   Cada vez que o jogador passa pela “casa partida”, recebe 1 carta aleatória" + newLine
+				+ " 7:   As jogadas são alternadas" + newLine + " 8:   Na casa neutra o jogador termina a sua vez"
 				+ newLine
-				+ "9:   Na casa surpresa o jogador recebe, aleatóriamente, uma ordem para avançar ou recuar x casas, ou pode receber um bónus de força e/ou destreza numa carta à sua escolha"
-				+ newLine + "10:   Na casa duelo o jogador é obrigado a enfrentar o adversário" + newLine
-				+ "11:   Para ver quem ganha o duelo, é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto"
-				+ newLine + "12:   Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso");
+				+ " 9:   Na casa surpresa o jogador recebe, aleatóriamente, uma ordem para avançar ou recuar x casas, ou pode receber/perder um bónus de força e/ou destreza numa carta aleatória"
+				+ newLine + "10:  Na casa duelo o jogador é obrigado a enfrentar o adversário" + newLine
+				+ "11:  Se o jogador estiver na mesma casa que outro jogador, inica os duelos entre todos os jogadores"
+				+ newLine
+				+ "12:  Para ver quem ganha o duelo, é medido a força, caso seja igual é medido pela destreza e em caso de empate nenhum jogador ganha o ponto"
+				+ newLine + "13:  Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso",
+				"ELEMENTAL BATTLES", JOptionPane.INFORMATION_MESSAGE);
 
 	}
 

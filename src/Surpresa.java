@@ -36,19 +36,31 @@ public class Surpresa extends Casa {
 					"Recebeu a carta: " + jogadores.get(jogador).getCarta(jogadores.get(jogador).getMao().size() - 1));
 			JOptionPane.showMessageDialog(null,
 					jogadores.get(jogador).getNome() + " recebeu a carta: "
-							+ jogadores.get(jogador).getCarta(jogadores.get(jogador).getMao().size()),
+							+ jogadores.get(jogador).getCarta(jogadores.get(jogador).getMao().size() - 1),
 					"Casa Surpresa", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		}
 
 		// Andar x
 		case 2: {
-			jogadores.get(jogador).setPosicaoJogador(jogadores.get(jogador).getPosicaoJogador() + numeroCasas);
-			System.out.println("Casa Surpresa: avançou para a casa " + jogadores.get(jogador).getPosicaoJogador());
-			JOptionPane.showMessageDialog(null,
-					jogadores.get(jogador).getNome() + " avançou para casa "
-							+ jogadores.get(jogador).getPosicaoJogador(),
-					"Casa Surpresa", JOptionPane.INFORMATION_MESSAGE);
+
+			int andarCasas = jogadores.get(jogador).getPosicaoJogador() + numeroCasas;
+			if (andarCasas > 24) {
+
+//				 Subtrai ao nº de casas a andar com tamanho do tabuleiro + 1. Ex: andarCasas =
+//				 18, casas.size() = 14 + 1. andarCasas - (casas.size() + 1) = posicao 2
+
+				jogadores.get(jogador).setPosicaoJogador((andarCasas - 24));
+				jogadores.get(jogador).getMao().add(baralho.get(1));
+			} else {
+
+				jogadores.get(jogador).setPosicaoJogador(jogadores.get(jogador).getPosicaoJogador() + numeroCasas);
+				System.out.println("Casa Surpresa: avançou para a casa " + jogadores.get(jogador).getPosicaoJogador());
+				JOptionPane.showMessageDialog(null,
+						jogadores.get(jogador).getNome() + " avançou para casa "
+								+ jogadores.get(jogador).getPosicaoJogador(),
+						"Casa Surpresa", JOptionPane.INFORMATION_MESSAGE);
+			}
 			break;
 		}
 
@@ -68,8 +80,9 @@ public class Surpresa extends Casa {
 
 			jogadores.get(jogador).getMao().get(carta).setCapacidade(capacidade);
 
-			System.out.println("A carta " + jogadores.get(jogador).getMao().get(carta) + " recebeu a capacidade: "
-					+ jogadores.get(jogador).getMao().get(carta).legendaCapacidade(capacidade));
+			System.out.println(
+					"Casa Surpresa: A carta " + jogadores.get(jogador).getMao().get(carta) + " recebeu a capacidade: "
+							+ jogadores.get(jogador).getMao().get(carta).legendaCapacidade(capacidade));
 			JOptionPane.showMessageDialog(null,
 					"A carta " + jogadores.get(jogador).getMao().get(carta).getNome() + " do(a) "
 							+ jogadores.get(jogador).getNome() + " recebeu a capacidade: "

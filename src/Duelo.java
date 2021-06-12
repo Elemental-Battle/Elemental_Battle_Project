@@ -58,42 +58,46 @@ public class Duelo extends Casa {
 			}
 
 		}
-
-		// Sistema de duelo
-		for (int i = 0; i < jogadores.size(); i++) {
+		System.out.println("");
+		if (jogadores.size() < 3) {
 
 			// Sistema de duelo entre 2 jogadores
-			if (jogadores.size() < 3)
-				verificaDuelo(i, i + 1, cartas, jogadores);
+			for (int i = 0; i < jogadores.size() - 1; i++) {
+
+				if (jogadores.size() < 3)
+					verificaDuelo(i, i + 1, cartas, jogadores);
+			}
+
+		} else {
 
 			// Sistema de duelo de 2+ jogadores
-			// Sistema de duelo de até ao penúltimo jogador
-			else if (i < jogadores.size() - 1) {
-				verificaDuelo(i, i + 1, cartas, jogadores);
+			for (int i = 0; i < jogadores.size(); i++) {
 
-				// Sistema de duelo de 2+ jogadores
-				// Sistema de duelo entre o último e primeiro jogador
-			} else {
-				verificaDuelo(i, 0, cartas, jogadores);
+				// Sistema de duelo de até ao penúltimo jogador
+
+				if (i < jogadores.size() - 1) {
+					verificaDuelo(i, i + 1, cartas, jogadores);
+
+					// Sistema de duelo entre o último e primeiro jogador
+				} else {
+					verificaDuelo(i, 0, cartas, jogadores);
+				}
 			}
 		}
-
 		// Remover as cartas utilizadas pelos jogadores
 		for (
 
 				int i = 0; i < jogadores.size(); i++) {
 			jogadores.get(i).getMao().remove(cartas[i]);
 		}
-
 	}
 
 	public void verificaDuelo(int jogador1, int jogador2, int[] cartas, ArrayList<Jogador> jogadores) {
 
 		if (jogadores.get(jogador1).getCarta(cartas[jogador1]).getForca() > jogadores.get(jogador2)
 				.getCarta(cartas[jogador2]).getForca()) {
-			System.out.println("");
-			System.out.println("O jogador " + jogadores.get(jogador1).getNome() + " ganhou ao jogador "
-					+ jogadores.get(jogador2).getNome());
+			System.out
+					.println(jogadores.get(jogador1).getNome() + " ganhou contra " + jogadores.get(jogador2).getNome());
 			jogadores.get(jogador1).setVitoria(jogadores.get(jogador1).getVitoria() + 1);
 			JOptionPane.showMessageDialog(null,
 					jogadores.get(jogador1).getNome() + " ganhou contra " + jogadores.get(jogador2).getNome(), "Duelo",
