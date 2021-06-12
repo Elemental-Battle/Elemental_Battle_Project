@@ -5,7 +5,7 @@ Desenvolvimento de um jogo de tabuleiro, no âmbito de Programação Orientada a
   * Criar um jogo de tabuleiro com o foco de envolver vários duelos entre jogadores. Esses duelos são representados pela utilização de cartas, sendo elas quantificadas pela sua força e destreza. Podendo ou não ter capacidades (modificar atributos).
 
 ## Objetivo: 
-  * Obter 10 vitórias nas “casas duelo”, evitando perder os duelos.
+  * Obter 10 vitórias através de duelos
 
 ## Características:  
   * Dado de 1 a 6; 
