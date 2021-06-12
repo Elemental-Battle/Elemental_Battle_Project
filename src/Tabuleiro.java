@@ -6,7 +6,7 @@ public class Tabuleiro {
 
 	// Atributos
 
-	ArrayList<Jogador> jogadores = new ArrayList<Jogador>(); // criação dos jogadores
+	public ArrayList<Jogador> jogadores = new ArrayList<Jogador>(); // criação dos jogadores
 	private ArrayList<Casa> tabuleiro; // criação do tabuleiro
 	Casa casaBonus = new Surpresa(); // criação da casa bonus
 	Casa casaDuelo = new Duelo(); // criação da casa duelo
@@ -35,6 +35,7 @@ public class Tabuleiro {
 		this.tabuleiro = new ArrayList<Casa>(criarTabuleiro());
 	}
 
+
 	// Construtor - cópia
 	/**
 	 * Cópia do tabuleiro
@@ -47,6 +48,8 @@ public class Tabuleiro {
 	}
 
 	// Acessores
+	
+	
 
 	/**
 	 * Recebe a quantidade de jogadores
@@ -56,6 +59,15 @@ public class Tabuleiro {
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 	}
+
+	/**
+	 * Define os jogadores
+	 * @param jogadores
+	 */
+	public void setJogadores(ArrayList<Jogador> jogadores) {
+		this.jogadores = jogadores;
+	}
+
 
 	/**
 	 * Recebe o tamanho do tabuleiro (número de casas)

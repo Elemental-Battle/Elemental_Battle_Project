@@ -135,8 +135,8 @@ public class Duelo extends Casa {
 
 			// Empate entre os jogadores
 		} else {
-			System.out.println("");
-			System.out.println("Empate");
+			
+			System.out.println(jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome());
 			JOptionPane.showMessageDialog(null,
 					jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome(), "Duelo",
 					JOptionPane.INFORMATION_MESSAGE);

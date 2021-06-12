@@ -130,12 +130,36 @@ public class Jogo {
 		System.out.println("O jogo durou " + turno + " turnos");
 		System.out.println("");
 		// Demonstra o primeiro jogador que ganhou 5 vitórias
-		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
-			if (tabuleiro.getJogadores().get(i).getVitoria() >= 5)
-				System.out.println("Vencedor do Jogo: " + tabuleiro.getJogadores().get(i).getNome());
+		/*
+		 * for (int i = 0; i < tabuleiro.getJogadores().size(); i++) { if
+		 * (tabuleiro.getJogadores().get(i).getVitoria() >= 5) System.out.println((i +1)
+		 * + "º -  " + tabuleiro.getJogadores().get(i).getNome());
+		 * 
+		 * // METER POSIÇÕES DOS JOGADORES DE ACORDO COM AS VITORIAS }
+		 */
 
-			// METER POSIÇÕES DOS JOGADORES DE ACORDO COM AS VITORIAS
+		
+		int[] vitorias = new int[tabuleiro.jogadores.size()];
+		for (int i = 0; i < tabuleiro.jogadores.size(); i++) {
+			vitorias[i] = tabuleiro.jogadores.get(i).getVitoria();
 		}
+		int aux;
+		for (int i = 0; i < tabuleiro.getJogadores().size() - 1; i++) {
+			for (int j = i + 1; j < tabuleiro.getJogadores().size(); j++) {
+				if(vitorias[i] < vitorias[j]) {
+						aux = vitorias[i];
+						vitorias[i] = vitorias[j];
+						vitorias[j] = aux;
+						Collections.swap(tabuleiro.getJogadores(), i, j);
+				}
+			}
+		}
+		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
+
+			System.out.println((i + 1) + "º lugar - " + tabuleiro.getJogadores().get(i).getNome() + " com " + tabuleiro.getJogadores().get(i).getVitoria() + " vitórias");
+		}
+
+		System.out.println("");
 		System.out.println("");
 
 	}
@@ -222,9 +246,9 @@ public class Jogo {
 		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
 				.getPosicaoJogador()) {
 
-			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " Entrou em duelo",
+			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo",
 					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("Casa Duelo");
+			System.out.println("Entrou em duelo");
 			System.out.println("");
 			System.out.println("|");
 			System.out.println("|");
@@ -238,13 +262,14 @@ public class Jogo {
 				| posicaoJogador == 15 | posicaoJogador == 18 | posicaoJogador == 21 | posicaoJogador == 24) {
 
 			// Faz Desafio (surpresa)
+			verificarMao(tabuleiro.getJogadores().get(jogador));
 			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 
 			// Se os jogadores calharem nas posições (1;4;6;9;11;14;16;19), faz duelo
 		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 7 | posicaoJogador == 10
 				| posicaoJogador == 13 | posicaoJogador == 16 | posicaoJogador == 19 | posicaoJogador == 22) {
 
-			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " Entrou em duelo",
+			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo",
 					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
 			System.out.println("Casa Duelo");
 			System.out.println("");
