@@ -37,22 +37,22 @@ public class Duelo extends Casa {
 			if (jogadores.get(i).getMao().size() > 0) {
 				mostrarCartas(jogadores.get(i).getMao());
 				do {
-					cartas[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "Número da Carta",
-							jogadores.get(i).getNome(), JOptionPane.INFORMATION_MESSAGE)) - 1;
+					cartas[i] = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Número da Carta",
+							jogadores.get(i).getNome(), JOptionPane.PLAIN_MESSAGE, null, null, "1")) - 1;
 
 				} while (cartas[i] > jogadores.get(i).getMao().size() - 1 || carta < 0);
 
 				// O jogador escolha uma carta que tenha na sua mão, caso não tenha cartas,
 				// recebe 3
+
 			} else {
 				recebeCarta(jogadores.get(i), baralho, quantidadeCartas);
 				JOptionPane.showMessageDialog(null,
 						"O jogador" + jogadores.get(i).getNome() + "recebeu 3 cartas por ter ficado sem mão");
 				mostrarCartas(jogadores.get(i).getMao());
 				do {
-					cartas[i] = Integer.parseInt(
-							JOptionPane.showInputDialog("Escolha a carta do jogador " + jogadores.get(i).getNome()))
-							- 1;
+					cartas[i] = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Número da Carta",
+							jogadores.get(i).getNome(), JOptionPane.PLAIN_MESSAGE, null, null, "1")) - 1;
 				} while (cartas[i] > jogadores.get(i).getMao().size() - 1 || carta < 0);
 
 			}
@@ -135,8 +135,9 @@ public class Duelo extends Casa {
 
 			// Empate entre os jogadores
 		} else {
-			
-			System.out.println(jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome());
+
+			System.out.println(
+					jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome());
 			JOptionPane.showMessageDialog(null,
 					jogadores.get(jogador1).getNome() + " empatou contra " + jogadores.get(jogador2).getNome(), "Duelo",
 					JOptionPane.INFORMATION_MESSAGE);

@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Stack;
 
 public class Baralho {
 
@@ -45,6 +42,29 @@ public class Baralho {
 		baralho.add(new Carta("The Lich King", 9, 5, 5));
 		baralho.add(new Carta("God King", 9, 3, 2));
 		baralho.add(new Carta("Camachão", 10, 5, 5));
+		baralho.add(new Carta("Aatrox", 5, 5, 5));
+		baralho.add(new Carta("Ahri", 7, 2, 3));
+		baralho.add(new Carta("Akali", 4, 5, 4));
+		baralho.add(new Carta("Alistar", 1, 5, 4));
+		baralho.add(new Carta("Amumu", 3, 5, 4));
+		baralho.add(new Carta("Anivia", 7, 2, 2));
+		baralho.add(new Carta("Annie", 8, 1, 1));
+		baralho.add(new Carta("Aphelios", 5, 5, 5));
+		baralho.add(new Carta("Aurelion Sol", 1, 1, 0));
+		baralho.add(new Carta("Azir", 7, 5, 0));
+		baralho.add(new Carta("Bard", 2, 5, 1));
+		baralho.add(new Carta("Blitzcrank", 8, 5, 3));
+		baralho.add(new Carta("Brand", 9, 2, 0));
+		baralho.add(new Carta("Braum", 4, 1, 4));
+		baralho.add(new Carta("Caitlyn", 3, 3, 3));
+		baralho.add(new Carta("Blue Eyes White Dragon", 10, 5, 4));
+		baralho.add(new Carta("Dark Magician", 10, 5, 4));
+		baralho.add(new Carta("Draven", 9, 1, 0));
+		baralho.add(new Carta("Ekko", 7, 3, 3));
+		baralho.add(new Carta("Elise", 5, 5, 1));
+		baralho.add(new Carta("Evelynn", 4, 1, 5));
+		baralho.add(new Carta("Ghost Hunter", 4, 1, 5));
+		baralho.add(new Carta("Gwen", 4, 1, 5));
 	}
 
 	/**

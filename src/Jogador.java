@@ -94,7 +94,7 @@ public class Jogador extends Peca {
 		String nome = "";
 		// Inserir o nome do jogador,
 		do {
-			nome = JOptionPane.showInputDialog(null, "Nome do jogador", "Jogador", JOptionPane.INFORMATION_MESSAGE);
+			nome = (String) JOptionPane.showInputDialog(null, "Nome do jogador", "Jogador", JOptionPane.PLAIN_MESSAGE, null, null, "jogador");
 
 		} while (nome.length() < 1);
 		this.nome = nome;

@@ -28,39 +28,55 @@ public class Jogo {
 	 * Mostrar as cartas do jogador
 	 * 
 	 * @param cartas Cartas
+	 * @throws NullPointerException Caso o baralho seja inválido
 	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
-		for (int i = 0; i < cartas.size(); i++) {
-			System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));
-		}
+		if (cartas == null) {
+			throw new NullPointerException("O baralho não é válido");
 
+		} else {
+			for (int i = 0; i < cartas.size(); i++) {
+				System.out.println("Carta " + (1 + i) + ": " + cartas.get(i));
+			}
+		}
 	}
 
 	/**
 	 * Dá cartas ao jogador
 	 * 
 	 * @param jogador Jogador
+	 * @throws NullPointerException Caso o jogador seja inválido
 	 */
 	public void receberCarta(Jogador jogador) {
+		if (jogador == null) {
+			throw new NullPointerException("O jogador não é válido");
 
-		Collections.shuffle(baralho.getElementals());
-		jogador.getMao().add(baralho.getElementals().get(1));
+		} else {
+
+			Collections.shuffle(baralho.getElementals());
+			jogador.getMao().add(baralho.getElementals().get(1));
+		}
 	}
 
 	/**
 	 * Baralha o baralho e distribui as cartas para os jogadores
 	 * 
 	 * @param baralho Baralho de cartas
+	 * @throw NullPointerException Caso o baralho seja nulo
 	 */
 	public static void distribuirBaralho(ArrayList<Carta> baralho) {
+		if (baralho == null) {
+			throw new NullPointerException("O baralho não é válido");
+		} else {
 
-		Collections.shuffle(baralho);
+			Collections.shuffle(baralho);
 
-		// Baralha o baralho e distribui 10 cartas à mão de cada jogador
-		for (int jogador = 0; jogador < tabuleiro.getJogadores().size(); jogador++) {
-			for (int carta = 0; carta < 10; carta++) {
-				Collections.shuffle(baralho);
-				tabuleiro.getJogadores().get(jogador).getMao().add(baralho.get(carta));
+			// Baralha o baralho e distribui 10 cartas à mão de cada jogador
+			for (int jogador = 0; jogador < tabuleiro.getJogadores().size(); jogador++) {
+				for (int carta = 0; carta < 10; carta++) {
+					Collections.shuffle(baralho);
+					tabuleiro.getJogadores().get(jogador).getMao().add(baralho.get(carta));
+				}
 			}
 		}
 
@@ -138,7 +154,6 @@ public class Jogo {
 		 * // METER POSIÇÕES DOS JOGADORES DE ACORDO COM AS VITORIAS }
 		 */
 
-		
 		int[] vitorias = new int[tabuleiro.jogadores.size()];
 		for (int i = 0; i < tabuleiro.jogadores.size(); i++) {
 			vitorias[i] = tabuleiro.jogadores.get(i).getVitoria();
@@ -146,17 +161,18 @@ public class Jogo {
 		int aux;
 		for (int i = 0; i < tabuleiro.getJogadores().size() - 1; i++) {
 			for (int j = i + 1; j < tabuleiro.getJogadores().size(); j++) {
-				if(vitorias[i] < vitorias[j]) {
-						aux = vitorias[i];
-						vitorias[i] = vitorias[j];
-						vitorias[j] = aux;
-						Collections.swap(tabuleiro.getJogadores(), i, j);
+				if (vitorias[i] < vitorias[j]) {
+					aux = vitorias[i];
+					vitorias[i] = vitorias[j];
+					vitorias[j] = aux;
+					Collections.swap(tabuleiro.getJogadores(), i, j);
 				}
 			}
 		}
 		for (int i = 0; i < tabuleiro.getJogadores().size(); i++) {
 
-			System.out.println((i + 1) + "º lugar - " + tabuleiro.getJogadores().get(i).getNome() + " com " + tabuleiro.getJogadores().get(i).getVitoria() + " vitórias");
+			System.out.println((i + 1) + "º lugar - " + tabuleiro.getJogadores().get(i).getNome() + " com "
+					+ tabuleiro.getJogadores().get(i).getVitoria() + " vitórias");
 		}
 
 		System.out.println("");
@@ -190,7 +206,7 @@ public class Jogo {
 	 * @param posicaoJogador Posicao do Jogador
 	 * 
 	 * @throws IllegalArgumentException se a posição do jogador for inferior a 0 ou
-	 *                                  superior a 20
+	 *                                  superior a 25
 	 * @throws NullPointerException     se o dado for nulo
 	 */
 	public void andarJogador(Dado dado, int jogador) {
@@ -198,8 +214,8 @@ public class Jogo {
 		// Validar os parametros
 		if (dado == null) {
 			throw new NullPointerException("O dado inserido é nulo");
-		} else if (jogador < 0 || jogador > 20) {
-			throw new IllegalArgumentException("A posição do jogador é superior a 20 ou inferior a 0");
+		} else if (jogador < 0 || jogador > 24) {
+			throw new IllegalArgumentException("A posição do jogador é superior a 24 ou inferior a 0");
 		} else {
 
 			int lancarDado = dado.lancarDado();
@@ -225,6 +241,7 @@ public class Jogo {
 
 			System.out.println("Posição: " + tabuleiro.getJogadores().get(jogador).getPosicaoJogador());
 			System.out.println("");
+
 			verificarCasa(jogador);
 		}
 	}
@@ -238,47 +255,55 @@ public class Jogo {
 	 * 
 	 * 
 	 * @param jogador Posicao do Jogador
+	 * @throws IllegalArgumentException O jogador é inferior a 0 e superior a 24
 	 */
 	public void verificarCasa(int jogador) {
-		int posicaoJogador = tabuleiro.getJogadores().get(jogador).getPosicaoJogador();
+		if (jogador < 0 || jogador > 24) {
+			throw new IllegalArgumentException("O jogador tem que ser superior a 0 e inferior a 25(não incluido)");
+		} else {
 
-		// Se os jogadores calharem na mesma casa, então fazem um duelo
-		if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
-				.getPosicaoJogador()) {
+			int posicaoJogador = tabuleiro.getJogadores().get(jogador).getPosicaoJogador();
 
-			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo",
-					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("Entrou em duelo");
-			System.out.println("");
-			System.out.println("|");
-			System.out.println("|");
-			System.out.println("V");
+			// Se os jogadores calharem na mesma casa, então fazem um duelo
+			if (tabuleiro.getJogadores().get(0).getPosicaoJogador() == tabuleiro.getJogadores().get(1)
+					.getPosicaoJogador()) {
 
-			// Faz Desafio (duelo)
-			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+				JOptionPane.showMessageDialog(null,
+						tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo", "SISTEMA DUELO",
+						JOptionPane.INFORMATION_MESSAGE);
+				System.out.println("Entrou em duelo");
+				System.out.println("");
+				System.out.println("|");
+				System.out.println("|");
+				System.out.println("V");
 
-			// Se os jogadores calharem nas posições (3;8;13;18), faz surpresa
-		} else if (posicaoJogador == 3 | posicaoJogador == 6 | posicaoJogador == 9 | posicaoJogador == 12
-				| posicaoJogador == 15 | posicaoJogador == 18 | posicaoJogador == 21 | posicaoJogador == 24) {
+				// Faz Desafio (duelo)
+				tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 
-			// Faz Desafio (surpresa)
-			verificarMao(tabuleiro.getJogadores().get(jogador));
-			tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+				// Se os jogadores calharem nas posições (3;8;13;18), faz surpresa
+			} else if (posicaoJogador == 3 | posicaoJogador == 6 | posicaoJogador == 9 | posicaoJogador == 12
+					| posicaoJogador == 15 | posicaoJogador == 18 | posicaoJogador == 21 | posicaoJogador == 24) {
 
-			// Se os jogadores calharem nas posições (1;4;6;9;11;14;16;19), faz duelo
-		} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 7 | posicaoJogador == 10
-				| posicaoJogador == 13 | posicaoJogador == 16 | posicaoJogador == 19 | posicaoJogador == 22) {
+				// Faz Desafio (surpresa)
+				verificarMao(tabuleiro.getJogadores().get(jogador));
+				tabuleiro.casaBonus.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
 
-			JOptionPane.showMessageDialog(null, tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo",
-					"SISTEMA DUELO", JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("Casa Duelo");
-			System.out.println("");
-			System.out.println("|");
-			System.out.println("|");
-			System.out.println("V");
+				// Se os jogadores calharem nas posições (1;4;6;9;11;14;16;19), faz duelo
+			} else if (posicaoJogador == 1 | posicaoJogador == 4 | posicaoJogador == 7 | posicaoJogador == 10
+					| posicaoJogador == 13 | posicaoJogador == 16 | posicaoJogador == 19 | posicaoJogador == 22) {
 
-			// Faz Desafio (duelo)
-			tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+				JOptionPane.showMessageDialog(null,
+						tabuleiro.getJogadores().get(jogador).getNome() + " entrou em duelo", "SISTEMA DUELO",
+						JOptionPane.INFORMATION_MESSAGE);
+				System.out.println("Casa Duelo");
+				System.out.println("");
+				System.out.println("|");
+				System.out.println("|");
+				System.out.println("V");
+
+				// Faz Desafio (duelo)
+				tabuleiro.casaDuelo.Desafio(jogador, baralho.getElementals(), tabuleiro.getJogadores());
+			}
 		}
 	}
 
@@ -286,19 +311,25 @@ public class Jogo {
 	 * Verifica a mão do jogador, na eventualidade de ficar sem cartas
 	 * 
 	 * @param jogador Jogador
+	 * @throws NullPointerException     Se o jogador for nulo
 	 */
 	public void verificarMao(Jogador jogador) {
 
-		int quantidadeCartas = 3;
+		if (jogador == null) {
+			throw new NullPointerException("O jogador não é válido");
+			
+		} else {
 
-		// Caso o jogador fique sem cartas, recebe 3
-		if (jogador.getMao().size() <= 0) {
+			int quantidadeCartas = 3;
 
-			tabuleiro.getTabuleiro().get(0).recebeCarta(jogador, baralho.getElementals(), quantidadeCartas);
-			JOptionPane.showMessageDialog(null, jogador.getNome() + "recebeu 3 cartas por ter ficado sem mão", "JOGO",
-					JOptionPane.INFORMATION_MESSAGE);
+			// Caso o jogador fique sem cartas, recebe 3
+			if (jogador.getMao().size() <= 0) {
+
+				tabuleiro.getTabuleiro().get(0).recebeCarta(jogador, baralho.getElementals(), quantidadeCartas);
+				JOptionPane.showMessageDialog(null, jogador.getNome() + "recebeu 3 cartas por ter ficado sem mão",
+						"JOGO", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
-
 	}
 
 	/**
