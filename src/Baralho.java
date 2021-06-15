@@ -1,14 +1,22 @@
 import java.util.ArrayList;
 
+
+/**
+ *  A classe baralho tem como objetivo criar um baralho com todas as cartas
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 public class Baralho {
 
 	// Criação de cartas
 	ArrayList<Carta> elementals = new ArrayList<Carta>();
 
 	/**
-	 * Criação de um baralho com 30 cartas
+	 * Criação de um baralho com 53 cartas
 	 * 
-	 * @param baralho
+	 * @param baralho ArrayList da classe Carta
 	 */
 	public void criarBaralho1(ArrayList<Carta> baralho) {
 		baralho.add(new Carta("Water Elemental", 10, 5, 6));
@@ -70,7 +78,8 @@ public class Baralho {
 	/**
 	 * Devolve as cartas do baralho "elementals"
 	 * 
-	 * @return elementals
+	 * @return Baralho elementals
+	 * 
 	 */
 	public ArrayList<Carta> getElementals() {
 		return elementals;

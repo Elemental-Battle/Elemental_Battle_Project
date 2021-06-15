@@ -3,6 +3,17 @@ import java.util.Collections;
 
 import javax.swing.JOptionPane;
 
+
+/**
+ * A classe jogo é o coração da aplicação, mostrando a descição, as cartas,
+ * verificar casas, a mão do jogador, voitória e andar com o jogador. Tabém tem
+ * as peças disponíveis para jogar
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
+
 public class Jogo {
 
 	// Atributos
@@ -27,8 +38,7 @@ public class Jogo {
 	/**
 	 * Mostrar as cartas do jogador
 	 * 
-	 * @param cartas Cartas
-	 * @throws NullPointerException Caso o baralho seja inválido
+	 * @param cartas Um baralho de cartas da calsse Cartas
 	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		if (cartas == null) {
@@ -44,8 +54,7 @@ public class Jogo {
 	/**
 	 * Dá cartas ao jogador
 	 * 
-	 * @param jogador Jogador
-	 * @throws NullPointerException Caso o jogador seja inválido
+	 * @param jogador Um jogador da classe Jogador
 	 */
 	public void receberCarta(Jogador jogador) {
 		if (jogador == null) {
@@ -62,7 +71,6 @@ public class Jogo {
 	 * Baralha o baralho e distribui as cartas para os jogadores
 	 * 
 	 * @param baralho Baralho de cartas
-	 * @throw NullPointerException Caso o baralho seja nulo
 	 */
 	public static void distribuirBaralho(ArrayList<Carta> baralho) {
 		if (baralho == null) {
@@ -181,9 +189,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Verifica se o jogador ganhou 5 duelos
+	 * Verifica se o jogador ganhou 10 duelos
 	 * 
-	 * @return true/false
+	 * @return True se algum jogador tiver ganho ou False caso nenhum tenha ganho
 	 */
 	public Boolean verificaVitoria() {
 		for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
@@ -196,18 +204,15 @@ public class Jogo {
 	}
 
 	/**
+	 * 
 	 * Lança um dado, utiliza a posição atual do jogador, e depois anda o valor do
 	 * dado no tabuleiro.
 	 * 
 	 * O dado não pode ser nulo e a posição do jogador não pode ser inferior a 0 nem
 	 * superior a 20
 	 * 
-	 * @param dado           Dado
-	 * @param posicaoJogador Posicao do Jogador
-	 * 
-	 * @throws IllegalArgumentException se a posição do jogador for inferior a 0 ou
-	 *                                  superior a 25
-	 * @throws NullPointerException     se o dado for nulo
+	 * @param dado    Um dado da classe dado
+	 * @param jogador Posição do jogador
 	 */
 	public void andarJogador(Dado dado, int jogador) {
 
@@ -253,9 +258,7 @@ public class Jogo {
 	 * duelo, irá duelar com outro jogador, caso esteja na mesma casa que outro
 	 * jogador, irá duelar com esse jogador.
 	 * 
-	 * 
 	 * @param jogador Posicao do Jogador
-	 * @throws IllegalArgumentException O jogador é inferior a 0 e superior a 24
 	 */
 	public void verificarCasa(int jogador) {
 		if (jogador < 0 || jogador > 24) {
@@ -310,14 +313,13 @@ public class Jogo {
 	/**
 	 * Verifica a mão do jogador, na eventualidade de ficar sem cartas
 	 * 
-	 * @param jogador Jogador
-	 * @throws NullPointerException     Se o jogador for nulo
+	 * @param jogador um jogador da classe jogador
 	 */
 	public void verificarMao(Jogador jogador) {
 
 		if (jogador == null) {
 			throw new NullPointerException("O jogador não é válido");
-			
+
 		} else {
 
 			int quantidadeCartas = 3;

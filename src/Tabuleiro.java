@@ -2,6 +2,13 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+/**
+ * A classe tabuleiro tem o respetivo tabuleiro com casas neutras, duelo e surpresa. Também tem os jogadores
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ */
+
 public class Tabuleiro {
 
 	// Atributos
@@ -62,7 +69,7 @@ public class Tabuleiro {
 
 	/**
 	 * Define os jogadores
-	 * @param jogadores
+	 * @param jogadores Arraylist de jogadores da classe Jogador
 	 */
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		this.jogadores = jogadores;

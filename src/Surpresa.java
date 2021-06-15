@@ -7,8 +7,7 @@ import javax.swing.JOptionPane;
 public class Surpresa extends Casa {
 
 	/**
-	 * 
-	 * @param Surpresa
+	 * Construtor default
 	 */
 	public Surpresa() {
 		// TODO Auto-generated constructor stub

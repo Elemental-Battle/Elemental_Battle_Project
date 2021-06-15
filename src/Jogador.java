@@ -88,7 +88,6 @@ public class Jogador extends Peca {
 	/**
 	 * Construtor por defeito
 	 * 
-	 * @param nome Nome do jogador
 	 */
 	public Jogador() {
 		String nome = "";

@@ -203,12 +203,13 @@ public class Carta {
 
 	}
 
+	
 	/**
 	 * Todos os tipos efeitos que uma carta pode ter, Validação do atributo
 	 * capacidade, a carta tem de ter uma capacidade de 0 a 6 inclusive
 	 * 
-	 * @param capacidade Tipo de capacidade da carta
-	 * @param cartaJ2    Uma carta
+	 * @param cartaJ1 Carta do jogador 1
+	 * @param cartaJ2 Carta do jogador 2
 	 */
 	public void efeitoCapacidade(Carta cartaJ1, Carta cartaJ2) {
 
