@@ -22,8 +22,8 @@ public class Tabuleiro {
 	Casa casaDuelo = new Duelo(); // criação da casa duelo
 
 	/**
-	 * Construtor Default, escolher a quantidade de jogadores que vão participar no jogo, havendo
-	 * restrição, minimo 2 jogadores e um máximo de 6 jogadores.
+	 * Construtor Default, escolher a quantidade de jogadores que vão participar no
+	 * jogo, havendo restrição, minimo 2 jogadores e um máximo de 6 jogadores.
 	 */
 	// Construtor Default
 	public Tabuleiro() {
