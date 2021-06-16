@@ -1,8 +1,8 @@
 package Elemental_Battle;
 
 /**
- *  A classe carta tem a caraterização de uma carta padrão do baralho, contendo o seu nome,
- *  forca, destreza e capacidade
+ * A classe carta tem a caraterização de uma carta padrão do baralho, contendo o
+ * seu nome, forca, destreza e capacidade
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -26,7 +26,6 @@ public class Carta {
 	 * @param destreza   Destreza da Carta
 	 * @param capacidade Capacidade da carta
 	 */
-	// Construtor - com argumentos
 	public Carta(String nome, int forca, int destreza, int capacidade) {
 		// Validar o nome
 		if (nome != null && nome != "")
@@ -34,18 +33,16 @@ public class Carta {
 		else
 			throw new NullPointerException("O nome tem que ser válido");
 
-		// Verificar se a força está no intervalo de 0 a 5
+		// Verificar se a força está no intervalo de 0 a 10
 		validarForca(forca);
 
 		// Verificar se a destreza está no intervalo de 0 a 5
 		validarDestreza(destreza);
 
-		// Verificar se a caracteristica está no intervalo de 1 a 5
+		// Verificar se a capacidade está no intervalo de 0 a 6
 		validarCapacidade(capacidade);
 
 	}
-
-	// Construtor - cópia
 
 	/**
 	 * Validação dos atributos da carta (nome, forca, destreza e capacidade)
@@ -63,17 +60,27 @@ public class Carta {
 		// Verificar se a destreza está no intervalo de 0 a 5
 		validarDestreza(carta.destreza);
 
-		// Verificar se a caracteristica está no intervalo de 0 a 6
+		// Verificar se a capacidade está no intervalo de 0 a 6
 		validarCapacidade(carta.capacidade);
 
 	}
 
 	// Acessores
 
+	/**
+	 * Define a força da carta
+	 * 
+	 * @param forca Força da Carta
+	 */
 	public void setForca(int forca) {
 		this.forca = forca;
 	}
 
+	/**
+	 * Defome a destreza da carta
+	 * 
+	 * @param destreza Destreza da carta
+	 */
 	public void setDestreza(int destreza) {
 		this.destreza = destreza;
 	}
@@ -178,7 +185,8 @@ public class Carta {
 	}
 
 	/**
-	 * Legenda do efeito de cada capacidade úinica, de 0 a 6
+	 * Legenda do efeito de cada capacidade úinica, de 0 a 6 Valida o valor da
+	 * capacidade
 	 * 
 	 * @param capacidade Tipo de capacidade da carta
 	 * @return Legenda do efeito da respetiva capacidade
@@ -187,25 +195,25 @@ public class Carta {
 
 		switch (capacidade) {
 		case 0:
-			return "Sem efeito";
+			return "Sem efeito"; // Legenda da capacidade 0
 
 		case 1:
-			return "Ganha 2 de força";
+			return "Ganha 2 de força"; // Legenda da capacidade 1
 
 		case 2:
-			return "Ganha 2 de destreza";
+			return "Ganha 2 de destreza"; // Legenda da capacidade 2
 
 		case 3:
-			return "Ganha 2 força e destreza";
+			return "Ganha 2 força e destreza"; // Legenda da capacidade 3
 
 		case 4:
-			return "Tira 2 de força ao adversário";
+			return "Tira 2 de força ao adversário"; // Legenda da capacidade 4
 
 		case 5:
-			return "Tira 2 destreza ao adversário";
+			return "Tira 2 destreza ao adversário"; // Legenda da capacidade 5
 
 		case 6:
-			return "Tira 2 força e destreza ao adversário";
+			return "Tira 2 força e destreza ao adversário"; // Legenda da capacidade 6
 
 		default:
 			throw new IllegalArgumentException("A capacidade tem que ter um número válido");
@@ -213,7 +221,6 @@ public class Carta {
 
 	}
 
-	
 	/**
 	 * Todos os tipos efeitos que uma carta pode ter, Validação do atributo
 	 * capacidade, a carta tem de ter uma capacidade de 0 a 6 inclusive
@@ -225,6 +232,8 @@ public class Carta {
 
 		switch (this.capacidade) {
 		case 0:
+
+			// Sem efeito
 
 			break;
 		case 1:

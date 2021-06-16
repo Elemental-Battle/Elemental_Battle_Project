@@ -1,12 +1,13 @@
 package Elemental_Battle;
+
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 /**
- *  A classe Duelo consiste em batalhas realizadas com cartas
- *  e a interação entre os jogadores, sendo a eles atribuido tais cartas.
- *  
+ * A classe Duelo consiste em batalhas realizadas com cartas e a interação entre
+ * os jogadores, sendo a eles atribuido tais cartas.
+ * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
  *
@@ -102,6 +103,16 @@ public class Duelo extends Casa {
 		}
 	}
 
+	/**
+	 * 
+	 * Verifica o sistema de duelos, verificando os parâmetros força e destreza e
+	 * decide qual o jogador ganha o ponto
+	 * 
+	 * @param jogador1  Jogador 1 do jogo Elemental Battle
+	 * @param jogador2  Jogador 2 do jogo Elemental Battle
+	 * @param cartas    Cartas de um baralho
+	 * @param jogadores Jogadores do jogo Elemental Battle
+	 */
 	public void verificaDuelo(int jogador1, int jogador2, int[] cartas, ArrayList<Jogador> jogadores) {
 
 		if (jogadores.get(jogador1).getCarta(cartas[jogador1]).getForca() > jogadores.get(jogador2)

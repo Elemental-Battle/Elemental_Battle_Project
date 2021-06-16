@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * @author Olavo Caxeiro
  *
  */
+
 public class Baralho {
 
 	// Criação de cartas

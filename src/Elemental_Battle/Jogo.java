@@ -1,9 +1,9 @@
 package Elemental_Battle;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 import javax.swing.JOptionPane;
-
 
 /**
  * A classe jogo é o coração da aplicação, mostrando a descição, as cartas,

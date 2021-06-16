@@ -1,10 +1,11 @@
 
 package Elemental_Battle;
+
 import javax.swing.JOptionPane;
 
 /**
- *  A classe main serve como condutor de todo o código criado,
- *  é aqui que chamamos e iniciamos o jogo Elemental Battle
+ * A classe main serve como condutor de todo o código criado, é aqui que
+ * chamamos e iniciamos o jogo Elemental Battle
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
