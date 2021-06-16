@@ -23,11 +23,11 @@ public abstract class Casa {
 	}
 
 	/**
-	 * Dá cartas ao jogador
+	 * Dá cartas ao jogador.
 	 * 
-	 * @param jogador    Jogador
-	 * @param baralho    Baralho de cartas
-	 * @param quantidade Quantidade de cartas
+	 * @param jogador    Jogador que vai receber a carta.
+	 * @param baralho    Baralho de cartas da partida.
+	 * @param quantidade Quantidade de cartas que vão ser recebidas
 	 */
 	protected void recebeCarta(Jogador jogador, ArrayList<Carta> baralho, int quantidade) {
 
@@ -39,11 +39,12 @@ public abstract class Casa {
 	}
 
 	/**
+	 * Desafio abstrato para as classes Bonus e Duelo poderem implementar o seu
+	 * respetivo desafio.
 	 * 
-	 * 
-	 * @param jogador   Jogador
-	 * @param baralho   Baralho de cartas
-	 * @param jogadores Jogadores
+	 * @param jogador   Jogador que iniciou o desafio.
+	 * @param baralho   Baralho de cartas da partida.
+	 * @param jogadores Todos os jogadores que participam na partida.
 	 */
 	public abstract void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores);
 

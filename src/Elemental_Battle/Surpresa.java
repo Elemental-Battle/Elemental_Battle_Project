@@ -7,7 +7,7 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
- * A classe Surpresa decide à sorte 4 bónus que o jogador pode receber
+ * A classe Surpresa decide à sorte 4 bónus que o jogador pode receber,  podendo eles beneficiar ou prejudicar o mesmo.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class Surpresa extends Casa {
 
 	/**
-	 * Construtor default
+	 * Construtor default.
 	 */
 	public Surpresa() {
 		// TODO Auto-generated constructor stub
@@ -25,9 +25,9 @@ public class Surpresa extends Casa {
 
 	@Override
 	/**
-	 * 4 bónus escolhidos à sorte, sendo eles, o jogador receber uma carta, mover a
+	 * 4 bónus escolhidos à sorte. Sendo eles, o jogador receber uma carta, mover a
 	 * sua peça para a frente, mover a sua peça para trás, receber ou modificar a
-	 * capacidade de uma carta da sua mão aleatóriamente
+	 * capacidade de uma carta da sua mão aleatóriamente.
 	 */
 	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
 		Random rand = new Random();

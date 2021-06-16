@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 /**
- * A classe JogoTeste tem o propósito de testar todo o código da classe Jogo
+ * A classe JogoTeste tem o propósito de testar todos os comportamentos da
+ * classe Jogo.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -18,7 +19,9 @@ import org.junit.jupiter.api.Test;
 class JogoTest {
 
 	@Test
-	// Verificar se existe um baralho de cartas para jogar o jogo
+	/**
+	 * Verifica se existe um baralho de cartas válido para jogar o jogo.
+	 */
 	void testMostrarCartas() {
 		Jogo jogo = new Jogo();
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
@@ -30,7 +33,9 @@ class JogoTest {
 	}
 
 	@Test
-	// Verificar se existe um jogador para receber uma carta
+	/**
+	 * Verifica se existe um jogador válido para receber uma carta.
+	 */
 	void testReceberCarta() {
 		Jogo jogo = new Jogo();
 		Jogador jogador = new Jogador();
@@ -42,7 +47,9 @@ class JogoTest {
 	}
 
 	@Test
-	// Verficiar se existe um baralho de cartas para poder distribui-las
+	/**
+	 * Verficia se existe um baralho válido de cartas para as poder distribuir.
+	 */
 	void testDistribuirBaralho() {
 		Jogo jogo = new Jogo();
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
@@ -54,7 +61,10 @@ class JogoTest {
 	}
 
 	@Test
-	// Verificar o valor do dado e o valor da posição do jogador
+	/**
+	 * Verifica se o dado é nulo e depois se o valor da posição do jogador é
+	 * superior a 0 e inferior a 24.
+	 */
 	void testAndarJogador() {
 		Jogo jogo = new Jogo();
 		ArrayList<Carta> cartas = new ArrayList<Carta>();
@@ -73,7 +83,9 @@ class JogoTest {
 	}
 
 	@Test
-	// Verificar a posição do jogador
+	/**
+	 *  Verifica se a posição do jogador seja inferior a 0 e se o valor da posição do jogador é superior a 24.
+	 */
 	void testVerificarCasa() {
 		Jogo jogo = new Jogo();
 
@@ -90,7 +102,9 @@ class JogoTest {
 	}
 
 	@Test
-	// Verificar se o jogador tem mão
+	/**
+	 *  Verifica se o jogador tem uma mão válida.
+	 */
 	void testVerificarMao() {
 		Jogo jogo = new Jogo();
 		Jogador jogador = new Jogador();

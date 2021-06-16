@@ -86,7 +86,7 @@ public class Carta {
 	}
 
 	/**
-	 * Recebe o nome da carta
+	 * Devolve o nome da carta
 	 * 
 	 * @return nome da carta
 	 */
@@ -95,7 +95,7 @@ public class Carta {
 	}
 
 	/**
-	 * Recebe a capacidade da carta
+	 * Devolve a capacidade da carta
 	 * 
 	 * @return capacidade da carta
 	 */
@@ -113,7 +113,7 @@ public class Carta {
 	}
 
 	/**
-	 * Recebe a força da carta
+	 * Devolve a força da carta
 	 * 
 	 * @return força da carta
 	 */
@@ -122,7 +122,7 @@ public class Carta {
 	}
 
 	/**
-	 * Recebe a destreza da carta
+	 * Devolve a destreza da carta
 	 * 
 	 * @return destreza da carta
 	 */

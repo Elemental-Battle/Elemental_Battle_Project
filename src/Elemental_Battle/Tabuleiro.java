@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 
 /**
  * A classe tabuleiro tem o respetivo tabuleiro com casas neutras, duelo e
- * surpresa. Também tem os jogadores
+ * surpresa, também tem os jogadores.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -22,8 +22,8 @@ public class Tabuleiro {
 	Casa casaDuelo = new Duelo(); // criação da casa duelo
 
 	/**
-	 * Escolher a quantidade de jogadores que vão participar no jogo, havendo
-	 * restrição, minimo 2 jogadores e um máximo de 6 jogadores
+	 * Construtor Default, escolher a quantidade de jogadores que vão participar no jogo, havendo
+	 * restrição, minimo 2 jogadores e um máximo de 6 jogadores.
 	 */
 	// Construtor Default
 	public Tabuleiro() {
@@ -47,9 +47,9 @@ public class Tabuleiro {
 
 	// Construtor - cópia
 	/**
-	 * Cópia do tabuleiro
+	 * Cópia do tabuleiro.
 	 * 
-	 * @param tabuleiro Tabuleiro
+	 * @param tabuleiro Tabuleiro para o qual se quer copiar o existente.
 	 */
 	public Tabuleiro(Tabuleiro tabuleiro) {
 		this.tabuleiro = tabuleiro.tabuleiro;
@@ -59,27 +59,27 @@ public class Tabuleiro {
 	// Acessores
 
 	/**
-	 * Recebe a quantidade de jogadores
+	 * Recebe a quantidade de jogadores.
 	 * 
-	 * @return Jogadores
+	 * @return Jogadores.
 	 */
 	public ArrayList<Jogador> getJogadores() {
 		return jogadores;
 	}
 
 	/**
-	 * Define os jogadores
+	 * Define os jogadores que vão jogar.
 	 * 
-	 * @param jogadores Arraylist de jogadores da classe Jogador
+	 * @param jogadores Arraylist de jogadores da classe Jogador.
 	 */
 	public void setJogadores(ArrayList<Jogador> jogadores) {
 		this.jogadores = jogadores;
 	}
 
 	/**
-	 * Recebe o tamanho do tabuleiro (número de casas)
+	 * Devolve o tamanho do tabuleiro (número de casas).
 	 *
-	 * @return tabuleiro
+	 * @return O tamanho do tabuleiro.
 	 */
 	public int getTabuleiroSize() {
 		return tabuleiro.size();
@@ -87,7 +87,7 @@ public class Tabuleiro {
 	}
 
 	/**
-	 * Recebe o tabuleiro
+	 * Devolve o tabuleiro.
 	 * 
 	 * @return tabuleiro
 	 */
@@ -98,9 +98,9 @@ public class Tabuleiro {
 	// Comportamentos
 
 	/**
-	 * Cria 25 casas para o tabuleiro.
+	 * Cria 25 casas do tabuleiro.
 	 * 
-	 * @return casas do tabuleiro
+	 * @return casas criadas.
 	 */
 	public static ArrayList<Casa> criarTabuleiro() {
 		ArrayList<Casa> casas = new ArrayList<Casa>();
@@ -119,7 +119,7 @@ public class Tabuleiro {
 	}
 
 	/**
-	 * Clonar o tabuleiro
+	 * Clona o tabuleiro.
 	 */
 	public Tabuleiro clone() {
 		return new Tabuleiro(this);

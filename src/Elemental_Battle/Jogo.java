@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 /**
  * A classe jogo é o coração da aplicação, mostrando a descição, as cartas,
  * verificar casas, a mão do jogador, vitória e andar com o jogador. Também tem
- * as peças disponíveis para jogar
+ * as peças disponíveis para jogar.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -27,7 +27,8 @@ public class Jogo {
 	// Comportamentos
 
 	/**
-	 * Criação do jogo de tabuleiro
+	 * Criação do jogo, mostrando as regras, criando um tabuleiro e iniciando o
+	 * mesmo.
 	 */
 	public Jogo() {
 		jogoDescricao();
@@ -37,9 +38,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Mostrar as cartas do jogador
+	 * Mostra as cartas de um jogador.
 	 * 
-	 * @param cartas Um baralho de cartas da calsse Cartas
+	 * @param cartas Um baralho de cartas da classe Cartas.
 	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		if (cartas == null) {
@@ -53,9 +54,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Dá cartas ao jogador
+	 * Dá cartas ao jogador.
 	 * 
-	 * @param jogador Um jogador da classe Jogador
+	 * @param jogador Um jogador da classe Jogador.
 	 */
 	public void receberCarta(Jogador jogador) {
 		if (jogador == null) {
@@ -69,9 +70,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Baralha o baralho e distribui as cartas para os jogadores
+	 * Baralha um baralho e distribui as cartas para os jogadores.
 	 * 
-	 * @param baralho Baralho de cartas
+	 * @param baralho Baralho de cartas.
 	 */
 	public static void distribuirBaralho(ArrayList<Carta> baralho) {
 		if (baralho == null) {
@@ -93,11 +94,10 @@ public class Jogo {
 
 	/**
 	 * Criação do sistema de turnos, o jogo começa no turno 1 com a distribuição de
-	 * um baralho de cartas para a mão de cada jogador, os jogadores jogam
-	 * alternadamente, começando pelo jogador 1, sendo que cada jogador cumpre o
-	 * ciclo, sendo ele, lançar o dado, mover a peça e verificar as escolhas
-	 * disponiveis de acordo com a localização da peça, por fim o turno acaba e
-	 * começa tudo novamente mas no turno a seguir.
+	 * um baralho de cartas para a mão de cada jogador. Os jogadores jogam
+	 * alternadamente, começando pelo jogador 1, sendo que cada jogador lança o
+	 * dado, move a peça e verificar as escolhas disponiveis de acordo com a
+	 * localização da peça.
 	 * 
 	 */
 	public void turno() {
@@ -190,9 +190,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Verifica se o jogador ganhou 10 duelos
+	 * Verifica se o jogador ganhou 10 duelos.
 	 * 
-	 * @return True se algum jogador tiver ganho ou False caso nenhum tenha ganho
+	 * @return True se algum jogador tiver ganho ou False caso nenhum tenha ganho.
 	 */
 	public Boolean verificaVitoria() {
 		for (int j = 0; j < tabuleiro.getJogadores().size(); j++) {
@@ -206,14 +206,14 @@ public class Jogo {
 
 	/**
 	 * 
-	 * Lança um dado, utiliza a posição atual do jogador, e depois anda o valor do
-	 * dado no tabuleiro.
+	 * Lança um dado e depois anda o valor do dado para a respetiva casa no
+	 * tabuleiro.
 	 * 
 	 * O dado não pode ser nulo e a posição do jogador não pode ser inferior a 0 nem
-	 * superior a 20
+	 * superior a 24.
 	 * 
-	 * @param dado    Um dado da classe dado
-	 * @param jogador Posição do jogador
+	 * @param dado    Um dado da classe dado.
+	 * @param jogador Posição do jogador.
 	 */
 	public void andarJogador(Dado dado, int jogador) {
 
@@ -253,13 +253,13 @@ public class Jogo {
 	}
 
 	/**
-	 * Verifica se o jogador está numa casa duelo ou surpresa e também se está na
-	 * mesma casa que outro jogador, cada acontecimento resultará de uma ação, caso
-	 * o jogador esteja numa casa surpresa, irá receber bónus, caso esteja numa casa
-	 * duelo, irá duelar com outro jogador, caso esteja na mesma casa que outro
-	 * jogador, irá duelar com esse jogador.
+	 * Verifica se o jogador está numa casa duelo ou surpresa e se está na
+	 * mesma casa que outro jogador. Cada acontecimento resultará de uma ação, caso
+	 * o jogador esteja numa casa surpresa, recebe bónus, caso esteja numa casa
+	 * duelo, inicia os duelos entre os jogadores, caso esteja na mesma casa que outro
+	 * jogador, inicia os duelos entre os jogadores.
 	 * 
-	 * @param jogador Posicao do Jogador
+	 * @param jogador Posicao do Jogador.
 	 */
 	public void verificarCasa(int jogador) {
 		if (jogador < 0 || jogador > 24) {
@@ -312,9 +312,9 @@ public class Jogo {
 	}
 
 	/**
-	 * Verifica a mão do jogador, na eventualidade de ficar sem cartas
+	 * Verifica a mão do jogador, na eventualidade de ficar sem cartas.
 	 * 
-	 * @param jogador um jogador da classe jogador
+	 * @param jogador Um jogador da classe jogador.
 	 */
 	public void verificarMao(Jogador jogador) {
 
@@ -336,7 +336,7 @@ public class Jogo {
 	}
 
 	/**
-	 * Descrição das características, objetivo e regras do jogo
+	 * Descrição das características, objetivo e regras do jogo.
 	 */
 	public void jogoDescricao() {
 

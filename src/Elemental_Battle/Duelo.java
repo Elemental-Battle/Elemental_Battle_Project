@@ -26,9 +26,9 @@ public class Duelo extends Casa {
 	 * força como prioritária, caso seja igual, então verificamos como segundo
 	 * prioritário a destreza, caso seja também igual, resulta num empate.
 	 * 
-	 * @param jogador   Jogador
-	 * @param baralho   Baralho de cartas
-	 * @param jogadores Jogadores
+	 * @param jogador   Jogador que iniciou o desafio.
+	 * @param baralho   Baralho de cartas da partida.
+	 * @param jogadores Todos os jogadores que participam na partida.
 	 */
 	@Override
 	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
@@ -106,12 +106,12 @@ public class Duelo extends Casa {
 	/**
 	 * 
 	 * Verifica o sistema de duelos, verificando os parâmetros força e destreza e
-	 * decide qual o jogador ganha o ponto
+	 * decide qual o jogador ganha o ponto.
 	 * 
-	 * @param jogador1  Jogador 1 do jogo Elemental Battle
-	 * @param jogador2  Jogador 2 do jogo Elemental Battle
-	 * @param cartas    Cartas de um baralho
-	 * @param jogadores Jogadores do jogo Elemental Battle
+	 * @param jogador1  Jogador 1 da partida.
+	 * @param jogador2  Jogador 2 da partida.
+	 * @param cartas    Baralho de cartas da partida.
+	 * @param jogadores Todos os jogadores que participam na partida.
 	 */
 	public void verificaDuelo(int jogador1, int jogador2, int[] cartas, ArrayList<Jogador> jogadores) {
 
@@ -167,9 +167,9 @@ public class Duelo extends Casa {
 	}
 
 	/**
-	 * Mostra as cartas do jogador
+	 * Mostra as cartas de um jogador.
 	 * 
-	 * @param cartas Cartas de um baralho
+	 * @param cartas Cartas de um baralho.
 	 */
 	public void mostrarCartas(ArrayList<Carta> cartas) {
 		for (int i = 0; i < cartas.size(); i++) {

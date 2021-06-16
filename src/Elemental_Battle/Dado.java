@@ -3,7 +3,7 @@ package Elemental_Battle;
 import java.util.Random;
 
 /**
- * A classe Dado é onde é feito o lancamento de um dado de 1 a 6
+ * A classe Dado é onde é feito o lancamento de um dado de 1 a 6.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -17,7 +17,7 @@ public class Dado {
 	Random rand = new Random();
 
 	/**
-	 * Criação do Dado
+	 * Construtor default do Dado.
 	 */
 	// Construtor - default
 	public Dado() {
@@ -28,9 +28,9 @@ public class Dado {
 	// Acessores
 
 	/**
-	 * Recebe o número do dado
+	 * Devolve o número do dado.
 	 * 
-	 * @return numero
+	 * @return numero do dado.
 	 */
 	public int getDado() {
 		return numero;
@@ -39,9 +39,9 @@ public class Dado {
 	// Comportamentos
 
 	/**
-	 * Recebe o número do dado lançado
+	 * Efetua o lançamento de um dado de 1-6.
 	 * 
-	 * @return numero
+	 * @return numero do dado.
 	 */
 	public int lancarDado() {
 		numero = rand.nextInt(5) + 1;

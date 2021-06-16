@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 /**
  * A classe Bonus decide qual vai ser a vantagem/desvantagem aplicada ao
  * jogador, como por exemplo, receber uma carta, andar x casas, recuar x casas
- * ou receber uma nova capacidade numa carta
+ * ou receber uma nova capacidade numa carta.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 public class Bonus extends Casa {
 
 	/**
-	 * Construtor default
+	 * Construtor default.
 	 */
 	public Bonus() {
 		// TODO Auto-generated constructor stub
@@ -29,7 +29,7 @@ public class Bonus extends Casa {
 	/**
 	 * 4 bónus escolhidos à sorte, sendo eles, o jogador receber uma carta, mover a
 	 * sua peça para a frente, mover a sua peça para trás, receber ou modificar a
-	 * capacidade de uma carta da sua mão aleatóriamente
+	 * capacidade de uma carta da sua mão aleatóriamente.
 	 */
 	public void Desafio(int jogador, ArrayList<Carta> baralho, ArrayList<Jogador> jogadores) {
 		Random rand = new Random();
