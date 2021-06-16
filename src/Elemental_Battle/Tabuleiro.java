@@ -98,7 +98,7 @@ public class Tabuleiro {
 	// Comportamentos
 
 	/**
-	 * Cria 25 casas para o tabuleiro
+	 * Cria 25 casas para o tabuleiro.
 	 * 
 	 * @return casas do tabuleiro
 	 */
