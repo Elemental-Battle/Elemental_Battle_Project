@@ -1,6 +1,16 @@
+package Elemental_Battle;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+
+/**
+ *  A classe Jogador é o participante e o elemento que participa no jogo e participa
+ *  no tabuleiro através da posição da sua Peca e das cartas que lhe são atribuidas
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 public class Jogador extends Peca {
 

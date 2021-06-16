@@ -1,5 +1,17 @@
+package Elemental_Battle;
 import java.util.ArrayList;
 import java.util.Iterator;
+
+/**
+ *  A classe Casa tem o objetivo de ser uma classe padrão e abstrata do tabuleiro, servindo
+ *  como base para subclasses
+ *  
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
+
 
 public abstract class Casa {
 

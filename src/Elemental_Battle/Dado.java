@@ -1,4 +1,13 @@
+package Elemental_Battle;
 import java.util.Random;
+
+/**
+ *  A classe Dado é onde é feito o lancamento de um dado de 1 a 6
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 
 public class Dado {

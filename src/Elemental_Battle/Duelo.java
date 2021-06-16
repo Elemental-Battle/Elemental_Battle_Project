@@ -1,6 +1,16 @@
+package Elemental_Battle;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
+
+/**
+ *  A classe Duelo consiste em batalhas realizadas com cartas
+ *  e a interação entre os jogadores, sendo a eles atribuido tais cartas.
+ *  
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 public class Duelo extends Casa {
 

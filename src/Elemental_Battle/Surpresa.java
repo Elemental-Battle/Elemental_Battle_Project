@@ -1,8 +1,18 @@
+package Elemental_Battle;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
 import javax.swing.JOptionPane;
+
+/**
+ * A classe Surpresa decide à sorte 4 bónus que o jogador pode receber
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 public class Surpresa extends Casa {
 

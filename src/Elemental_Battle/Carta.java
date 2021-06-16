@@ -1,3 +1,13 @@
+package Elemental_Battle;
+
+/**
+ *  A classe carta tem a caraterização de uma carta padrão do baralho, contendo o seu nome,
+ *  forca, destreza e capacidade
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 public class Carta {
 

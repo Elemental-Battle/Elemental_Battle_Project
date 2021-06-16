@@ -1,3 +1,4 @@
+package Elemental_Battle;
 /**
  * Contem classes utilizadas no desenvolvimento do jogo Elemental_Battle, no
  * âmbito das disciplinas de Programação Orientada a Objetos e de Engenharia de

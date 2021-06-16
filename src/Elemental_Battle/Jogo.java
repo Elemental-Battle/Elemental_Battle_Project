@@ -1,3 +1,4 @@
+package Elemental_Battle;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -6,7 +7,7 @@ import javax.swing.JOptionPane;
 
 /**
  * A classe jogo é o coração da aplicação, mostrando a descição, as cartas,
- * verificar casas, a mão do jogador, voitória e andar com o jogador. Tabém tem
+ * verificar casas, a mão do jogador, vitória e andar com o jogador. Também tem
  * as peças disponíveis para jogar
  * 
  * @author Vasco Geada

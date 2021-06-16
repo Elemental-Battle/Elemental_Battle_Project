@@ -1,9 +1,18 @@
+package Elemental_Battle;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+
+/**
+ *  A classe JogoTeste tem o propósito de testar todo o código da classe Jogo
+ * 
+ * @author Vasco Geada
+ * @author Olavo Caxeiro
+ *
+ */
 
 class JogoTest {
 
