@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="Elemental_Battle.Carta" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Carta.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="405" width="196" x="327" y="1046"/>    
+    <position height="-1" width="-1" x="342" y="675"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="Elemental_Battle.Casa" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Casa.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="292" x="842" y="655"/>    
+    <position height="-1" width="-1" x="1380" y="456"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="Elemental_Battle.Duelo" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Duelo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="290" x="563" y="1046"/>    
+    <position height="-1" width="-1" x="1476" y="660"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Elemental_Battle.Peca" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Peca.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="87" x="715" y="408"/>    
+    <position height="-1" width="-1" x="757" y="497"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="Elemental_Battle.Dado" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Dado.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="103" x="572" y="408"/>    
+    <position height="-1" width="-1" x="547" y="396"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="Elemental_Battle.Tabuleiro" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Tabuleiro.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="219" x="842" y="408"/>    
+    <position height="-1" width="-1" x="1093" y="305"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="Elemental_Battle.Main" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="327" y="125"/>    
+    <position height="-1" width="-1" x="775" y="52"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="Elemental_Battle.Baralho" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Baralho.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="117" width="205" x="327" y="408"/>    
+    <position height="-1" width="-1" x="338" y="307"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,160 +75,146 @@
   </class>  
   <class id="9" language="java" name="Elemental_Battle.JogoTest" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/JogoTest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="154" x="480" y="125"/>    
+    <position height="-1" width="-1" x="462" y="105"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="Elemental_Battle.Surpresa" project="Elemental_Battle" 
-    file="/Elemental_Battle/src/Elemental_Battle/Surpresa.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="290" x="893" y="1046"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="11" language="java" name="Elemental_Battle.Jogo" project="Elemental_Battle" 
+  <class id="10" language="java" name="Elemental_Battle.Jogo" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Jogo.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="218" x="674" y="125"/>    
+    <position height="-1" width="-1" x="777" y="236"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="Elemental_Battle.Bonus" project="Elemental_Battle" 
-    file="/Elemental_Battle/src/Elemental_Battle/Bonus.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="290" x="1223" y="1046"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="13" language="java" name="Elemental_Battle.Jogador" project="Elemental_Battle" 
+  <class id="11" language="java" name="Elemental_Battle.Jogador" project="Elemental_Battle" 
     file="/Elemental_Battle/src/Elemental_Battle/Jogador.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="175" x="627" y="655"/>    
+    <position height="-1" width="-1" x="726" y="797"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="14">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="15" name="dado">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <class id="12" language="java" name="Elemental_Battle.Surpresa" project="Elemental_Battle" 
+    file="/Elemental_Battle/src/Elemental_Battle/Surpresa.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1150" y="657"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="13">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="14" name="jogadores">        
+        <position height="0" width="0" x="12" y="-33"/>      
       </attribute>      
-      <multiplicity id="16" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="15" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="12" y="-33"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="18">    
+  <association id="16">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="17" name="mao">        
+        <position height="0" width="0" x="-83" y="-573"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-83" y="-573"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="19">    
     <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <association id="19">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="20" name="tabuleiro">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="23" name="mao">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="24" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="25">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="26" name="pecas">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="27" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="28">    
-    <bendpoint x="336" y="655"/>    
-    <end type="SOURCE" refId="8" navigable="false">      
-      <attribute id="29" name="elementals">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="30" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="31">    
+  <association id="20">    
     <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="32" name="tabuleiro">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="21" name="tabuleiro">        
+        <position height="0" width="0" x="392" y="-257"/>      
       </attribute>      
-      <multiplicity id="33" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="22" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="392" y="-257"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="34">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="35" name="baralho">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <generalization id="23">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <association id="24">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="25" name="elementals">        
+        <position height="0" width="0" x="-83" y="-573"/>      
       </attribute>      
-      <multiplicity id="36" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="26" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-83" y="-573"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="28" name="baralho">        
+        <position height="0" width="0" x="-91" y="-159"/>      
+      </attribute>      
+      <multiplicity id="29" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-91" y="-159"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="37">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <generalization id="38">    
+  <generalization id="30">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="2"/>  
   </generalization>  
-  <association id="39">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="40" name="jogadores">        
-        <position height="0" width="0" x="0" y="0"/>      
+  <association id="31">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="32" name="pecas">        
+        <position height="0" width="0" x="-1" y="49"/>      
       </attribute>      
-      <multiplicity id="41" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <multiplicity id="33" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="-1" y="49"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="35" name="dado">        
+        <position height="0" width="0" x="-76" y="-88"/>      
+      </attribute>      
+      <multiplicity id="36" minimum="0" maximum="1">        
+        <position height="0" width="0" x="-76" y="-88"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="38" name="tabuleiro">        
+        <position height="0" width="0" x="142" y="-206"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="0" width="0" x="142" y="-206"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

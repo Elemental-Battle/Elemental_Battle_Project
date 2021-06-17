@@ -253,10 +253,10 @@ public class Jogo {
 	}
 
 	/**
-	 * Verifica se o jogador está numa casa duelo ou surpresa e se está na
-	 * mesma casa que outro jogador. Cada acontecimento resultará de uma ação, caso
-	 * o jogador esteja numa casa surpresa, recebe bónus, caso esteja numa casa
-	 * duelo, inicia os duelos entre os jogadores, caso esteja na mesma casa que outro
+	 * Verifica se o jogador está numa casa duelo ou surpresa e se está na mesma
+	 * casa que outro jogador. Cada acontecimento resultará de uma ação, caso o
+	 * jogador esteja numa casa surpresa, recebe bónus, caso esteja numa casa duelo,
+	 * inicia os duelos entre os jogadores, caso esteja na mesma casa que outro
 	 * jogador, inicia os duelos entre os jogadores.
 	 * 
 	 * @param jogador Posicao do Jogador.

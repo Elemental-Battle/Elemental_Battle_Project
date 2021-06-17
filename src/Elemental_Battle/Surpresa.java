@@ -7,7 +7,8 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
- * A classe Surpresa decide à sorte 4 bónus que o jogador pode receber,  podendo eles beneficiar ou prejudicar o mesmo.
+ * A classe Surpresa decide à sorte 4 bónus que o jogador pode receber, podendo
+ * eles beneficiar ou prejudicar o mesmo.
  * 
  * @author Vasco Geada
  * @author Olavo Caxeiro
