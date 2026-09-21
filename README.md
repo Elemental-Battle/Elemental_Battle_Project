@@ -34,6 +34,7 @@ Desenvolvimento de um jogo de tabuleiro, no âmbito de Programação Orientada a
  * Cada carta só pode ser utilizada uma vez, pois é descartada após o seu uso.<br/>
 
 
+
 ## Desenvolvedores: 
  * Vasco Geada nº 200100284
  * Olavo Cacheiro nº 200100274
